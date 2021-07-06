@@ -33,7 +33,7 @@ pub async fn query_profile(
     let query = query.into_inner();
 
     match query.profile_id.as_str() {
-        "athena" => {
+        "athena" | "profile0" => {
             let cosmetics = &app.cosmetics;
             let profile = app.get_user(&id);
 
