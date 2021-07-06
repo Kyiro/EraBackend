@@ -1,27 +1,25 @@
-use actix_web::{HttpRequest, HttpResponse, Responder, delete, get, post, web};
 use crate::structs::account::*;
-use serde::{Deserialize};
+use actix_web::{delete, get, post, web, HttpRequest, HttpResponse, Responder};
+use serde::Deserialize;
 use serde_json::json;
 
 #[derive(Deserialize)]
 pub struct OAuthToken {
-    pub grant_type: String
+    pub grant_type: String,
 }
 
 #[post("/api/oauth/token")]
-pub async fn oauth_token(
-    body: web::Form<OAuthToken>,
-    req: HttpRequest
-) -> impl Responder {
-    let basic = req.headers()
-    .get("Authorization").unwrap()
-    .to_str().unwrap();
-    
+pub async fn oauth_token(body: web::Form<OAuthToken>, req: HttpRequest) -> impl Responder {
+    let basic = req
+        .headers()
+        .get("Authorization")
+        .unwrap()
+        .to_str()
+        .unwrap();
+
     match body.grant_type.as_str() {
-        "client_credentials" => HttpResponse::Ok()
-        .json(ClientCreds::new(basic)),
-        _ => HttpResponse::Ok()
-        .json(BearerToken::new(basic))
+        "client_credentials" => HttpResponse::Ok().json(ClientCreds::new(basic)),
+        _ => HttpResponse::Ok().json(BearerToken::new(basic)),
     }
 }
 
@@ -31,11 +29,8 @@ pub async fn oauth_verify() -> impl Responder {
 }
 
 #[get("/api/public/account/{id}")]
-pub async fn personal_account(
-    web::Path(id): web::Path<String>
-) -> impl Responder {
-    HttpResponse::Ok()
-    .json(json!({
+pub async fn personal_account(web::Path(id): web::Path<String>) -> impl Responder {
+    HttpResponse::Ok().json(json!({
         "id": id,
         "displayName": "Project Era",
         "name": "Project",

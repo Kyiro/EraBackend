@@ -25,14 +25,14 @@ pub struct Profile {
 pub enum ProfileChanges {
     Full(FullProfile),
     Changed(AttrChanged),
-    Stat(StatModified)
+    Stat(StatModified),
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct StatModified {
     pub changeType: String,
     pub name: String,
-    pub value: StatValue
+    pub value: StatValue,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -47,7 +47,7 @@ pub enum StatValue {
 pub enum Attributes {
     Bool(bool),
     String(String),
-    Variants(Vec<Variant>)
+    Variants(Vec<Variant>),
 }
 
 #[derive(Serialize, Deserialize)]

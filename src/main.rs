@@ -23,16 +23,15 @@ async fn main() -> std::io::Result<()> {
 
     let state = web::Data::new({
         let mut state = structs::app::State::new();
-        
+
         // get cosmetics from cosmetics.json and use a fallback when it fails
         state.cosmetics = files::cosmetics().unwrap_or({
             let data = include_str!("../resources/cosmetics.json");
             serde_json::from_str(data)?
         });
-        state.game = files::game().unwrap_or(
-            include_str!("../resources/fortnite-game.json").to_string()
-        );
-        
+        state.game =
+            files::game().unwrap_or(include_str!("../resources/fortnite-game.json").to_string());
+
         state
     });
 
@@ -42,42 +41,39 @@ async fn main() -> std::io::Result<()> {
             .service(index)
             .service(
                 web::scope("/account")
-                .service(api::account::oauth_token)
-                .service(api::account::oauth_verify)
-                .service(api::account::external_auths)
-                .service(api::account::kill_sessions)
-                .service(api::account::personal_account)
+                    .service(api::account::oauth_token)
+                    .service(api::account::oauth_verify)
+                    .service(api::account::external_auths)
+                    .service(api::account::kill_sessions)
+                    .service(api::account::personal_account),
             )
-            .service(
-                web::scope("/content")
-                .service(api::content::fortnite_game)
-            )
+            .service(web::scope("/content").service(api::content::fortnite_game))
             .service(
                 web::scope("/fortnite")
-                .service(api::cloudstorage::system)
-                .service(api::cloudstorage::system_config)
-                .service(api::cloudstorage::system_file)
-                .service(api::cloudstorage::user)
-                .service(api::cloudstorage::user_file)
-                .service(api::cloudstorage::put_user_file)
-                .service(api::fortnite::catalog)
-                .service(api::fortnite::enabled_features)
-                .service(api::fortnite::find_player)
-                .service(api::fortnite::play_on_platform)
-                .service(api::fortnite::receipts)
-                .service(api::fortnite::timeline)
-                .service(api::fortnite::version_check)
-                .service(api::profile::client_quest_login)
-                .service(api::profile::equip_battle_royale)
-                .service(api::profile::query_profile)
-                .service(api::profile::other)
+                    .service(api::cloudstorage::system)
+                    .service(api::cloudstorage::system_config)
+                    .service(api::cloudstorage::system_file)
+                    .service(api::cloudstorage::user)
+                    .service(api::cloudstorage::user_file)
+                    .service(api::cloudstorage::put_user_file)
+                    .service(api::fortnite::catalog)
+                    .service(api::fortnite::enabled_features)
+                    .service(api::fortnite::find_player)
+                    .service(api::fortnite::play_on_platform)
+                    .service(api::fortnite::receipts)
+                    .service(api::fortnite::timeline)
+                    .service(api::fortnite::version_check)
+                    .service(api::profile::client_quest_login)
+                    .service(api::profile::equip_battle_royale)
+                    .service(api::profile::query_profile)
+                    .service(api::profile::other),
             )
-            .service(
-                web::scope("/lightswitch")
-                .service(api::lightswitch::status)
-            )
+            .service(web::scope("/lightswitch").service(api::lightswitch::status))
     })
-    .bind(format!("0.0.0.0:{}", var("PORT").unwrap_or("60101".to_string())))?
+    .bind(format!(
+        "0.0.0.0:{}",
+        var("PORT").unwrap_or("60101".to_string())
+    ))?
     .run()
     .await
 }

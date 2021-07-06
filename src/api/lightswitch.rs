@@ -1,10 +1,9 @@
-use actix_web::{HttpResponse, Responder, get};
+use actix_web::{get, HttpResponse, Responder};
 use serde_json::json;
 
 #[get("/api/service/bulk/status")]
 pub async fn status() -> impl Responder {
-    HttpResponse::Ok()
-    .json(json!([
+    HttpResponse::Ok().json(json!([
         {
             "serviceInstanceId": "fortnite",
             "status": "UP",

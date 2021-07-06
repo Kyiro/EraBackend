@@ -31,7 +31,7 @@ pub async fn query_profile(
     web::Path(id): web::Path<String>,
 ) -> impl Responder {
     let query = query.into_inner();
-    
+
     match query.profile_id.as_str() {
         "athena" => {
             let cosmetics = &app.cosmetics;
@@ -58,7 +58,7 @@ pub struct EquipBattleRoyaleCustomization {
     #[serde(rename = "indexWithinSlot")]
     pub index: usize,
     #[serde(rename = "variantUpdates")]
-    pub variants: Vec<Variant>
+    pub variants: Vec<Variant>,
 }
 
 #[post("/api/game/v2/profile/{id}/client/EquipBattleRoyaleCustomization")]
@@ -70,10 +70,10 @@ pub async fn equip_battle_royale(
 ) -> impl Responder {
     let body = body.into_inner();
     let query = query.into_inner();
-    
+
     // poor spam protection lol
     if body.item_to_slot.len() > 100 {
-        return HttpResponse::BadRequest().into()
+        return HttpResponse::BadRequest().into();
     }
 
     {
@@ -81,7 +81,7 @@ pub async fn equip_battle_royale(
         app.get_user(&id);
         let mut profile = app.users.write().unwrap();
         let profile = profile.get_mut(&id).unwrap();
-        
+
         let slot = match body.slot_name.as_str() {
             "Character" => &mut profile.character,
             "Dance" => &mut profile.dance[body.index],
@@ -92,39 +92,34 @@ pub async fn equip_battle_royale(
             "SkyDiveContrail" => &mut profile.contrail,
             "MusicPack" => &mut profile.music_pack,
             "LoadingScreen" => &mut profile.loading,
-            _ => &mut profile.character
+            _ => &mut profile.character,
         };
-        
+
         *slot = body.item_to_slot.clone();
     }
-    
+
     let mut changes: Vec<ProfileChanges> = Vec::new();
-    
+
     changes.push(ProfileChanges::Stat(StatModified {
         changeType: String::from("statModified"),
         name: ["favorite", &body.slot_name.to_lowercase()].join("_"),
-        value: if
-            &body.slot_name == "Dance" ||
-            &body.slot_name == "ItemWrap" {
-                StatValue::Vec(app.get_user(&id).dance.to_vec())
-            } else {
-                StatValue::String(body.item_to_slot.clone())
-            }
+        value: if &body.slot_name == "Dance" || &body.slot_name == "ItemWrap" {
+            StatValue::Vec(app.get_user(&id).dance.to_vec())
+        } else {
+            StatValue::String(body.item_to_slot.clone())
+        },
     }));
-    
+
     if body.variants.len() != 0 {
         changes.push(ProfileChanges::Changed(AttrChanged {
             changeType: String::from("itemAttrChanged"),
             itemId: body.item_to_slot,
             attributeName: String::from("variants"),
-            attributeValue: Attributes::Variants(body.variants)
+            attributeValue: Attributes::Variants(body.variants),
         }))
     }
-    
-    HttpResponse::Ok()
-    .json(
-        create(String::from("athena"), changes, Some(query.rvn))
-    )
+
+    HttpResponse::Ok().json(create(String::from("athena"), changes, Some(query.rvn)))
 }
 
 #[post("/api/game/v2/profile/{id}/client/ClientQuestLogin")]
@@ -134,14 +129,11 @@ pub async fn client_quest_login(
 ) -> impl Responder {
     let query = query.into_inner();
 
-    HttpResponse::Ok()
-    .json(create(query.profile_id, Vec::new(), None))
+    HttpResponse::Ok().json(create(query.profile_id, Vec::new(), None))
 }
 
 #[post("/api/game/v2/profile/{id}/client/{action}")]
-pub async fn other(
-    query: web::Query<Query>,
-) -> impl Responder {
+pub async fn other(query: web::Query<Query>) -> impl Responder {
     let query = query.into_inner();
     HttpResponse::Ok().json(create(query.profile_id, Vec::new(), Some(query.rvn)))
 }

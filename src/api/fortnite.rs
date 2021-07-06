@@ -1,10 +1,9 @@
-use actix_web::{HttpResponse, Responder, get, post};
+use actix_web::{get, post, HttpResponse, Responder};
 use serde_json::json;
 
 #[get("/api/v2/versioncheck/{i}")]
 pub async fn version_check() -> impl Responder {
-    HttpResponse::NoContent()
-    .json(json!({
+    HttpResponse::NoContent().json(json!({
         "type": "NO_UPDATE"
     }))
 }
@@ -16,14 +15,12 @@ pub async fn enabled_features() -> impl Responder {
 
 #[get("/api/receipts/v1/account/{i}/receipts")]
 pub async fn receipts() -> impl Responder {
-    HttpResponse::Ok()
-    .json(Vec::<i8>::new())
+    HttpResponse::Ok().json(Vec::<i8>::new())
 }
 
 #[get("/api/storefront/v2/catalog")]
 pub async fn catalog() -> impl Responder {
-    HttpResponse::Ok()
-    .json(json!({
+    HttpResponse::Ok().json(json!({
         "dailyPurchaseHrs": 24,
         "expiration": "6104-07-28T13:21:45Z",
         "refreshIntervalHrs": 1,
