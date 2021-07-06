@@ -56,7 +56,9 @@ pub struct EquipBattleRoyaleCustomization {
     #[serde(rename = "slotName")]
     pub slot_name: String,
     #[serde(rename = "indexWithinSlot")]
-    pub index: usize
+    pub index: usize,
+    #[serde(rename = "variantUpdates")]
+    pub variants: Vec<Variant>
 }
 
 #[post("/api/game/v2/profile/{id}/client/EquipBattleRoyaleCustomization")]
@@ -96,7 +98,9 @@ pub async fn equip_battle_royale(
         *slot = body.item_to_slot.clone();
     }
     
-    let stat = StatModified {
+    let mut changes: Vec<ProfileChanges> = Vec::new();
+    
+    changes.push(ProfileChanges::Stat(StatModified {
         changeType: String::from("statModified"),
         name: ["favorite", &body.slot_name.to_lowercase()].join("_"),
         value: if
@@ -104,13 +108,22 @@ pub async fn equip_battle_royale(
             &body.slot_name == "ItemWrap" {
                 StatValue::Vec(app.get_user(&id).dance.to_vec())
             } else {
-                StatValue::String(body.item_to_slot)
+                StatValue::String(body.item_to_slot.clone())
             }
-    };
+    }));
+    
+    if body.variants.len() != 0 {
+        changes.push(ProfileChanges::Changed(AttrChanged {
+            changeType: String::from("itemAttrChanged"),
+            itemId: body.item_to_slot,
+            attributeName: String::from("variants"),
+            attributeValue: Attributes::Variants(body.variants)
+        }))
+    }
     
     HttpResponse::Ok()
     .json(
-        create(String::from("athena"), vec![ProfileChanges::Stat(stat)], Some(query.rvn))
+        create(String::from("athena"), changes, Some(query.rvn))
     )
 }
 

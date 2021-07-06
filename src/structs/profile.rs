@@ -1,5 +1,6 @@
 #![allow(non_snake_case)]
-use crate::structs::app::{CItem, User};
+#[allow(unused_imports)]
+use crate::structs::app::{CItem, CVariant, User};
 use chrono::prelude::*;
 use serde::{Deserialize, Serialize};
 use serde_json::{json, Value};
@@ -46,6 +47,7 @@ pub enum StatValue {
 pub enum Attributes {
     Bool(bool),
     String(String),
+    Variants(Vec<Variant>)
 }
 
 #[derive(Serialize, Deserialize)]
@@ -157,6 +159,7 @@ impl FullProfile {
                         level: 1,
                         item_seen: true,
                         xp: 0,
+                        // TO-DO: Add unlockable edit styles
                         variants: Vec::new(),
                         favorite: false,
                     },
@@ -168,6 +171,20 @@ impl FullProfile {
         full_profile
     }
 }
+
+// pub fn variants(cvariants: &Vec<CVariant>) -> Vec<Variant> {
+//     let mut variants: Vec<Variant> = Vec::new();
+//     for v in cvariants.iter() {
+//         if &v.channel == "JerseyColor" { continue; }
+//         // idk if clone is good here but whatever
+//         variants.push(Variant {
+//             channel: v.channel.clone(),
+//             active: v.options.get(0).unwrap().clone(),
+//             owned: v.options.clone()
+//         });
+//     }
+//     variants
+// }
 
 #[derive(Serialize, Deserialize)]
 pub struct FullProfileUpdate {
