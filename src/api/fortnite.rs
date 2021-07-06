@@ -42,3 +42,12 @@ pub async fn play_on_platform() -> impl Responder {
 pub async fn find_player() -> impl Responder {
     HttpResponse::Ok()
 }
+
+#[get("/api/game/v2/world/info")]
+pub async fn world_info() -> impl Responder {
+    HttpResponse::Ok().json(json!({
+        "theaters": Vec::<i8>::new(),
+        "missions": Vec::<i8>::new(),
+        "missionAlerts": Vec::<i8>::new()
+    }))
+}

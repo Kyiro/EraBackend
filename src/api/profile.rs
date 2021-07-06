@@ -58,7 +58,7 @@ pub struct EquipBattleRoyaleCustomization {
     #[serde(rename = "indexWithinSlot")]
     pub index: usize,
     #[serde(rename = "variantUpdates")]
-    pub variants: Vec<Variant>,
+    pub variants: Option<Vec<Variant>>,
 }
 
 #[post("/api/game/v2/profile/{id}/client/EquipBattleRoyaleCustomization")]
@@ -110,13 +110,15 @@ pub async fn equip_battle_royale(
         },
     }));
 
-    if body.variants.len() != 0 {
-        changes.push(ProfileChanges::Changed(AttrChanged {
-            changeType: String::from("itemAttrChanged"),
-            itemId: body.item_to_slot,
-            attributeName: String::from("variants"),
-            attributeValue: Attributes::Variants(body.variants),
-        }))
+    if let Some(variants) = body.variants {
+        if variants.len() != 0 {
+            changes.push(ProfileChanges::Changed(AttrChanged {
+                changeType: String::from("itemAttrChanged"),
+                itemId: body.item_to_slot,
+                attributeName: String::from("variants"),
+                attributeValue: Attributes::Variants(variants),
+            }))
+        }
     }
 
     HttpResponse::Ok().json(create(String::from("athena"), changes, Some(query.rvn)))
