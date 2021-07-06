@@ -77,7 +77,7 @@ async fn main() -> std::io::Result<()> {
                 .service(api::lightswitch::status)
             )
     })
-    .bind(var("HOST_URL").expect("HOST_URL: not defined"))?
+    .bind(format!("0.0.0.0:{}", var("PORT").unwrap_or("60101".to_string())))?
     .run()
     .await
 }
