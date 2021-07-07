@@ -170,10 +170,10 @@ impl FullProfile {
 
         full_profile
     }
-    
+
     pub fn new_common_core(id: &str) -> Self {
         let mut full_profile = Self::new(id);
-        
+
         full_profile.profile.stats.attributes = StatsAttributes::CommonCore(CommonCoreAttributes {
             survey_data: json!({}),
             personal_offers: json!({}),
@@ -195,9 +195,22 @@ impl FullProfile {
             allowed_to_send_gifts: true,
             mfa_enabled: false,
             allowed_to_receive_gifts: true,
-            gift_history: json!({})
+            gift_history: json!({}),
         });
-        
+
+        full_profile
+    }
+
+    pub fn new_common_public(id: &str) -> Self {
+        let mut full_profile = Self::new(id);
+
+        full_profile.profile.stats.attributes =
+            StatsAttributes::CommonPublic(CommonPublicAttributes {
+                banner_color: String::from(""),
+                banner_icon: String::from(""),
+                homebase_name: String::from("Project Era"),
+            });
+
         full_profile
     }
 }

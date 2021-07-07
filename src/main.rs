@@ -72,7 +72,6 @@ async fn main() -> std::io::Result<()> {
             )
             .service(api::other::status)
             .service(api::other::waitingroom)
-            
     })
     .bind(format!(
         "0.0.0.0:{}",
