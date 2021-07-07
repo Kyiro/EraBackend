@@ -45,6 +45,7 @@ async fn main() -> std::io::Result<()> {
                     .service(api::account::oauth_verify)
                     .service(api::account::external_auths)
                     .service(api::account::kill_sessions)
+                    .service(api::account::kill_sessions_id)
                     .service(api::account::personal_account),
             )
             .service(web::scope("/content").service(api::content::fortnite_game))

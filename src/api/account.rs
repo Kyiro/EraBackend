@@ -65,3 +65,8 @@ pub async fn external_auths() -> impl Responder {
 pub async fn kill_sessions() -> impl Responder {
     HttpResponse::NoContent()
 }
+
+#[delete("/api/oauth/sessions/kill/{i}")]
+pub async fn kill_sessions_id() -> impl Responder {
+    HttpResponse::NoContent()
+}
