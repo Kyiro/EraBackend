@@ -33,7 +33,7 @@ pub async fn query_profile(
     let query = query.into_inner();
     
     match query.profile_id.as_str() {
-        "athena" | "profile0" => {
+        "athena" => {
             let cosmetics = &app.cosmetics;
             let profile = app.get_user(&id);
 
@@ -45,16 +45,25 @@ pub async fn query_profile(
                 None,
             ))
         }
-        // "common_core" => HttpResponse::Ok().json(create(
-        //     query.profile_id,
-        //     vec![ProfileChanges::Full(FullProfile::new_common_core(&id))],
-        //     None,
-        // )),
-        // "common_public" => HttpResponse::Ok().json(create(
-        //     query.profile_id,
-        //     vec![ProfileChanges::Full(FullProfile::new_common_public(&id))],
-        //     None,
-        // )),
+        "profile0" => HttpResponse::Ok().json(create(
+            query.profile_id,
+            vec![ProfileChanges::Full(FullProfile::new_athena(
+                &Vec::new(),
+                &id,
+                app.get_user(&id)
+            ))],
+            None,
+        )),
+        "common_core" => HttpResponse::Ok().json(create(
+            query.profile_id,
+            vec![ProfileChanges::Full(FullProfile::new_common_core(&id))],
+            None,
+        )),
+        "common_public" => HttpResponse::Ok().json(create(
+            query.profile_id,
+            vec![ProfileChanges::Full(FullProfile::new_common_public(&id))],
+            None,
+        )),
         _ => HttpResponse::Ok().json(create(query.profile_id, Vec::new(), None)),
     }
 }
