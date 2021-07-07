@@ -8,3 +8,7 @@ pub fn cosmetics() -> std::io::Result<Vec<CItem>> {
 pub fn game() -> std::io::Result<String> {
     Ok(read_to_string("fortnite-game.json")?)
 }
+
+pub fn timeline() -> std::io::Result<String> {
+    Ok(read_to_string("timeline.json")?)
+}

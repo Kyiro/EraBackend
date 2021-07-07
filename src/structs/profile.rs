@@ -101,7 +101,7 @@ impl FullProfile {
                 "dailyQuestRerolls": 1
             }),
             book_level: 100,
-            season_num: 17,
+            season_num: 2,
             book_xp: 999999,
             permissions: Vec::new(),
             season: json!({
@@ -168,6 +168,36 @@ impl FullProfile {
             );
         }
 
+        full_profile
+    }
+    
+    pub fn new_common_core(id: &str) -> Self {
+        let mut full_profile = Self::new(id);
+        
+        full_profile.profile.stats.attributes = StatsAttributes::CommonCore(CommonCoreAttributes {
+            survey_data: json!({}),
+            personal_offers: json!({}),
+            intro_game_played: false,
+            import_friends_claimed: json!({}),
+            mtx_purchase_history: json!({}),
+            undo_cooldowns: Vec::new(),
+            mtx_affiliate_set_time: Utc::now().to_rfc3339_opts(SecondsFormat::Secs, true),
+            inventory_limit_bonus: 0,
+            current_mtx_platform: String::from("EpicPC"),
+            mtx_affiliate: String::from(""),
+            weekly_purchases: json!({}),
+            daily_purchases: json!({}),
+            ban_history: json!({}),
+            in_app_purchases: json!({}),
+            permissions: Vec::new(),
+            undo_timeout: String::from("min"),
+            monthly_purchases: json!({}),
+            allowed_to_send_gifts: true,
+            mfa_enabled: false,
+            allowed_to_receive_gifts: true,
+            gift_history: json!({})
+        });
+        
         full_profile
     }
 }

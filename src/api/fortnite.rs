@@ -1,4 +1,5 @@
 use actix_web::{get, post, HttpResponse, Responder};
+use chrono::prelude::*;
 use serde_json::json;
 
 #[get("/api/v2/versioncheck/{i}")]
@@ -28,11 +29,6 @@ pub async fn catalog() -> impl Responder {
     }))
 }
 
-#[get("/api/calendar/v1/timeline")]
-pub async fn timeline() -> impl Responder {
-    HttpResponse::NoContent()
-}
-
 #[post("/api/game/v2/tryPlayOnPlatform/account/{i}")]
 pub async fn play_on_platform() -> impl Responder {
     HttpResponse::Ok().body("true")
@@ -50,4 +46,56 @@ pub async fn world_info() -> impl Responder {
         "missions": Vec::<i8>::new(),
         "missionAlerts": Vec::<i8>::new()
     }))
+}
+
+#[get("/api/calendar/v1/timeline")]
+pub async fn timeline() -> impl Responder {
+    HttpResponse::Ok().json(json!({
+      "channels": {
+        "client-events": {
+          "states": [
+            {
+              "validFrom": "2010-01-01T10:00:00Z",
+              "activeEvents": [
+                {
+                  "eventType": "EventFlag.Season2",
+                  "activeUntil": "2019-08-08T00:00:00.000Z",
+                  "activeSince": "2010-01-01T10:00:00Z"
+                },
+                {
+                  "eventType": "EventFlag.LobbyWinterDecor",
+                  "activeUntil": "2019-08-15T14:00:00.000Z",
+                  "activeSince": "2010-01-01T10:00:00Z"
+                }
+              ],
+              "state": {
+                "activeStorefronts": [],
+                "eventNamedWeights": {},
+                "seasonNumber": 2,
+                "seasonTemplateId": "AthenaSeason:athenaseason2",
+                "matchXpBonusPoints": 0,
+                "seasonBegin": "2010-01-01T10:00:00Z",
+                "seasonEnd": "9999-01-01T14:00:00Z",
+                "seasonDisplayedEnd": "9999-01-01T07:30:00Z",
+                "weeklyStoreEnd": "9999-01-01T00:00:00Z",
+                "stwEventStoreEnd": "9999-01-01T00:00:00.000Z",
+                "stwWeeklyStoreEnd": "9999-01-01T00:00:00.000Z",
+                "dailyStoreEnd": "9999-01-01T00:00:00Z"
+              }
+            }
+          ],
+          "cacheExpire": "9999-01-01T22:28:47.830Z"
+        }
+      },
+      "eventsTimeOffsetHrs": 0,
+      "cacheIntervalMins": 9999,
+      "currentTime": Utc::now().to_rfc3339_opts(SecondsFormat::Secs, true)
+    }))
+}
+
+#[get("/api/storefront/v2/keychain")]
+pub async fn keychain() -> impl Responder {
+    HttpResponse::TemporaryRedirect()
+    .header("Location", "https://api.nitestats.com/v1/epic/keychain")
+    .finish()
 }

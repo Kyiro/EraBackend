@@ -32,6 +32,7 @@ pub async fn query_profile(
 ) -> impl Responder {
     let query = query.into_inner();
 
+    // TO-DO: Implement actual support for other profiles
     match query.profile_id.as_str() {
         "athena" | "profile0" => {
             let cosmetics = &app.cosmetics;
@@ -44,7 +45,10 @@ pub async fn query_profile(
                 ))],
                 None,
             ))
-        }
+        },
+        "common_core" => HttpResponse::Ok().json(create(query.profile_id, vec![
+            ProfileChanges::Full(FullProfile::new_common_core(&id))
+        ], None)),
         _ => HttpResponse::Ok().json(create(query.profile_id, Vec::new(), None)),
     }
 }

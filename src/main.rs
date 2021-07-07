@@ -59,6 +59,7 @@ async fn main() -> std::io::Result<()> {
                     .service(api::fortnite::catalog)
                     .service(api::fortnite::enabled_features)
                     .service(api::fortnite::find_player)
+                    .service(api::fortnite::keychain)
                     .service(api::fortnite::play_on_platform)
                     .service(api::fortnite::receipts)
                     .service(api::fortnite::timeline)
@@ -69,7 +70,9 @@ async fn main() -> std::io::Result<()> {
                     .service(api::profile::query_profile)
                     .service(api::profile::other),
             )
-            .service(web::scope("/lightswitch").service(api::lightswitch::status))
+            .service(api::other::status)
+            .service(api::other::waitingroom)
+            
     })
     .bind(format!(
         "0.0.0.0:{}",
