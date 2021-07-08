@@ -31,7 +31,7 @@ pub async fn query_profile(
     web::Path(id): web::Path<String>,
 ) -> impl Responder {
     let query = query.into_inner();
-    
+
     match query.profile_id.as_str() {
         "athena" => {
             let cosmetics = &app.cosmetics;
@@ -50,7 +50,7 @@ pub async fn query_profile(
             vec![ProfileChanges::Full(FullProfile::new_athena(
                 &Vec::new(),
                 &id,
-                app.get_user(&id)
+                app.get_user(&id),
             ))],
             None,
         )),

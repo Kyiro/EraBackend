@@ -25,10 +25,8 @@ async fn main() -> std::io::Result<()> {
         let mut state = structs::app::State::new();
 
         // get cosmetics from cosmetics.json and use a fallback when it fails
-        state.cosmetics = files::cosmetics().unwrap_or({
-            let data = include_str!("../resources/cosmetics.json");
-            serde_json::from_str(data)?
-        });
+        state.cosmetics = files::cosmetics()
+            .unwrap_or({ serde_json::from_str(include_str!("../resources/cosmetics.json"))? });
         state.game =
             files::game().unwrap_or(include_str!("../resources/fortnite-game.json").to_string());
 
