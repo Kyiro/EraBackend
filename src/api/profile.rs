@@ -28,23 +28,19 @@ pub struct Query {
 pub async fn query_profile(
     app: web::Data<State>,
     query: web::Query<Query>,
-    web::Path(id): web::Path<String>,
+    id: web::Path<String>,
 ) -> impl Responder {
     let query = query.into_inner();
+    let id = id.into_inner();
     
     match query.profile_id.as_str() {
-        "athena" => {
-            let cosmetics = &app.cosmetics;
-            let profile = app.get_user(&id);
-
-            HttpResponse::Ok().json(create(
-                query.profile_id,
-                vec![ProfileChanges::Full(FullProfile::new_athena(
-                    cosmetics, &id, profile,
-                ))],
-                None,
-            ))
-        }
+        "athena" => HttpResponse::Ok().json(create(
+            query.profile_id,
+            vec![ProfileChanges::Full(FullProfile::new_athena(
+                &app.cosmetics, &id, app.get_user(&id),
+            ))],
+            None,
+        )),
         "profile0" => HttpResponse::Ok().json(create(
             query.profile_id,
             vec![ProfileChanges::Full(FullProfile::new_athena(
@@ -85,10 +81,11 @@ pub async fn equip_battle_royale(
     app: web::Data<State>,
     body: web::Json<EquipBattleRoyaleCustomization>,
     query: web::Query<Query>,
-    web::Path(id): web::Path<String>,
+    id: web::Path<String>,
 ) -> impl Responder {
     let body = body.into_inner();
     let query = query.into_inner();
+    let id = id.into_inner();
 
     // poor spam protection lol
     if body.item_to_slot.len() > 100 {
@@ -145,8 +142,7 @@ pub async fn equip_battle_royale(
 
 #[post("/api/game/v2/profile/{id}/client/ClientQuestLogin")]
 pub async fn client_quest_login(
-    query: web::Query<Query>,
-    web::Path(_): web::Path<()>,
+    query: web::Query<Query>
 ) -> impl Responder {
     let query = query.into_inner();
 

@@ -96,6 +96,6 @@ pub async fn timeline() -> impl Responder {
 #[get("/api/storefront/v2/keychain")]
 pub async fn keychain() -> impl Responder {
     HttpResponse::TemporaryRedirect()
-        .header("Location", "https://api.nitestats.com/v1/epic/keychain")
+        .append_header(("Location", "https://api.nitestats.com/v1/epic/keychain"))
         .finish()
 }

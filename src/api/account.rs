@@ -29,7 +29,8 @@ pub async fn oauth_verify() -> impl Responder {
 }
 
 #[get("/api/public/account/{id}")]
-pub async fn personal_account(web::Path(id): web::Path<String>) -> impl Responder {
+pub async fn personal_account(id: web::Path<String>) -> impl Responder {
+    let id = id.into_inner();
     HttpResponse::Ok().json(json!({
         "id": id,
         "displayName": "Project Era",

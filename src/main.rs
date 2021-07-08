@@ -8,7 +8,7 @@ pub mod structs;
 #[get("/")]
 async fn index() -> impl Responder {
     HttpResponse::PermanentRedirect()
-        .header("Location", "https://erafn.glitch.me/")
+        .append_header(("Location", "https://erafn.glitch.me/"))
         .finish()
 }
 
