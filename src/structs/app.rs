@@ -54,10 +54,6 @@ pub struct CVariant {
     pub options: Vec<String>,
 }
 
-// TO-DO: Add Variants
-// I think they **should** be defined in every skin afaik
-// And it's set in EquipBattleRoyaleCustomization
-// Just like newer SetCosmeticLockerSlot it's in variantUpdates
 #[derive(Clone)]
 pub struct User {
     pub character: String,
