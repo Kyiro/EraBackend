@@ -28,7 +28,8 @@ for item in items["data"]:
         
         data.append({
             "type": item_type,
-            "id": item["id"].lower()
+            "id": item["id"].lower(),
+            "variants": variants
         })
 
 file.write(json.dumps(data, indent=4))

@@ -45,6 +45,7 @@ pub struct CItem {
     #[serde(rename = "type")]
     pub item_type: String,
     pub id: String,
+    pub variants: Vec<CVariant>,
 }
 
 #[derive(Clone, Deserialize, Serialize)]
