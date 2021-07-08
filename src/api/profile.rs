@@ -34,13 +34,19 @@ pub async fn query_profile(
     let id = id.into_inner();
     
     match query.profile_id.as_str() {
-        "athena" => HttpResponse::Ok().json(create(
-            query.profile_id,
-            vec![ProfileChanges::Full(FullProfile::new_athena(
-                &app.cosmetics, &id, app.get_user(&id),
-            ))],
-            None,
-        )),
+        "athena" => {
+            let profile = create(
+                query.profile_id,
+                vec![ProfileChanges::Full(FullProfile::new_athena(
+                    &app.cosmetics, &id, app.get_user(&id),
+                ))],
+                None,
+            );
+            
+            HttpResponse::Ok()
+            .append_header(("content-type", "application/json"))
+            .body(serde_json::to_string(&profile).unwrap())
+        },
         "profile0" => HttpResponse::Ok().json(create(
             query.profile_id,
             vec![ProfileChanges::Full(FullProfile::new_athena(
