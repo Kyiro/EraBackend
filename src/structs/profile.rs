@@ -5,8 +5,6 @@ use chrono::prelude::*;
 use serde::{Deserialize, Serialize};
 use serde_json::{json, Value};
 use std::collections::HashMap;
-use std::thread::sleep;
-use std::time::Duration;
 
 // most also reused from Ruten for my own insanity
 // Fortnite Profile
@@ -150,7 +148,6 @@ impl FullProfile {
         });
 
         for i in cosmetics.into_iter() {
-            sleep(Duration::from_millis(5));
             let template = [i.item_type.clone(), i.id.clone()].join(":");
 
             full_profile.profile.items.insert(
