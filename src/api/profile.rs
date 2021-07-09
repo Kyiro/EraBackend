@@ -7,11 +7,11 @@ use serde::Deserialize;
 // reused from Ruten
 fn create(profile_id: String, change: Vec<ProfileChanges>, rvn: Option<i32>) -> Profile {
     Profile {
-        profileRevision: rvn.unwrap_or(1) + 1,
+        profileRevision: rvn.unwrap_or(0) + 1,
         profileId: profile_id,
-        profileChangesBaseRevision: rvn.unwrap_or(2),
+        profileChangesBaseRevision: rvn.unwrap_or(1),
         profileChanges: change,
-        profileCommandRevision: rvn.unwrap_or(1) + 1,
+        profileCommandRevision: rvn.unwrap_or(0) + 1,
         serverTime: Utc::now().to_rfc3339_opts(SecondsFormat::Secs, true),
         responseVersion: 1,
     }
