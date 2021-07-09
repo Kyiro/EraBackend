@@ -51,7 +51,7 @@ pub async fn world_info() -> impl Responder {
 
 // bad code but it works lol
 pub fn get_season(useragent: &str) -> Option<&str> {
-    let regex = match Regex::new(r"\+\+Fortnite\+Release-(.*?).\d-CL") {
+    let regex = match Regex::new(r"\+\+Fortnite\+Release-(\d+)\.(\d+).*-CL") {
         Ok(data) => data,
         Err(_) => return None
     };
