@@ -24,9 +24,13 @@ pub struct Query {
     pub rvn: i32,
 }
 
+#[derive(Deserialize)]
+pub struct QueryProfile {}
+
 #[post("/api/game/v2/profile/{id}/client/QueryProfile")]
 pub async fn query_profile(
     app: web::Data<State>,
+    _: web::Json<QueryProfile>,
     query: web::Query<Query>,
     id: web::Path<String>,
 ) -> impl Responder {
