@@ -1,5 +1,6 @@
-use actix_web::{get, post, HttpResponse, Responder};
+use actix_web::{HttpRequest, HttpResponse, Responder, get, post};
 use chrono::prelude::*;
+use regex::Regex;
 use serde_json::json;
 
 #[get("/api/v2/versioncheck/{i}")]
@@ -48,33 +49,58 @@ pub async fn world_info() -> impl Responder {
     }))
 }
 
+// bad code but it works lol
+pub fn get_season(useragent: &str) -> Option<&str> {
+    let regex = match Regex::new(r"\+\+Fortnite\+Release-(.*?).\d-CL") {
+        Ok(data) => data,
+        Err(_) => return None
+    };
+    // lowkey spaghetti
+    let capture = match regex.captures(useragent) {
+        Some(data) => match data.get(1) {
+            Some(data) => data,
+            None => return None
+        },
+        None => return None
+    };
+    
+    Some(capture.as_str())
+}
+
 #[get("/api/calendar/v1/timeline")]
-pub async fn timeline() -> impl Responder {
+pub async fn timeline(req: HttpRequest) -> impl Responder {
+    // lol
+    let useragent = req.headers().get("User-Agent").unwrap().to_str().unwrap();
+    let season = get_season(useragent).unwrap_or("2");
+    
     HttpResponse::Ok().json(json!({
       "channels": {
         "client-events": {
           "states": [
             {
-              "validFrom": "2010-01-01T10:00:00Z",
+              "validFrom": "2000-01-01T10:00:00Z",
               "activeEvents": [
                 {
-                  "eventType": "EventFlag.Season2",
-                  "activeUntil": "2019-08-08T00:00:00.000Z",
-                  "activeSince": "2010-01-01T10:00:00Z"
+                  "eventType": format!("EventFlag.Season{}", season.clone()),
+                  "activeUntil": "9999-01-01T22:28:47.830Z",
+                  "activeSince": "2000-01-01T10:00:00Z"
                 },
                 {
-                  "eventType": "EventFlag.LobbyWinterDecor",
-                  "activeUntil": "2019-08-15T14:00:00.000Z",
-                  "activeSince": "2010-01-01T10:00:00Z"
+                  "eventType": match season {
+                      "1" | "2" => String::from("EventFlag.LobbyWinterDecor"),
+                      _ => format!("EventFlag.LobbySeason{}", season.clone())
+                  },
+                  "activeUntil": "9999-01-01T22:28:47.830Z",
+                  "activeSince": "2000-01-01T10:00:00Z"
                 }
               ],
               "state": {
                 "activeStorefronts": [],
                 "eventNamedWeights": {},
-                "seasonNumber": 2,
-                "seasonTemplateId": "AthenaSeason:athenaseason2",
+                "seasonNumber": season.parse::<i32>().unwrap(),
+                "seasonTemplateId": format!("AthenaSeason:athenaseason{}", season),
                 "matchXpBonusPoints": 0,
-                "seasonBegin": "2010-01-01T10:00:00Z",
+                "seasonBegin": "2000-01-01T10:00:00Z",
                 "seasonEnd": "9999-01-01T14:00:00Z",
                 "seasonDisplayedEnd": "9999-01-01T07:30:00Z",
                 "weeklyStoreEnd": "9999-01-01T00:00:00Z",
