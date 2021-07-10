@@ -36,12 +36,14 @@ pub async fn query_profile(
 ) -> impl Responder {
     let query = query.into_inner();
     let id = id.into_inner();
-    
+
     match query.profile_id.as_str() {
         "athena" => HttpResponse::Ok().json(create(
             query.profile_id,
             vec![ProfileChanges::Full(FullProfile::new_athena(
-                &app.cosmetics, &id, app.get_user(&id),
+                &app.cosmetics,
+                &id,
+                app.get_user(&id),
             ))],
             None,
         )),
@@ -50,7 +52,7 @@ pub async fn query_profile(
             vec![ProfileChanges::Full(FullProfile::new_athena(
                 &Vec::new(),
                 &id,
-                app.get_user(&id)
+                app.get_user(&id),
             ))],
             None,
         )),
@@ -145,9 +147,7 @@ pub async fn equip_battle_royale(
 }
 
 #[post("/api/game/v2/profile/{id}/client/ClientQuestLogin")]
-pub async fn client_quest_login(
-    query: web::Query<Query>
-) -> impl Responder {
+pub async fn client_quest_login(query: web::Query<Query>) -> impl Responder {
     let query = query.into_inner();
 
     HttpResponse::Ok().json(create(query.profile_id, Vec::new(), None))

@@ -1,4 +1,4 @@
-use actix_web::{HttpRequest, HttpResponse, Responder, get, post};
+use actix_web::{get, post, HttpRequest, HttpResponse, Responder};
 use chrono::prelude::*;
 use regex::Regex;
 use serde_json::json;
@@ -53,17 +53,17 @@ pub async fn world_info() -> impl Responder {
 pub fn get_season(useragent: &str) -> Option<&str> {
     let regex = match Regex::new(r"\+\+Fortnite\+Release-(\d+)\.(\d+).*-CL") {
         Ok(data) => data,
-        Err(_) => return None
+        Err(_) => return None,
     };
     // lowkey spaghetti
     let capture = match regex.captures(useragent) {
         Some(data) => match data.get(1) {
             Some(data) => data,
-            None => return None
+            None => return None,
         },
-        None => return None
+        None => return None,
     };
-    
+
     Some(capture.as_str())
 }
 
@@ -72,7 +72,7 @@ pub async fn timeline(req: HttpRequest) -> impl Responder {
     // lol
     let useragent = req.headers().get("User-Agent").unwrap().to_str().unwrap();
     let season = get_season(useragent).unwrap_or("2");
-    
+
     HttpResponse::Ok().json(json!({
       "channels": {
         "client-events": {

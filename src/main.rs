@@ -1,15 +1,22 @@
-use actix_web::{get, web, App, HttpResponse, HttpServer, Responder};
+use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
 use std::env::{set_var, var};
 
 pub mod api;
 pub mod files;
 pub mod structs;
 
+pub const VERSION: &'static str = "1.2";
+
 #[get("/")]
 async fn index() -> impl Responder {
     HttpResponse::PermanentRedirect()
         .append_header(("Location", "https://erafn.glitch.me/"))
         .finish()
+}
+
+#[post("/VersionRequest")]
+async fn version() -> impl Responder {
+    HttpResponse::Ok().body(VERSION)
 }
 
 #[actix_web::main]
@@ -39,6 +46,7 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .app_data(state.clone())
             .service(index)
+            .service(version)
             .service(
                 web::scope("/account")
                     .service(api::account::oauth_token)
