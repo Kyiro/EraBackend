@@ -1,6 +1,6 @@
+use crate::utils::get_season;
 use actix_web::{get, post, HttpRequest, HttpResponse, Responder};
 use chrono::prelude::*;
-use regex::Regex;
 use serde_json::json;
 
 #[get("/api/v2/versioncheck/{i}")]
@@ -47,24 +47,6 @@ pub async fn world_info() -> impl Responder {
         "missions": Vec::<i8>::new(),
         "missionAlerts": Vec::<i8>::new()
     }))
-}
-
-// bad code but it works lol
-pub fn get_season(useragent: &str) -> Option<&str> {
-    let regex = match Regex::new(r"\+\+Fortnite\+Release-(\d+)\.(\d+).*-CL") {
-        Ok(data) => data,
-        Err(_) => return None,
-    };
-    // lowkey spaghetti
-    let capture = match regex.captures(useragent) {
-        Some(data) => match data.get(1) {
-            Some(data) => data,
-            None => return None,
-        },
-        None => return None,
-    };
-
-    Some(capture.as_str())
 }
 
 #[get("/api/calendar/v1/timeline")]

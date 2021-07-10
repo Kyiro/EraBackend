@@ -4,6 +4,7 @@ use std::env::{set_var, var};
 pub mod api;
 pub mod files;
 pub mod structs;
+pub mod utils;
 
 pub const VERSION: &'static str = "1.2";
 

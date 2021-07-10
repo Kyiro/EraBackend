@@ -1,6 +1,7 @@
 use crate::structs::app::State;
 use crate::structs::profile::*;
-use actix_web::{post, web, HttpResponse, Responder};
+use crate::utils::get_season;
+use actix_web::{post, web, HttpRequest, HttpResponse, Responder};
 use chrono::prelude::*;
 use serde::Deserialize;
 
@@ -33,9 +34,15 @@ pub async fn query_profile(
     _: web::Json<QueryProfile>,
     query: web::Query<Query>,
     id: web::Path<String>,
+    req: HttpRequest,
 ) -> impl Responder {
     let query = query.into_inner();
     let id = id.into_inner();
+    let useragent = req.headers().get("User-Agent").unwrap().to_str().unwrap();
+    let season = get_season(useragent)
+        .unwrap_or("2")
+        .parse::<i32>()
+        .unwrap_or(2);
 
     match query.profile_id.as_str() {
         "athena" => HttpResponse::Ok().json(create(
@@ -44,6 +51,7 @@ pub async fn query_profile(
                 &app.cosmetics,
                 &id,
                 app.get_user(&id),
+                season,
             ))],
             None,
         )),
@@ -53,6 +61,7 @@ pub async fn query_profile(
                 &Vec::new(),
                 &id,
                 app.get_user(&id),
+                season,
             ))],
             None,
         )),

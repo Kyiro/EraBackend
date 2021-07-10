@@ -88,7 +88,7 @@ impl FullProfile {
         }
     }
 
-    pub fn new_athena(cosmetics: &Vec<CItem>, id: &str, profile: User) -> Self {
+    pub fn new_athena(cosmetics: &Vec<CItem>, id: &str, profile: User, season: i32) -> Self {
         let mut full_profile = Self::new(id);
 
         full_profile.profile.stats.attributes = StatsAttributes::Athena(AthenaAttributes {
@@ -101,7 +101,7 @@ impl FullProfile {
                 "dailyQuestRerolls": 1
             }),
             book_level: 100,
-            season_num: 2,
+            season_num: season,
             book_xp: 999999,
             permissions: Vec::new(),
             season: json!({
