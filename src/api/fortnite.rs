@@ -79,7 +79,7 @@ pub async fn timeline(req: HttpRequest) -> impl Responder {
               "state": {
                 "activeStorefronts": [],
                 "eventNamedWeights": {},
-                "seasonNumber": season.parse::<i32>().unwrap(),
+                "seasonNumber": season.parse::<i32>().unwrap_or(2),
                 "seasonTemplateId": format!("AthenaSeason:athenaseason{}", season),
                 "matchXpBonusPoints": 0,
                 "seasonBegin": "2000-01-01T10:00:00Z",
