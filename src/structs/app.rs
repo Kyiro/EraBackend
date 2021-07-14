@@ -48,6 +48,16 @@ pub struct CItem {
     pub variants: Vec<CVariant>,
 }
 
+impl CItem {
+    pub fn new() -> Self {
+        Self {
+            item_type: String::new(),
+            id: String::new(),
+            variants: Vec::new(),
+        }
+    }
+}
+
 #[derive(Clone, Deserialize, Serialize)]
 pub struct CVariant {
     pub channel: String,

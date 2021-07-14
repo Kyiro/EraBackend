@@ -1,4 +1,4 @@
-use crate::structs::app::State;
+use crate::structs::app::{CItem, State};
 use crate::structs::profile::*;
 use crate::utils::get_season;
 use actix_web::{post, web, HttpRequest, HttpResponse, Responder};
@@ -105,7 +105,13 @@ pub async fn equip_battle_royale(
         let id = body.item_to_slot.clone().split(":").collect::<Vec<&str>>()[1].to_string();
         match app.cosmetics.iter().find(|c| c.id == id) {
             Some(data) => data.clone(),
-            None => return HttpResponse::BadRequest().into(),
+            None => {
+                if body.item_to_slot == "" {
+                    CItem::new()
+                } else {
+                    return HttpResponse::BadRequest().into();
+                }
+            }
         }
     };
 
