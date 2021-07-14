@@ -159,8 +159,7 @@ impl FullProfile {
                         level: 1,
                         item_seen: true,
                         xp: 0,
-                        // TO-DO: Add unlockable edit styles
-                        variants: Vec::new(),
+                        variants: build_variants(Vec::new(), i.variants.clone()),
                         favorite: false,
                     },
                     quantity: 1,
@@ -215,19 +214,24 @@ impl FullProfile {
     }
 }
 
-// pub fn variants(cvariants: &Vec<CVariant>) -> Vec<Variant> {
-//     let mut variants: Vec<Variant> = Vec::new();
-//     for v in cvariants.iter() {
-//         if &v.channel == "JerseyColor" { continue; }
-//         // idk if clone is good here but whatever
-//         variants.push(Variant {
-//             channel: v.channel.clone(),
-//             active: v.options.get(0).unwrap().clone(),
-//             owned: v.options.clone()
-//         });
-//     }
-//     variants
-// }
+pub fn build_variants(updates: Vec<Variant>, cvariants: Vec<CVariant>) -> Vec<Variant> {
+    let mut variants: Vec<Variant> = Vec::new();
+    for v in cvariants.into_iter() {
+        if &v.channel == "JerseyColor" {
+            continue;
+        }
+        variants.push(Variant {
+            channel: v.channel.clone(),
+            // could be better but works :/
+            active: match updates.iter().find(|u| u.channel == v.channel) {
+                Some(data) => data.active.clone(),
+                None => v.options.get(0).unwrap().clone(),
+            },
+            owned: v.options,
+        });
+    }
+    variants
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct FullProfileUpdate {

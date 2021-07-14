@@ -101,11 +101,13 @@ pub async fn equip_battle_royale(
     let body = body.into_inner();
     let query = query.into_inner();
     let id = id.into_inner();
-
-    // poor spam protection lol
-    if body.item_to_slot.len() > 100 {
-        return HttpResponse::BadRequest().into();
-    }
+    let cosmetic = {
+        let id = body.item_to_slot.clone().split(":").collect::<Vec<&str>>()[1].to_string();
+        match app.cosmetics.iter().find(|c| c.id == id) {
+            Some(data) => data.clone(),
+            None => return HttpResponse::BadRequest().into(),
+        }
+    };
 
     {
         // make new user if it doesn't exist
@@ -147,7 +149,7 @@ pub async fn equip_battle_royale(
                 changeType: String::from("itemAttrChanged"),
                 itemId: body.item_to_slot,
                 attributeName: String::from("variants"),
-                attributeValue: Attributes::Variants(variants),
+                attributeValue: Attributes::Variants(build_variants(variants, cosmetic.variants)),
             }))
         }
     }
