@@ -102,7 +102,7 @@ pub async fn equip_battle_royale(
     let query = query.into_inner();
     let id = id.into_inner();
     let cosmetic = {
-        let id = body.item_to_slot.clone().split(":").collect::<Vec<&str>>()[1].to_string();
+        let id = body.item_to_slot.clone().split(":").collect::<Vec<&str>>().get(1).unwrap_or(&"").to_string();
         match app.cosmetics.iter().find(|c| c.id == id) {
             Some(data) => data.clone(),
             None => {
