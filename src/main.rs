@@ -55,7 +55,8 @@ async fn main() -> std::io::Result<()> {
                     .service(api::account::external_auths)
                     .service(api::account::kill_sessions)
                     .service(api::account::kill_sessions_id)
-                    .service(api::account::personal_account),
+                    .service(api::account::personal_account)
+                    .service(api::account::personal_account_query),
             )
             .service(web::scope("/content").service(api::content::fortnite_game))
             .service(
@@ -80,6 +81,7 @@ async fn main() -> std::io::Result<()> {
                     .service(api::profile::query_profile)
                     .service(api::profile::other),
             )
+            .service(api::other::party_user)
             .service(api::other::status)
             .service(api::other::waitingroom)
     })

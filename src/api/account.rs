@@ -57,6 +57,22 @@ pub async fn personal_account(id: web::Path<String>) -> impl Responder {
     }))
 }
 
+#[derive(Deserialize)]
+pub struct PublicAccount {
+    #[serde(rename = "accountId")]
+    account_id: String,
+}
+
+#[get("/api/public/account")]
+pub async fn personal_account_query(query: web::Query<PublicAccount>) -> impl Responder {
+    let query = query.into_inner();
+    HttpResponse::Ok().json(json!([{
+        "id": query.account_id,
+        "displayName": "Project Era",
+        "externalAuths": {}
+    }]))
+}
+
 #[get("/api/public/account/{i}/externalAuths")]
 pub async fn external_auths() -> impl Responder {
     HttpResponse::Ok().json(Vec::<i8>::new())
