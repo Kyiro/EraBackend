@@ -1,4 +1,4 @@
-use actix_web::{get, put, HttpResponse, Responder};
+use actix_web::{get, put, web, HttpResponse, Responder};
 
 #[get("/api/cloudstorage/system")]
 pub async fn system() -> impl Responder {
@@ -22,10 +22,10 @@ pub async fn user() -> impl Responder {
 
 #[get("/api/cloudstorage/user/{i}/{f}")]
 pub async fn user_file() -> impl Responder {
-    HttpResponse::Ok().json(Vec::<i8>::new())
+    HttpResponse::Ok()
 }
 
 #[put("/api/cloudstorage/user/{i}/{f}")]
-pub async fn put_user_file() -> impl Responder {
-    HttpResponse::Ok().json(Vec::<i8>::new())
+pub async fn put_user_file(_: web::Bytes) -> impl Responder {
+    HttpResponse::Ok()
 }
