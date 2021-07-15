@@ -231,7 +231,7 @@ pub fn build_variants(updates: Vec<Variant>, cvariants: Vec<CVariant>) -> Vec<Va
         });
     }
     for update in updates.into_iter() {
-        if !variants.contains(&update) {
+        if let None = variants.iter().find(|v| v.channel == update.channel) {
             variants.push(update);
         }
     }
