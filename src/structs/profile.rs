@@ -230,6 +230,11 @@ pub fn build_variants(updates: Vec<Variant>, cvariants: Vec<CVariant>) -> Vec<Va
             owned: v.options,
         });
     }
+    for update in updates.into_iter() {
+        if !variants.contains(&update) {
+            variants.push(update);
+        }
+    }
     variants
 }
 
@@ -394,7 +399,7 @@ pub struct CosmeticAttributes {
     pub favorite: bool,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, PartialEq)]
 pub struct Variant {
     pub channel: String,
     pub active: String,
