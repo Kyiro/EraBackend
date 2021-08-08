@@ -639,6 +639,601 @@
     },
     {
         "type": "AthenaBackpack",
+        "id": "bid_114_modernmilitaryred",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_115_dieselpunkmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_116_dieselpunkfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_117_octoberfestmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_118_octoberfestfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_119_vampirefemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_120_werewolf",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_121_redriding",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_122_halloweentomato",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_123_fortnitedj",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_124_scarecrowmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_125_scarecrowfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_126_darkbomber",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_127_plaguemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_128_plaguefemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_129_pumpkinslice",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_130_vampiremale02",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_131_blackwidowfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_132_blackwidowmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_133_guanyu",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_134_militaryfashion",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_135_muertosfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_136_muertosmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_137_evilcowboy",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage1",
+                    "Stage2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_138_celestial",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_139_fuzzybearhalloween",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_140_streetopsmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_141_streetopsfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_142_raptorarcticcamo",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_142_samuraiultra",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_143_madcommandermale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_144_madcommanderfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_145_animaljacketsmale",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_146_animaljacketsfemale",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_147_lilkev",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_148_robotred",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_149_wizard",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2",
+                    "Mat3",
+                    "Mat4"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_150_witch",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2",
+                    "Mat3",
+                    "Mat4"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_151_sushicheffemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_152_hornedmaskmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_153_hornedmaskfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_154_feathers",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_155_sniperhoodmale",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_156_sniperhoodfemale",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_157_mothmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_158_arcticsnipermale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_160_tacticalsantamale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_161_snowboardfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_162_yetimale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_163_iceking",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat0",
+                    "Mat1",
+                    "Mat2",
+                    "Mat3"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_164_snowmanmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_165_bluebadassfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_166_ravenwintermale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_167_redknightwinterfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_168_cupidwintermale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_169_mathmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_170_mathfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_175_prisoner",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_176_nautilusmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_177_nautilusfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_178_angel",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_179_demonmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_180_icemaiden",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_181_snowninjamale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_182_nutcrackermale",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_183_nutcrackerfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_184_snowfairyfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_185_gnomemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_186_gingerbreadmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_187_gingerbreadfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_188_fortnitedjfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_189_streetgothmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_190_streetgothfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_191_winterghoulmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_192_winterholidayfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_193_teriyakifishmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_194_krampus",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_195_funkopsfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_196_barbarianmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_197_barbarianfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_198_techops",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_199_icequeen",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat0",
+                    "Mat1",
+                    "Mat2",
+                    "Mat3"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_200_snowninjafemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_201_wavymanmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_202_wavymanfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_203_bluemystery",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_204_tennisfemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_205_scrapyardmale",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage1",
+                    "Stage2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_206_scrapyardfemale",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage1",
+                    "Stage2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_208_cupiddarkmale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_209_robottroublemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_210_robottroublefemale",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_211_skullbrite",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage0",
+                    "Stage1"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_213_icecream",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
+        "id": "bid_214_lovellama",
+        "variants": []
+    },
+    {
+        "type": "AthenaBackpack",
         "id": "bid_stwheronodefaultbackpack",
         "variants": []
     },
@@ -2166,6 +2761,11 @@
     },
     {
         "type": "AthenaCharacter",
+        "id": "cid_174_athena_commando_f_carbidewhite",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
         "id": "cid_175_athena_commando_m_celestial",
         "variants": []
     },
@@ -2215,6 +2815,11 @@
     {
         "type": "AthenaCharacter",
         "id": "cid_182_athena_commando_m_modernmilitary",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_183_athena_commando_m_modernmilitaryred",
         "variants": []
     },
     {
@@ -2378,6 +2983,304 @@
     },
     {
         "type": "AthenaCharacter",
+        "id": "cid_207_athena_commando_m_footballdudea",
+        "variants": [
+            {
+                "channel": "JerseyColor",
+                "options": [
+                    "000",
+                    "001",
+                    "002",
+                    "003",
+                    "004",
+                    "005",
+                    "006",
+                    "007",
+                    "008",
+                    "009",
+                    "010",
+                    "011",
+                    "012",
+                    "013",
+                    "014",
+                    "015",
+                    "016",
+                    "017",
+                    "018",
+                    "019",
+                    "020",
+                    "021",
+                    "022",
+                    "023",
+                    "024",
+                    "025",
+                    "026",
+                    "027",
+                    "028",
+                    "029",
+                    "030",
+                    "031",
+                    "036",
+                    "032",
+                    "033",
+                    "034",
+                    "035"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_208_athena_commando_m_footballdudeb",
+        "variants": [
+            {
+                "channel": "JerseyColor",
+                "options": [
+                    "000",
+                    "001",
+                    "002",
+                    "003",
+                    "004",
+                    "005",
+                    "006",
+                    "007",
+                    "008",
+                    "009",
+                    "010",
+                    "011",
+                    "012",
+                    "013",
+                    "014",
+                    "015",
+                    "016",
+                    "017",
+                    "018",
+                    "019",
+                    "020",
+                    "021",
+                    "022",
+                    "023",
+                    "024",
+                    "025",
+                    "026",
+                    "027",
+                    "028",
+                    "029",
+                    "030",
+                    "031",
+                    "036",
+                    "032",
+                    "033",
+                    "034",
+                    "035"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_209_athena_commando_m_footballdudec",
+        "variants": [
+            {
+                "channel": "JerseyColor",
+                "options": [
+                    "000",
+                    "001",
+                    "002",
+                    "003",
+                    "004",
+                    "005",
+                    "006",
+                    "007",
+                    "008",
+                    "009",
+                    "010",
+                    "011",
+                    "012",
+                    "013",
+                    "014",
+                    "015",
+                    "016",
+                    "017",
+                    "018",
+                    "019",
+                    "020",
+                    "021",
+                    "022",
+                    "023",
+                    "024",
+                    "025",
+                    "026",
+                    "027",
+                    "028",
+                    "029",
+                    "030",
+                    "031",
+                    "036",
+                    "032",
+                    "033",
+                    "034",
+                    "035"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_210_athena_commando_f_footballgirla",
+        "variants": [
+            {
+                "channel": "JerseyColor",
+                "options": [
+                    "000",
+                    "001",
+                    "002",
+                    "003",
+                    "004",
+                    "005",
+                    "006",
+                    "007",
+                    "008",
+                    "009",
+                    "010",
+                    "011",
+                    "012",
+                    "013",
+                    "014",
+                    "015",
+                    "016",
+                    "017",
+                    "018",
+                    "019",
+                    "020",
+                    "021",
+                    "022",
+                    "023",
+                    "024",
+                    "025",
+                    "026",
+                    "027",
+                    "028",
+                    "029",
+                    "030",
+                    "031",
+                    "036",
+                    "032",
+                    "033",
+                    "034",
+                    "035"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_211_athena_commando_f_footballgirlb",
+        "variants": [
+            {
+                "channel": "JerseyColor",
+                "options": [
+                    "000",
+                    "001",
+                    "002",
+                    "003",
+                    "004",
+                    "005",
+                    "006",
+                    "007",
+                    "008",
+                    "009",
+                    "010",
+                    "011",
+                    "012",
+                    "013",
+                    "014",
+                    "015",
+                    "016",
+                    "017",
+                    "018",
+                    "019",
+                    "020",
+                    "021",
+                    "022",
+                    "023",
+                    "024",
+                    "025",
+                    "026",
+                    "027",
+                    "028",
+                    "029",
+                    "030",
+                    "031",
+                    "036",
+                    "032",
+                    "033",
+                    "034",
+                    "035"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_212_athena_commando_f_footballgirlc",
+        "variants": [
+            {
+                "channel": "JerseyColor",
+                "options": [
+                    "000",
+                    "001",
+                    "002",
+                    "003",
+                    "004",
+                    "005",
+                    "006",
+                    "007",
+                    "008",
+                    "009",
+                    "010",
+                    "011",
+                    "012",
+                    "013",
+                    "014",
+                    "015",
+                    "016",
+                    "017",
+                    "018",
+                    "019",
+                    "020",
+                    "021",
+                    "022",
+                    "023",
+                    "024",
+                    "025",
+                    "026",
+                    "027",
+                    "028",
+                    "029",
+                    "030",
+                    "031",
+                    "036",
+                    "032",
+                    "033",
+                    "034",
+                    "035"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_214_athena_commando_f_footballreferee",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_215_athena_commando_m_footballreferee",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
         "id": "cid_216_athena_commando_f_medic",
         "variants": [
             {
@@ -2435,6 +3338,1000 @@
     {
         "type": "AthenaCharacter",
         "id": "cid_222_athena_commando_f_darkviking",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_223_athena_commando_m_dieselpunk",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_224_athena_commando_f_dieselpunk",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_225_athena_commando_m_octoberfest",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_226_athena_commando_f_octoberfest",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_227_athena_commando_f_vampire",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_228_athena_commando_m_vampire",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_229_athena_commando_f_darkbomber",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_230_athena_commando_m_werewolf",
+        "variants": [
+            {
+                "channel": "Progressive",
+                "options": [
+                    "Stage0",
+                    "Stage1",
+                    "Stage2",
+                    "Stage3",
+                    "Stage4",
+                    "Stage5"
+                ]
+            },
+            {
+                "channel": "ClothingColor",
+                "options": [
+                    "Mat0",
+                    "Mat1",
+                    "Mat2",
+                    "Mat3"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_231_athena_commando_f_redriding",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_232_athena_commando_f_halloweentomato",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_233_athena_commando_m_fortnitedj",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_234_athena_commando_m_llamarider",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_235_athena_commando_m_scarecrow",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_236_athena_commando_f_scarecrow",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_237_athena_commando_f_cowgirl",
+        "variants": [
+            {
+                "channel": "Progressive",
+                "options": [
+                    "Stage0",
+                    "Stage1",
+                    "Stage2",
+                    "Stage3",
+                    "Stage4",
+                    "Stage5"
+                ]
+            },
+            {
+                "channel": "ClothingColor",
+                "options": [
+                    "Mat0",
+                    "Mat1",
+                    "Mat2",
+                    "Mat3"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_238_athena_commando_f_footballgirld",
+        "variants": [
+            {
+                "channel": "JerseyColor",
+                "options": [
+                    "000",
+                    "001",
+                    "002",
+                    "003",
+                    "004",
+                    "005",
+                    "006",
+                    "007",
+                    "008",
+                    "009",
+                    "010",
+                    "011",
+                    "012",
+                    "013",
+                    "014",
+                    "015",
+                    "016",
+                    "017",
+                    "018",
+                    "019",
+                    "020",
+                    "021",
+                    "022",
+                    "023",
+                    "024",
+                    "025",
+                    "026",
+                    "027",
+                    "028",
+                    "029",
+                    "030",
+                    "031",
+                    "036",
+                    "032",
+                    "033",
+                    "034",
+                    "035"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_239_athena_commando_m_footballduded",
+        "variants": [
+            {
+                "channel": "JerseyColor",
+                "options": [
+                    "000",
+                    "001",
+                    "002",
+                    "003",
+                    "004",
+                    "005",
+                    "006",
+                    "007",
+                    "008",
+                    "009",
+                    "010",
+                    "011",
+                    "012",
+                    "013",
+                    "014",
+                    "015",
+                    "016",
+                    "017",
+                    "018",
+                    "019",
+                    "020",
+                    "021",
+                    "022",
+                    "023",
+                    "024",
+                    "025",
+                    "026",
+                    "027",
+                    "028",
+                    "029",
+                    "030",
+                    "031",
+                    "036",
+                    "032",
+                    "033",
+                    "034",
+                    "035"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_240_athena_commando_f_plague",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_241_athena_commando_m_plague",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_242_athena_commando_f_bullseye",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2",
+                    "Mat3"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_243_athena_commando_m_pumpkinslice",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_244_athena_commando_m_pumpkinsuit",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2",
+                    "Mat3"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_245_athena_commando_f_durrburgerpjs",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage0",
+                    "Stage1"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_246_athena_commando_f_grave",
+        "variants": [
+            {
+                "channel": "ClothingColor",
+                "options": [
+                    "Mat0",
+                    "Mat1"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_247_athena_commando_m_guanyu",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage1",
+                    "Stage2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_248_athena_commando_m_blackwidow",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_249_athena_commando_f_blackwidow",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_250_athena_commando_m_evilcowboy",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage1",
+                    "Stage2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_251_athena_commando_f_muertos",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_252_athena_commando_m_muertos",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_253_athena_commando_m_militaryfashion2",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_254_athena_commando_m_zombie",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_255_athena_commando_f_halloweenbunny",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_256_athena_commando_m_pumpkin",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_257_athena_commando_m_samuraiultra",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_258_athena_commando_f_fuzzybearhalloween",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_259_athena_commando_m_streetops",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_260_athena_commando_f_streetops",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_261_athena_commando_m_raptorarcticcamo",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_262_athena_commando_m_madcommander",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage1",
+                    "Stage2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_263_athena_commando_f_madcommander",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage1",
+                    "Stage2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_264_athena_commando_m_animaljackets",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_265_athena_commando_f_animaljackets",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_266_athena_commando_f_llamarider",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_267_athena_commando_m_robotred",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_268_athena_commando_m_rockerpunk",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_269_athena_commando_m_wizard",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2",
+                    "Mat3",
+                    "Mat4"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_270_athena_commando_f_witch",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2",
+                    "Mat3",
+                    "Mat4"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_271_athena_commando_f_sushichef",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_272_athena_commando_m_hornedmask",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_273_athena_commando_f_hornedmask",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_274_athena_commando_m_feathers",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_275_athena_commando_m_sniperhood",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_276_athena_commando_f_sniperhood",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_277_athena_commando_m_moth",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_278_athena_commando_m_yeti",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat0",
+                    "Mat1"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_279_athena_commando_m_tacticalsanta",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage0",
+                    "Stage1",
+                    "Stage2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_280_athena_commando_m_snowman",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_281_athena_commando_f_snowboard",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage0",
+                    "Stage1"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_286_athena_commando_f_neoncat",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage0",
+                    "Stage1",
+                    "Stage2",
+                    "Stage4",
+                    "Stage3",
+                    "Stage5"
+                ]
+            },
+            {
+                "channel": "Particle",
+                "options": [
+                    "Mat0",
+                    "Mat1",
+                    "Mat2",
+                    "Mat3"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_287_athena_commando_m_arcticsniper",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage0",
+                    "Stage1",
+                    "Stage2",
+                    "Stage3"
+                ]
+            },
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat0",
+                    "Mat1",
+                    "Mat2",
+                    "Mat3"
+                ]
+            },
+            {
+                "channel": "Particle",
+                "options": [
+                    "Emissive0",
+                    "Emissive1",
+                    "Emissive2",
+                    "Emissive3"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_288_athena_commando_m_iceking",
+        "variants": [
+            {
+                "channel": "Particle",
+                "options": [
+                    "Mat0",
+                    "Mat1",
+                    "Mat2",
+                    "Mat3"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_290_athena_commando_f_bluebadass",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage1",
+                    "Stage2"
+                ]
+            },
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_291_athena_commando_m_dieselpunk02",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_292_athena_commando_f_dieselpunk02",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_293_athena_commando_m_ravenwinter",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_294_athena_commando_f_redknightwinter",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_295_athena_commando_m_cupidwinter",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_296_athena_commando_m_math",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_297_athena_commando_f_math",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_298_athena_commando_f_icemaiden",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_299_athena_commando_m_snowninja",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_300_athena_commando_f_angel",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_302_athena_commando_f_nutcracker",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_303_athena_commando_f_snowfairy",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_304_athena_commando_m_gnome",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat0",
+                    "Mat1"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_308_athena_commando_f_fortnitedj",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage1",
+                    "Stage2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_309_athena_commando_m_streetgoth",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_310_athena_commando_f_streetgoth",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_311_athena_commando_m_reindeer",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_312_athena_commando_f_funkops",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_314_athena_commando_m_krampus",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_315_athena_commando_m_teriyakifish",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage0",
+                    "Stage1",
+                    "Stage2",
+                    "Stage3"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_316_athena_commando_f_winterholiday",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_317_athena_commando_m_winterghoul",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_318_athena_commando_m_demon",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_319_athena_commando_f_nautilus",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_320_athena_commando_m_nautilus",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_321_athena_commando_m_militaryfashion1",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_322_athena_commando_m_techops",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_323_athena_commando_m_barbarian",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_324_athena_commando_f_barbarian",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_325_athena_commando_m_wavyman",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_326_athena_commando_f_wavyman",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_327_athena_commando_m_bluemystery",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_328_athena_commando_f_tennis",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_329_athena_commando_f_snowninja",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_330_athena_commando_f_icequeen",
+        "variants": [
+            {
+                "channel": "Particle",
+                "options": [
+                    "Mat0",
+                    "Mat1",
+                    "Mat2",
+                    "Mat3"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_331_athena_commando_m_taxi",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_332_athena_commando_m_prisoner",
+        "variants": [
+            {
+                "channel": "Progressive",
+                "options": [
+                    "Stage0",
+                    "Stage1",
+                    "Stage2",
+                    "Stage3"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_333_athena_commando_m_squishy",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_334_athena_commando_m_scrapyard",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage1",
+                    "Stage2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_335_athena_commando_f_scrapyard",
+        "variants": [
+            {
+                "channel": "Parts",
+                "options": [
+                    "Stage1",
+                    "Stage2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_336_athena_commando_m_dragonmask",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_339_athena_commando_m_robottrouble",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_340_athena_commando_f_robottrouble",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_341_athena_commando_f_skullbrite",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat0",
+                    "Mat1"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_342_athena_commando_m_streetracermetallic",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_343_athena_commando_m_cupiddark",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_344_athena_commando_m_icecream",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
+        "id": "cid_345_athena_commando_m_lovellama",
         "variants": []
     },
     {
@@ -2529,6 +4426,11 @@
     },
     {
         "type": "AthenaCharacter",
+        "id": "cid_creative_mannequin_m_default",
+        "variants": []
+    },
+    {
+        "type": "AthenaCharacter",
         "id": "cid_npc_athena_commando_f_rebirthdefault_henchman",
         "variants": []
     },
@@ -2549,7 +4451,37 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_accolades",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_acrobaticsuperhero",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_aerobics",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_afrohouse",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_airhorn",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_airhornraisin",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_armupdance",
         "variants": []
     },
     {
@@ -2614,6 +4546,11 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_cheerleading",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_chicken",
         "variants": []
     },
@@ -2630,6 +4567,36 @@
     {
         "type": "AthenaDance",
         "id": "eid_confused",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_coolrobot",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_coolrobotraisin",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_cowboydance",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_crackshotdance",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_crazyfeet",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_crisscross",
         "variants": []
     },
     {
@@ -2654,7 +4621,17 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_disagree",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_discofever",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_dj01",
         "variants": []
     },
     {
@@ -2675,6 +4652,11 @@
     {
         "type": "AthenaDance",
         "id": "eid_electroshuffle",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_electroswing",
         "variants": []
     },
     {
@@ -2709,6 +4691,11 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_flamenco",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_flapper",
         "variants": []
     },
@@ -2729,6 +4716,21 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_getfunky",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_glowstickdance",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_golfclap",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_goodvibes",
         "variants": []
     },
@@ -2739,12 +4741,37 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_halloweencandy",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_handsignals",
         "variants": []
     },
     {
         "type": "AthenaDance",
+        "id": "eid_headbang",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_headbangraisin",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_headshake",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_heelclick",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_hilowwave",
         "variants": []
     },
     {
@@ -2755,6 +4782,11 @@
     {
         "type": "AthenaDance",
         "id": "eid_hiphops5",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_hiphops7",
         "variants": []
     },
     {
@@ -2779,6 +4811,16 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_iceking",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_idontknow",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_infinitedab",
         "variants": []
     },
@@ -2799,6 +4841,21 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_jammin",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_jazzdance",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_juggler",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_keagle",
         "variants": []
     },
@@ -2809,7 +4866,17 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_kittycat",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_kpopdance01",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_kpopdance02",
         "variants": []
     },
     {
@@ -2820,6 +4887,11 @@
     {
         "type": "AthenaDance",
         "id": "eid_laugh",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_lazyshuffle",
         "variants": []
     },
     {
@@ -2839,6 +4911,16 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_llamarider_glitter",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_lookatthis",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_makeitrain",
         "variants": []
     },
@@ -2849,12 +4931,37 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_micdrop",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_mime",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_mindblown",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_myidol",
         "variants": []
     },
     {
         "type": "AthenaDance",
+        "id": "eid_needtogo",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_nottoday",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_octopus",
         "variants": []
     },
     {
@@ -2889,6 +4996,11 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_presentopening",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_pump",
         "variants": []
     },
@@ -2899,7 +5011,17 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_quicksweeper",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_redcard",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_regalwave",
         "variants": []
     },
     {
@@ -2929,12 +5051,37 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_runningman",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_salute",
         "variants": []
     },
     {
         "type": "AthenaDance",
+        "id": "eid_saxophone",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_scorecard",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_sexyflip",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_shaolin",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_showstopper",
         "variants": []
     },
     {
@@ -2954,7 +5101,27 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_somethingstinks",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_sparkler",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_sprinkler",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_squishydance",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_squishymedley",
         "variants": []
     },
     {
@@ -2969,12 +5136,27 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_taichi",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_taketheelf",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_takethel",
         "variants": []
     },
     {
         "type": "AthenaDance",
         "id": "eid_tapshuffle",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_texting",
         "variants": []
     },
     {
@@ -2990,6 +5172,21 @@
     {
         "type": "AthenaDance",
         "id": "eid_tidy",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_timeout",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_touchdown",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_tpose",
         "variants": []
     },
     {
@@ -3024,6 +5221,16 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_wavedance",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_whirlwind",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_wiggle",
         "variants": []
     },
@@ -3034,7 +5241,27 @@
     },
     {
         "type": "AthenaDance",
+        "id": "eid_wir",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_wizard",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_wolfhowl",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "eid_worm",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "eid_wristflick",
         "variants": []
     },
     {
@@ -3119,7 +5346,22 @@
     },
     {
         "type": "AthenaDance",
+        "id": "emoji_bang",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "emoji_battlebus",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "emoji_birthday2018",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "emoji_blackcat",
         "variants": []
     },
     {
@@ -3144,6 +5386,11 @@
     },
     {
         "type": "AthenaDance",
+        "id": "emoji_camper",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "emoji_celebrate",
         "variants": []
     },
@@ -3159,12 +5406,22 @@
     },
     {
         "type": "AthenaDance",
+        "id": "emoji_clown",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "emoji_crabby",
         "variants": []
     },
     {
         "type": "AthenaDance",
         "id": "emoji_disco",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "emoji_durrrburger",
         "variants": []
     },
     {
@@ -3184,12 +5441,42 @@
     },
     {
         "type": "AthenaDance",
+        "id": "emoji_fiery",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "emoji_fistbump",
         "variants": []
     },
     {
         "type": "AthenaDance",
+        "id": "emoji_fkey",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "emoji_flamingrage",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "emoji_ggwreath",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "emoji_ghost",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "emoji_gingerbreadhappy",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "emoji_gingerbreadmad",
         "variants": []
     },
     {
@@ -3219,7 +5506,22 @@
     },
     {
         "type": "AthenaDance",
+        "id": "emoji_hotchocolate",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "emoji_hotdawg",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "emoji_huskwow",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "emoji_iceheart",
         "variants": []
     },
     {
@@ -3254,6 +5556,21 @@
     },
     {
         "type": "AthenaDance",
+        "id": "emoji_meet",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "emoji_mistletoe",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "emoji_mittens",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "emoji_mvp",
         "variants": []
     },
@@ -3274,12 +5591,27 @@
     },
     {
         "type": "AthenaDance",
+        "id": "emoji_penguin",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "emoji_pickaxe",
         "variants": []
     },
     {
         "type": "AthenaDance",
+        "id": "emoji_pizza",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "emoji_plotting",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "emoji_plunger",
         "variants": []
     },
     {
@@ -3344,7 +5676,27 @@
     },
     {
         "type": "AthenaDance",
+        "id": "emoji_s6lvl100",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "emoji_s7lvl100",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "emoji_salty",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "emoji_snowflake",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "emoji_snowman",
         "variants": []
     },
     {
@@ -3404,12 +5756,22 @@
     },
     {
         "type": "AthenaDance",
+        "id": "emoji_tp",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
         "id": "emoji_trap",
         "variants": []
     },
     {
         "type": "AthenaDance",
         "id": "emoji_victoryroyale",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "emoji_witchsbrew",
         "variants": []
     },
     {
@@ -3709,6 +6071,11 @@
     },
     {
         "type": "AthenaGlider",
+        "id": "glider_id_056_carbidewhite",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
         "id": "glider_id_057_modernmilitary",
         "variants": []
     },
@@ -3779,12 +6146,278 @@
     },
     {
         "type": "AthenaGlider",
+        "id": "glider_id_071_football",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
         "id": "glider_id_072_bling",
         "variants": []
     },
     {
         "type": "AthenaGlider",
         "id": "glider_id_073_medic",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_074_raptorarcticcamo",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_075_modernmilitaryred",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_076_dieselpunk",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_077_octoberfest",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_078_vampire",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_079_redriding",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_080_prairiepusher",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_081_cowboygunslinger",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_082_scarecrow",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_083_darkbomber",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_084_plague",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_085_skulltrooper",
+        "variants": [
+            {
+                "channel": "Emissive",
+                "options": [
+                    "Emissive1",
+                    "Emissive2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_086_blackwidow",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_087_guanyu",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_088_evilcowboy",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_089_muertos",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_090_celestial",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_091_madcommander",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_092_streetops",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_093_animaljackets",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat0",
+                    "Mat1"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_094_samuraiultra",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_095_witch",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_096_hornedmask",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_097_feathers",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_098_sup",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_099_moth",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_100_yeti",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_101_tacticalsanta",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_103_nautilus",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_104_durrburger",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_104_math",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_105_gingerbread",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_105_snowboard",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_106_fortnitedj",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_107_icemaiden",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_108_krampus",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_109_streetgoth",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_110_teriyakifish",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_111_militaryfashion",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_112_techops",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_113_barbarian",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_114_icequeen",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_115_snowninja",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_116_pizzapit",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_118_squishy",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_119_reaperfrozen",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_120_icecream",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_121_britebomberdeluxe",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "glider_id_122_valentines",
         "variants": []
     },
     {
@@ -4104,12 +6737,368 @@
     },
     {
         "type": "AthenaLoadingScreen",
+        "id": "lsid_050_tomatotemple",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_051_ravage",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_052_emoticoncollage",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_053_supplyllama",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_054_scuba",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_055_valkyrie",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_056_fate",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_057_bunnies",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_058_djconcept",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_059_vampire",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_060_cowgirl",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_061_werewolf",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_062_s6cumulative01",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_063_s6cumulative02",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_064_s6cumulative03",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_065_s6cumulative04",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_066_s6cumulative05",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_067_s6cumulative06",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_068_s6cumulative07",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_069_s6cumulative08",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_070_s6cumulative09",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_071_s6cumulative10",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_072_winterlauncher",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_073_dustydepot",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_074_darkbomber",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_075_tacticalsanta",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_076_medics",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_078_skulltrooper",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_079_plane",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_080_gingerbread",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_081_tenderdefender",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_082_neoncat",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_083_crackshot",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_084_s7cumulative01",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_085_s7cumulative02",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_086_s7cumulative03",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_087_s7cumulative04",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_088_s7cumulative05",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_089_s7cumulative06",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_090_s7cumulative07",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_091_s7cumulative08",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_092_s7cumulative09",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_093_s7cumulative10",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_094_holidayspecial",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_095_prisoner",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
+        "id": "lsid_096_planekey",
+        "variants": []
+    },
+    {
+        "type": "AthenaLoadingScreen",
         "id": "lsid_defaultbg",
         "variants": []
     },
     {
         "type": "AthenaMusicPack",
         "id": "musicpack_000_default",
+        "variants": []
+    },
+    {
+        "type": "AthenaMusicPack",
+        "id": "musicpack_001_floss",
+        "variants": []
+    },
+    {
+        "type": "AthenaMusicPack",
+        "id": "musicpack_002_spooky",
+        "variants": []
+    },
+    {
+        "type": "AthenaMusicPack",
+        "id": "musicpack_003_ogremix",
+        "variants": []
+    },
+    {
+        "type": "AthenaMusicPack",
+        "id": "musicpack_004_holiday",
+        "variants": []
+    },
+    {
+        "type": "AthenaMusicPack",
+        "id": "musicpack_005_disco",
+        "variants": []
+    },
+    {
+        "type": "AthenaMusicPack",
+        "id": "musicpack_006_twist",
+        "variants": []
+    },
+    {
+        "type": "AthenaPetCarrier",
+        "id": "petcarrier_001_dog",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat0",
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaPetCarrier",
+        "id": "petcarrier_002_chameleon",
+        "variants": []
+    },
+    {
+        "type": "AthenaPetCarrier",
+        "id": "petcarrier_003_dragon",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat0",
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaPetCarrier",
+        "id": "petcarrier_004_hamster",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat0",
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaPetCarrier",
+        "id": "petcarrier_005_wolf",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat0",
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaPetCarrier",
+        "id": "petcarrier_006_gingerbread",
+        "variants": []
+    },
+    {
+        "type": "AthenaPet",
+        "id": "petid_001_dog",
+        "variants": []
+    },
+    {
+        "type": "AthenaPet",
+        "id": "petid_002_chameleon",
+        "variants": []
+    },
+    {
+        "type": "AthenaPet",
+        "id": "petid_003_dragon",
+        "variants": []
+    },
+    {
+        "type": "AthenaPet",
+        "id": "petid_004_hamster",
+        "variants": []
+    },
+    {
+        "type": "AthenaPet",
+        "id": "petid_005_wolf",
+        "variants": []
+    },
+    {
+        "type": "AthenaPet",
+        "id": "petid_006_gingerbread",
         "variants": []
     },
     {
@@ -4454,6 +7443,11 @@
     },
     {
         "type": "AthenaPickaxe",
+        "id": "pickaxe_id_077_carbidewhite",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
         "id": "pickaxe_id_078_lifeguard",
         "variants": []
     },
@@ -4534,8 +7528,399 @@
     },
     {
         "type": "AthenaPickaxe",
+        "id": "pickaxe_id_094_football",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_095_footballtrophy",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_096_footballreferee",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_097_raptorarcticcamo",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
         "id": "pickaxe_id_098_garageband",
         "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_099_modernmilitaryred",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_100_dieselpunk",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_101_octoberfest",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_102_redriding",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_103_fortnitedj",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_104_cowgirl",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_105_scarecrow",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_106_darkbomber",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_107_halloweentomato",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_107_plague",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_108_pumpkinslice",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_109_skulltrooper",
+        "variants": [
+            {
+                "channel": "Material",
+                "options": [
+                    "Mat0",
+                    "Mat1",
+                    "Mat2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_110_vampire",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_111_blackwidow",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_112_guanyu",
+        "variants": [
+            {
+                "channel": "Particle",
+                "options": [
+                    "Particle1",
+                    "Particle2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_113_muertos",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_115_evilcowboy",
+        "variants": [
+            {
+                "channel": "Particle",
+                "options": [
+                    "Particle1",
+                    "Particle2"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_116_celestial",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_117_madcommander",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_118_streetops",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_119_animaljackets",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_120_samuraiultraarmor",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_121_robotred",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_122_witch",
+        "variants": [
+            {
+                "channel": "Particle",
+                "options": [
+                    "Particle0",
+                    "Particle1"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_123_hornedmask",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_124_feathers",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_125_moth",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_126_yeti",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_131_nautilus",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_131_neoncat",
+        "variants": [
+            {
+                "channel": "Emissive",
+                "options": [
+                    "Emissive0",
+                    "Emissive1",
+                    "Emissive2",
+                    "Emissive3"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_132_arcticsniper",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_133_demon",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_133_iceking",
+        "variants": [
+            {
+                "channel": "Emissive",
+                "options": [
+                    "Emissive0",
+                    "Emissive1",
+                    "Emissive2",
+                    "Emissive3"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_134_snowman",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_135_snowninja",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_136_math",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_137_nutcracker",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_138_gnome",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_139_gingerbread",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_140_streetgoth",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_141_krampus",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_142_teriyakifish",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_143_flintlockwinter",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_144_angel",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_145_icemaiden",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_146_militaryfashion",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_147_techops",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_148_barbarian",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_149_wavyman",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_150_icequeen",
+        "variants": [
+            {
+                "channel": "Emissive",
+                "options": [
+                    "Emissive0",
+                    "Emissive1",
+                    "Emissive2",
+                    "Emissive3"
+                ]
+            }
+        ]
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_151_alienfishhead",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_152_dragonmask",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_154_squishy",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_155_valentinesfrozen",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_156_ravenquillfrozen",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_158_fuzzybear",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_159_robottrouble",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_160_icecream",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_161_lovellama",
+        "variants": []
+    },
+    {
+        "type": "AthenaPickaxe",
+        "id": "pickaxe_id_162_skullbrite",
+        "variants": [
+            {
+                "channel": "Particle",
+                "options": [
+                    "Particle1",
+                    "Particle2"
+                ]
+            }
+        ]
     },
     {
         "type": "AthenaPickaxe",
@@ -4763,6 +8148,221 @@
         "variants": []
     },
     {
+        "type": "AthenaDance",
+        "id": "spid_045_oni",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_046_pixelraven",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_047_gremlins",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_049_cactusmaze",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_050_fullmoon",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_051_gameover",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_053_ggpotion",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_055_wallcrawler",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_056_manholecover",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_057_creepybunny",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_058_cowgirl",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_059_dj",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_060_dayofdead",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_061_spiderweb",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_062_werewolf",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_063_cowboy",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_064_s6lvl100",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_065_discoballer",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_066_llamalaxy",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_067_ggsnowman",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_068_eviltree",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_069_bagofcoal",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_070_hohoho",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_071_neoncat",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_072_mothhead",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_073_porthole",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_074_cuddlehula",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_075_meltingsnowman",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_076_yeti",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_077_baited",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_078_pixelramirez",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_079_catgirl",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_080_s7lvl100",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_081_bananas",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_082_ornament",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_083_winter",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_084_festivus",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_085_sharethelove_a",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_086_sharethelove_b",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_087_sharethelove_c",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_088_sharethelove_d",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_089_sharethelove_e",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "spid_090_dancefloorbox",
+        "variants": []
+    },
+    {
         "type": "AthenaPickaxe",
         "id": "spikypickaxe",
         "variants": []
@@ -4795,6 +8395,36 @@
     {
         "type": "AthenaDance",
         "id": "toy_006_beachballelite",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "toy_007_tomato",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "toy_008_tomatoelite",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "toy_009_burgerelite",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "toy_010_icepuck",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "toy_011_snowball",
+        "variants": []
+    },
+    {
+        "type": "AthenaDance",
+        "id": "toy_012_americanfootball",
         "variants": []
     },
     {
@@ -4859,6 +8489,11 @@
     },
     {
         "type": "AthenaSkyDiveContrail",
+        "id": "trails_id_014_vines",
+        "variants": []
+    },
+    {
+        "type": "AthenaSkyDiveContrail",
         "id": "trails_id_015_goldenstarfish",
         "variants": []
     },
@@ -4893,6 +8528,61 @@
         "variants": []
     },
     {
+        "type": "AthenaSkyDiveContrail",
+        "id": "trails_id_022_greensmoke",
+        "variants": []
+    },
+    {
+        "type": "AthenaSkyDiveContrail",
+        "id": "trails_id_023_fireflies",
+        "variants": []
+    },
+    {
+        "type": "AthenaSkyDiveContrail",
+        "id": "trails_id_024_dieselsmoke",
+        "variants": []
+    },
+    {
+        "type": "AthenaSkyDiveContrail",
+        "id": "trails_id_025_jackolantern",
+        "variants": []
+    },
+    {
+        "type": "AthenaSkyDiveContrail",
+        "id": "trails_id_026_bats",
+        "variants": []
+    },
+    {
+        "type": "AthenaSkyDiveContrail",
+        "id": "trails_id_032_stringlights",
+        "variants": []
+    },
+    {
+        "type": "AthenaSkyDiveContrail",
+        "id": "trails_id_033_snowflakes",
+        "variants": []
+    },
+    {
+        "type": "AthenaSkyDiveContrail",
+        "id": "trails_id_034_swirlysmoke",
+        "variants": []
+    },
+    {
+        "type": "AthenaSkyDiveContrail",
+        "id": "trails_id_036_fiberoptics",
+        "variants": []
+    },
+    {
+        "type": "AthenaSkyDiveContrail",
+        "id": "trails_id_037_glyphs",
+        "variants": []
+    },
+    {
+        "type": "AthenaSkyDiveContrail",
+        "id": "trails_id_31_greenflame",
+        "variants": []
+    },
+    {
         "type": "AthenaGlider",
         "id": "umbrella_paperparasol",
         "variants": []
@@ -4909,7 +8599,92 @@
     },
     {
         "type": "AthenaGlider",
+        "id": "umbrella_season_06",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
+        "id": "umbrella_season_07",
+        "variants": []
+    },
+    {
+        "type": "AthenaGlider",
         "id": "umbrella_snowflake",
+        "variants": []
+    },
+    {
+        "type": "AthenaItemWrap",
+        "id": "wrap_001_arcticcamo",
+        "variants": []
+    },
+    {
+        "type": "AthenaItemWrap",
+        "id": "wrap_002_holidaygreen",
+        "variants": []
+    },
+    {
+        "type": "AthenaItemWrap",
+        "id": "wrap_003_anodizedred",
+        "variants": []
+    },
+    {
+        "type": "AthenaItemWrap",
+        "id": "wrap_004_durrburgerpjs",
+        "variants": []
+    },
+    {
+        "type": "AthenaItemWrap",
+        "id": "wrap_005_carbonfiber",
+        "variants": []
+    },
+    {
+        "type": "AthenaItemWrap",
+        "id": "wrap_006_ice",
+        "variants": []
+    },
+    {
+        "type": "AthenaItemWrap",
+        "id": "wrap_007_candycane",
+        "variants": []
+    },
+    {
+        "type": "AthenaItemWrap",
+        "id": "wrap_009_newyears",
+        "variants": []
+    },
+    {
+        "type": "AthenaItemWrap",
+        "id": "wrap_010_blueemissive",
+        "variants": []
+    },
+    {
+        "type": "AthenaItemWrap",
+        "id": "wrap_011_hotcold",
+        "variants": []
+    },
+    {
+        "type": "AthenaItemWrap",
+        "id": "wrap_012_dragonmask",
+        "variants": []
+    },
+    {
+        "type": "AthenaItemWrap",
+        "id": "wrap_013_valentines",
+        "variants": []
+    },
+    {
+        "type": "AthenaItemWrap",
+        "id": "wrap_014_icecream",
+        "variants": []
+    },
+    {
+        "type": "AthenaItemWrap",
+        "id": "wrap_015_snowboard",
+        "variants": []
+    },
+    {
+        "type": "AthenaItemWrap",
+        "id": "wrap_016_cuddleteam",
         "variants": []
     }
 ]

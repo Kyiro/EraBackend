@@ -80,7 +80,7 @@ pub struct User {
 impl User {
     pub fn new() -> Self {
         Self {
-            character: String::new(),
+            character: String::from("AthenaCharacter:cid_005_athena_commando_m_default"),
             backpack: String::new(),
             pickaxe: String::from("AthenaPickaxe:defaultpickaxe"),
             glider: String::from("AthenaGlider:defaultglider"),
