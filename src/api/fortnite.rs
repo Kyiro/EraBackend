@@ -1,5 +1,6 @@
+use crate::structs::app::State;
 use crate::utils::get_season;
-use actix_web::{get, post, HttpRequest, HttpResponse, Responder};
+use actix_web::{get, post, web, HttpRequest, HttpResponse, Responder};
 use chrono::prelude::*;
 use serde_json::json;
 
@@ -102,8 +103,8 @@ pub async fn timeline(req: HttpRequest) -> impl Responder {
 }
 
 #[get("/api/storefront/v2/keychain")]
-pub async fn keychain() -> impl Responder {
-    HttpResponse::TemporaryRedirect()
-        .append_header(("Location", "https://api.nitestats.com/v1/epic/keychain"))
-        .finish()
+pub async fn keychain(app: web::Data<State>) -> impl Responder {
+    HttpResponse::Ok()
+        .append_header(("content-type", "application/json"))
+        .body(app.keychain.clone())
 }
