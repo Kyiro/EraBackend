@@ -6,6 +6,7 @@ use std::sync::{Arc, RwLock};
 pub struct State {
     pub cosmetics: Vec<CItem>,
     pub game: String,
+    pub keychain: String,
     // Yeah! Um...
     pub users: Arc<RwLock<HashMap<String, User>>>,
 }
@@ -15,6 +16,7 @@ impl State {
         Self {
             cosmetics: Vec::new(),
             game: String::new(),
+            keychain: String::new(),
             users: Arc::new(RwLock::new(HashMap::new())),
         }
     }
