@@ -1,6 +1,6 @@
 #![allow(non_snake_case)]
 #[allow(unused_imports)]
-use crate::structs::app::{CItem, CVariant, User};
+use crate::structs::app::{CItem, CVariant, Athena};
 use chrono::prelude::*;
 use serde::{Deserialize, Serialize};
 use serde_json::{json, Value};
@@ -88,7 +88,7 @@ impl FullProfile {
         }
     }
 
-    pub fn new_athena(cosmetics: &Vec<CItem>, id: &str, profile: User, season: i32) -> Self {
+    pub fn new_athena(cosmetics: &Vec<CItem>, id: &str, profile: Athena, season: i32) -> Self {
         let mut full_profile = Self::new(id);
 
         full_profile.profile.stats.attributes = StatsAttributes::Athena(AthenaAttributes {

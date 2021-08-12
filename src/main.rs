@@ -8,10 +8,22 @@ pub mod utils;
 
 pub const VERSION: &'static str = "1.2";
 
+// funny macro lol
+#[macro_export]
+macro_rules! public {
+    // URL and File
+    [$(($x:expr, $y:expr)),*] => {
+        web::scope("/")
+        $(
+            .route($x, web::to(|| HttpResponse::Ok().body(include_bytes!($y).to_vec())))
+        )*
+    };
+}
+
 #[get("/")]
 async fn index() -> impl Responder {
     HttpResponse::PermanentRedirect()
-        .append_header(("Location", "https://erafn.glitch.me/"))
+        .append_header(("Location", "/index.html"))
         .finish()
 }
 
@@ -29,20 +41,12 @@ async fn main() -> std::io::Result<()> {
     // pwetty
     pretty_env_logger::init();
 
-    let state = web::Data::new({
-        let mut state = structs::app::State::new();
-
-        state.cosmetics = files::cosmetics();
-        state.game = files::game();
-        state.keychain = files::keychain();
-
-        state
-    });
+    let state = web::Data::new(structs::app::State::new().await);
 
     HttpServer::new(move || {
         App::new()
             .app_data(state.clone())
-            .service(index)
+            // .service(index)
             .service(version)
             .service(
                 web::scope("/account")
@@ -73,13 +77,37 @@ async fn main() -> std::io::Result<()> {
                     .service(api::fortnite::version_check)
                     .service(api::fortnite::world_info)
                     .service(api::profile::client_quest_login)
-                    .service(api::profile::equip_battle_royale)
+                    // .service(api::profile::equip_battle_royale)
                     .service(api::profile::query_profile)
                     .service(api::profile::other),
             )
+            .service(
+                web::scope("/id")
+                    .service(api::id::discord_oauth)
+            )
+            .service(web::scope("/lightswitch").service(api::lightswitch::status))
             .service(api::other::party_user)
-            .service(api::other::status)
             .service(api::other::waitingroom)
+            .service(public! [
+                ("", "../resources/public/index.html"),
+                ("index.html", "../resources/public/index.html"),
+                ("style.css", "../resources/public/style.css"),
+                ("script.js", "../resources/public/script.js"),
+                ("favicon.ico", "../resources/public/favicon.ico"),
+                ("svg/book.svg", "../resources/public/svg/book.svg"),
+                ("svg/discord.svg", "../resources/public/svg/discord.svg"),
+                ("svg/download.svg", "../resources/public/svg/download.svg"),
+                ("svg/home.svg", "../resources/public/svg/home.svg"),
+                ("svg/people.svg", "../resources/public/svg/people.svg"),
+                ("svg/user.svg", "../resources/public/svg/user.svg"),
+                ("img/danii.webp", "../resources/public/img/danii.webp"),
+                ("img/kemo.webp", "../resources/public/img/kemo.webp"),
+                ("img/kyiro.webp", "../resources/public/img/kyiro.webp"),
+                ("img/mix.webp", "../resources/public/img/mix.webp"),
+                ("img/ozne.webp", "../resources/public/img/ozne.webp"),
+                ("img/robot.webp", "../resources/public/img/robot.webp"),
+                ("img/sizzy.webp", "../resources/public/img/sizzy.webp")
+            ])
     })
     .bind(format!(
         "0.0.0.0:{}",

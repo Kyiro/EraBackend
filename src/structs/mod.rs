@@ -5,4 +5,6 @@ pub const ALPHABET: [char; 36] = [
 
 pub mod account;
 pub mod app;
+pub mod discord;
+pub mod error;
 pub mod profile;

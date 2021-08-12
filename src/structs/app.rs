@@ -1,48 +1,53 @@
+use crate::files;
+use mongodb::bson::{DateTime};
+use mongodb::{Client, Collection, options::ClientOptions, error::Result as MDResult};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
+use std::env::{var};
 use std::sync::{Arc, RwLock};
+use sha1::{Sha1, Digest};
+use sha2::Sha256;
 
-#[derive(Clone)]
 pub struct State {
     pub cosmetics: Vec<CItem>,
     pub game: String,
     pub keychain: String,
+    pub database: Database,
+    pub discord: DiscordApp,
     // Yeah! Um...
-    pub users: Arc<RwLock<HashMap<String, User>>>,
+    pub tokens: Arc<RwLock<HashMap<String, Token>>>
 }
 
 impl State {
-    pub fn new() -> Self {
+    pub async fn new() -> Self {
         Self {
-            cosmetics: Vec::new(),
-            game: String::new(),
-            keychain: String::new(),
-            users: Arc::new(RwLock::new(HashMap::new())),
-        }
-    }
-
-    pub fn get_user(&self, id: &str) -> User {
-        let users = self.users.read().unwrap();
-
-        match users.get(id) {
-            Some(user) => user.clone(),
-            None => {
-                drop(users);
-                let new_user = User::new();
-
-                {
-                    // RwLocks lock when writing so seperate scope
-                    let mut users = self.users.write().unwrap();
-                    users.insert(id.to_string(), new_user.clone());
-                }
-
-                new_user
-            }
+            cosmetics: files::cosmetics(),
+            game: files::game(),
+            keychain: files::keychain(),
+            database: Database::new().await.expect("Couldn't connect to DB"),
+            discord: DiscordApp::new(),
+            tokens: Arc::new(RwLock::new(HashMap::new()))
         }
     }
 }
 
-#[derive(Clone, Deserialize, Serialize)]
+pub struct DiscordApp {
+    pub client_id: String,
+    pub secret: String,
+    pub oauth_url: String
+}
+
+impl DiscordApp {
+    pub fn new() -> Self {
+        Self {
+            client_id: var("DISCORD_CLIENT").expect("DISCORD_CLIENT Not Present"),
+            secret: var("DISCORD_SECRET").expect("DISCORD_SECRET Not Present"),
+            oauth_url: var("DISCORD_URL").expect("DISCORD_URL Not Present")
+        }
+    }
+}
+
+#[derive(Deserialize, Serialize)]
 pub struct CItem {
     #[serde(rename = "type")]
     pub item_type: String,
@@ -66,8 +71,42 @@ pub struct CVariant {
     pub options: Vec<String>,
 }
 
-#[derive(Clone)]
-pub struct User {
+pub struct Database {
+    pub athena: Collection<Athena>,
+    pub cloudstorage: Collection<CloudStorage>,
+    pub tokens: Collection<RefreshToken>,
+    pub users: Collection<User>
+}
+
+impl Database {
+    pub async fn new() -> MDResult<Self> {
+        let client_options = {
+            let mut options = ClientOptions::parse(
+                var("MONGODB").expect("MONGODB Not Present")
+            ).await?;
+            options.app_name = Some("Project Era".to_string());
+            options
+        };
+        
+        let client = Client::with_options(client_options)?;
+        let db = client.database(
+            &var("DB_NAME").expect("DB_NAME Not Present")
+        );
+        
+        Ok(Self {
+            athena: db.collection::<Athena>("athena"),
+            cloudstorage: db.collection::<CloudStorage>("cloudstorage"),
+            tokens: db.collection::<RefreshToken>("tokens"),
+            users: db.collection::<User>("users")
+        })
+    }
+}
+
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct Athena {
+    pub id: String,
+    pub favourites: Vec<String>,
+    pub battlebus: String,
     pub character: String,
     pub backpack: String,
     pub pickaxe: String,
@@ -79,9 +118,12 @@ pub struct User {
     pub item_wrap: [String; 7],
 }
 
-impl User {
-    pub fn new() -> Self {
+impl Athena {
+    pub fn new(id: String) -> Self {
         Self {
+            id,
+            favourites: Vec::new(),
+            battlebus: String::new(),
             character: String::from("AthenaCharacter:cid_005_athena_commando_m_default"),
             backpack: String::new(),
             pickaxe: String::from("AthenaPickaxe:defaultpickaxe"),
@@ -108,4 +150,78 @@ impl User {
             ],
         }
     }
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct CloudStorage {
+    pub id: String,
+    pub files: HashMap<String, CloudStorageFile>
+}
+
+impl CloudStorage {
+    pub fn new(id: String) -> Self {
+        Self {
+            id,
+            files: HashMap::new()
+        }
+    }
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct CloudStorageFile {
+    pub data: Vec<u8>,
+    pub hash: String,
+    pub hash256: String,
+    pub length: usize,
+    pub last_updated: DateTime
+}
+
+impl CloudStorageFile {
+    pub fn new(data: Vec<u8>) -> Self {
+        // i hate how these hashes work in rust
+        let mut sha1 = Sha1::new();
+        let mut sha256 = Sha256::new();
+        sha1.update(&data);
+        sha256.update(&data);
+        let sha1 = sha1.finalize();
+        let sha256 = sha256.finalize();
+        let length = data.len();
+        
+        Self {
+            data,
+            hash: format!("{:x}", sha1),
+            hash256: format!("{:x}", sha256),
+            length: length,
+            last_updated: DateTime::now()
+        }
+    }
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct User {
+    pub id: String,
+    // i have cool plans for this
+    pub admin: bool,
+    pub creation_time: DateTime,
+    pub discord_avatar: String,
+    pub discord_refresh_token: String,
+    pub discord_id: String,
+    pub display_name: String
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct RefreshToken {
+    pub id: String,
+    pub date: DateTime,
+    pub token: String
+}
+
+pub struct Token {
+    pub token_type: TokenType,
+    pub id: Option<String>
+}
+
+pub enum TokenType {
+    ClientCredentials,
+    Bearer
 }

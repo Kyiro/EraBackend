@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Era</title>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico">
+</head>
+<body>
+    <nav>
+        <div class="nav-item" onclick="s('home')">
+            <img class="nav-icon" src="./svg/home.svg">
+            <span>Home</span>
+        </div>
+        <div class="nav-item" onclick="s('credits')">
+            <img class="nav-icon" src="./svg/people.svg">
+            <span>Credits</span>
+        </div>
+        <div class="nav-item" onclick="s('download')">
+            <img class="nav-icon" src="./svg/download.svg">
+            <span>Download</span>
+        </div>
+        <!-- <div class="nav-item" onclick="s('tutorials')">
+            <img class="nav-icon" src="./svg/book.svg">
+            <span>Tutorials</span>
+        </div> -->
+        <div class="nav-item" onclick="o('discord.gg/8n5EXMBgEb')">
+            <img class="nav-icon" src="./svg/discord.svg">
+            <span>Discord</span>
+        </div>
+        <div class="nav-item" onclick="s('account')">
+            <img class="nav-icon" src="./svg/user.svg">
+            <span id="account-name">Account</span>
+        </div>
+    </nav>
+    <article id="home" class="disabled center">
+        <h1>ERA</h1>
+        <p>A Fortnite™ Private Server that lets you revisit older seasons</p>
+        <p>Made by the <a href="#credits" onclick="s('credits')">Project Era Team</a></p>
+    </article>
+    <article id="credits" class="disabled center">
+        <h2>Project Era Developers</h2>
+        <div class="row">
+            <div class="center">
+                <img class="avatar" src="./img/danii.webp">
+                <a href="https://twitter.com/danihhhhhhhh">Danii</a>
+            </div>
+            <div class="center">
+                <img class="avatar" src="./img/robot.webp">
+                <a href="https://twitter.com/RobotPlaysTF2">Not A Robot</a>
+            </div>
+            <div class="center">
+                <img class="avatar" src="./img/ozne.webp">
+                <a href="https://twitter.com/susOzne">Ozne</a>
+            </div>
+            <div class="center">
+                <img class="avatar" src="./img/kyiro.webp">
+                <a href="https://twitter.com/ky1ro">Kyiro</a>
+            </div>
+        </div>
+        <h2>Special thanks to...</h2>
+        <div class="row">
+            <div class="center">
+                <img class="avatar" src="./img/sizzy.webp">
+                <a href="https://twitter.com/sizzyxx">Sizzy</a>
+            </div>
+            <div class="center">
+                <img class="avatar" src="./img/kemo.webp">
+                <a href="https://twitter.com/xkem0x">Kemo</a>
+            </div>
+            <div class="center">
+                <img class="avatar" src="./img/mix.webp">
+                <a href="https://twitter.com/tonxim">Mix</a>
+            </div>
+        </div>
+    </article>
+    <article id="download" class="disabled center">
+        <h2>Download</h2>
+        <p>Join our Discord Server to download Era</p>
+        <hr>
+        <iframe src="https://canary.discord.com/widget?id=802558747695120414&theme=dark" width="500" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        <hr>
+        <a href="https://discord.gg/8n5EXMBgEb">The widget isn't working?</a>
+    </article>
+    <!-- <article id="tutorials" class="disabled center">
+        <h1>WIP</h1>
+        <p>Tutorials</p>
+    </article> -->
+    <article id="account" class="disabled center">
+        <h2>empty</h2>
+    </article>
+</body>
+</html>

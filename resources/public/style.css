@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+:root {
+    --light-dark: #404040;
+    --light-dark2: #262626;
+    --dark: #1b1b1b;
+    --mid-dark: #151515;
+    --darker: #0e0e0e;
+    --nav-width: 16rem;
+    --blurple: #5865f2;
+    --gradient: linear-gradient(90deg, rgba(150,64,255,1) 0%, rgba(61,174,253,1) 100%);
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--dark);
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+
+article {
+    box-sizing: border-box;
+    margin-left: var(--nav-width);
+    height: 100vh;
+    padding: 15px;
+}
+
+nav {
+    background-color: var(--darker);
+    position: fixed;
+    height: 100vh;
+    width: var(--nav-width);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h3 {
+    background-image: var(--gradient);
+    background-repeat: repeat;
+    background-position: center center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: min-content;
+    
+    font-size: calc((50vh + 50vw) / 4.5);
+    margin: 0px;
+    user-select: none;
+}
+
+h3 {
+    font-size: 2.8rem;
+    font-weight: bolder;
+    user-select: auto;
+}
+
+h2 {
+    font-size: 3.5rem;
+}
+
+h4 {
+    font-size: 2rem;
+    margin: 0px;
+}
+
+a {
+    color: var(--blurple);
+}
+
+p {
+    margin: 0px;
+}
+
+input {
+    background-color: var(--light-dark2);
+    border: hidden;
+    color: white;
+    padding: 5px 2px;
+    width: 40rem;
+}
+
+input[type=submit] {
+    background-image: var(--gradient);
+    font-size: 16px;
+    font-weight: lighter;
+    height: 33px;
+    margin-top: 3px;
+}
+
+input[type=submit]:hover {
+    filter: brightness(1.25) contrast(1.1);
+}
+
+input[type=text], input[type=password] {
+    border: 2px solid var(--light-dark);
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    outline: none !important;
+    border-color: white;
+}
+
+.nav-item {
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding-left: 20px;
+    display: flex;
+    height: 4rem;
+    width: 100%;
+    user-select: none;
+}
+
+.nav-item:last-child {
+    margin-top: auto;
+}
+
+.nav-item:hover {
+    background-color: var(--mid-dark);
+    border: 1px solid var(--light-dark);
+}
+
+.nav-item:active {
+    background-color: var(--light-dark);
+}
+
+.nav-icon {
+    padding-right: 25px;
+    height: 15px;
+    width: 15px;
+    filter: invert(100%);
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.disabled {
+    display: none !important;
+    overflow: hidden !important;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    border: 2px solid var(--light-dark);
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 80%;
+}
+
+hr {
+    border-color: white;
+    width: 500px;
+}
+
+hr.full {
+    width: 100%;
+}
