@@ -1,12 +1,12 @@
 use crate::files;
-use mongodb::bson::{DateTime};
-use mongodb::{Client, Collection, options::ClientOptions, error::Result as MDResult};
+use mongodb::bson::DateTime;
+use mongodb::{error::Result as MDResult, options::ClientOptions, Client, Collection};
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
-use std::env::{var};
-use std::sync::{Arc, RwLock};
-use sha1::{Sha1, Digest};
+use sha1::{Digest, Sha1};
 use sha2::Sha256;
+use std::collections::HashMap;
+use std::env::var;
+use std::sync::{Arc, RwLock};
 
 pub struct State {
     pub cosmetics: Vec<CItem>,
@@ -15,7 +15,7 @@ pub struct State {
     pub database: Database,
     pub discord: DiscordApp,
     // Yeah! Um...
-    pub tokens: Arc<RwLock<HashMap<String, Token>>>
+    pub tokens: Arc<RwLock<HashMap<String, Token>>>,
 }
 
 impl State {
@@ -26,7 +26,7 @@ impl State {
             keychain: files::keychain(),
             database: Database::new().await.expect("Couldn't connect to DB"),
             discord: DiscordApp::new(),
-            tokens: Arc::new(RwLock::new(HashMap::new()))
+            tokens: Arc::new(RwLock::new(HashMap::new())),
         }
     }
 }
@@ -34,7 +34,7 @@ impl State {
 pub struct DiscordApp {
     pub client_id: String,
     pub secret: String,
-    pub oauth_url: String
+    pub oauth_url: String,
 }
 
 impl DiscordApp {
@@ -42,7 +42,7 @@ impl DiscordApp {
         Self {
             client_id: var("DISCORD_CLIENT").expect("DISCORD_CLIENT Not Present"),
             secret: var("DISCORD_SECRET").expect("DISCORD_SECRET Not Present"),
-            oauth_url: var("DISCORD_URL").expect("DISCORD_URL Not Present")
+            oauth_url: var("DISCORD_URL").expect("DISCORD_URL Not Present"),
         }
     }
 }
@@ -75,29 +75,26 @@ pub struct Database {
     pub athena: Collection<Athena>,
     pub cloudstorage: Collection<CloudStorage>,
     pub tokens: Collection<RefreshToken>,
-    pub users: Collection<User>
+    pub users: Collection<User>,
 }
 
 impl Database {
     pub async fn new() -> MDResult<Self> {
         let client_options = {
-            let mut options = ClientOptions::parse(
-                var("MONGODB").expect("MONGODB Not Present")
-            ).await?;
+            let mut options =
+                ClientOptions::parse(var("MONGODB").expect("MONGODB Not Present")).await?;
             options.app_name = Some("Project Era".to_string());
             options
         };
-        
+
         let client = Client::with_options(client_options)?;
-        let db = client.database(
-            &var("DB_NAME").expect("DB_NAME Not Present")
-        );
-        
+        let db = client.database(&var("DB_NAME").expect("DB_NAME Not Present"));
+
         Ok(Self {
             athena: db.collection::<Athena>("athena"),
             cloudstorage: db.collection::<CloudStorage>("cloudstorage"),
             tokens: db.collection::<RefreshToken>("tokens"),
-            users: db.collection::<User>("users")
+            users: db.collection::<User>("users"),
         })
     }
 }
@@ -155,14 +152,14 @@ impl Athena {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct CloudStorage {
     pub id: String,
-    pub files: HashMap<String, CloudStorageFile>
+    pub files: HashMap<String, CloudStorageFile>,
 }
 
 impl CloudStorage {
     pub fn new(id: String) -> Self {
         Self {
             id,
-            files: HashMap::new()
+            files: HashMap::new(),
         }
     }
 }
@@ -173,7 +170,7 @@ pub struct CloudStorageFile {
     pub hash: String,
     pub hash256: String,
     pub length: usize,
-    pub last_updated: DateTime
+    pub last_updated: DateTime,
 }
 
 impl CloudStorageFile {
@@ -186,13 +183,13 @@ impl CloudStorageFile {
         let sha1 = sha1.finalize();
         let sha256 = sha256.finalize();
         let length = data.len();
-        
+
         Self {
             data,
             hash: format!("{:x}", sha1),
             hash256: format!("{:x}", sha256),
             length: length,
-            last_updated: DateTime::now()
+            last_updated: DateTime::now(),
         }
     }
 }
@@ -206,22 +203,22 @@ pub struct User {
     pub discord_avatar: String,
     pub discord_refresh_token: String,
     pub discord_id: String,
-    pub display_name: String
+    pub display_name: String,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct RefreshToken {
     pub id: String,
     pub date: DateTime,
-    pub token: String
+    pub token: String,
 }
 
 pub struct Token {
     pub token_type: TokenType,
-    pub id: Option<String>
+    pub id: Option<String>,
 }
 
 pub enum TokenType {
     ClientCredentials,
-    Bearer
+    Bearer,
 }

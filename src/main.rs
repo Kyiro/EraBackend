@@ -81,14 +81,11 @@ async fn main() -> std::io::Result<()> {
                     .service(api::profile::query_profile)
                     .service(api::profile::other),
             )
-            .service(
-                web::scope("/id")
-                    .service(api::id::discord_oauth)
-            )
+            .service(web::scope("/id").service(api::id::discord_oauth))
             .service(web::scope("/lightswitch").service(api::lightswitch::status))
             .service(api::other::party_user)
             .service(api::other::waitingroom)
-            .service(public! [
+            .service(public![
                 ("", "../resources/public/index.html"),
                 ("index.html", "../resources/public/index.html"),
                 ("style.css", "../resources/public/style.css"),

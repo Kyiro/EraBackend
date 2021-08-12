@@ -1,6 +1,6 @@
 #![allow(non_snake_case)]
 #[allow(unused_imports)]
-use crate::structs::app::{CItem, CVariant, Athena};
+use crate::structs::app::{Athena, CItem, CVariant};
 use chrono::prelude::*;
 use serde::{Deserialize, Serialize};
 use serde_json::{json, Value};
