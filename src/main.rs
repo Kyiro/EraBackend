@@ -85,7 +85,7 @@ async fn main() -> std::io::Result<()> {
                 web::scope("/id")
                     .service(api::id::discord_oauth)
                     .service(api::id::discord_url)
-                    .service(api::id::user_info)
+                    .service(api::id::user_info),
             )
             .service(web::scope("/lightswitch").service(api::lightswitch::status))
             .service(api::other::party_user)
