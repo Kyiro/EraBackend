@@ -59,15 +59,17 @@ pub async fn discord_oauth(app: web::Data<State>, query: web::Query<OAuthQuery>)
             .await
             .unwrap();
     } else {
-        // app.database.users.update_one(
-        //     doc! { "discord_id": user.id.clone() },
-        //     doc! {
-        //         "discord_avatar": user.avatar,
-        //         "discord_last_token": auth.access_token,
-        //         "discord_refresh_token": auth.refresh_token
-        //     },
-        //     None
-        // ).await.unwrap();
+        app.database.users.update_one(
+            doc! { "discord_id": user.id.clone() },
+            doc! {
+                "$set": {
+                    "discord_avatar": user.avatar,
+                    "discord_last_token": auth.access_token,
+                    "discord_refresh_token": auth.refresh_token
+                }
+            },
+            None
+        ).await.unwrap();
     }
 
     // unwrap should be alright here since the account should be made above ^
