@@ -133,7 +133,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 .nav-icon {
-    padding-right: 25px;
+    margin-right: 25px;
     height: 15px;
     width: 15px;
     filter: invert(100%);
@@ -141,6 +141,7 @@ input[type=text]:focus, input[type=password]:focus {
 
 .avatar {
     border-radius: 50%;
+    filter: none !important;
 }
 
 .disabled {

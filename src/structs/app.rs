@@ -201,6 +201,7 @@ pub struct User {
     pub admin: bool,
     pub creation_time: DateTime,
     pub discord_avatar: String,
+    pub discord_last_token: String,
     pub discord_refresh_token: String,
     pub discord_id: String,
     pub display_name: String,
@@ -218,7 +219,23 @@ pub struct Token {
     pub id: Option<String>,
 }
 
+impl Token {
+    pub fn new(id: Option<String>, token_type: TokenType) -> Self {
+        Self { id, token_type }
+    }
+}
+
 pub enum TokenType {
     ClientCredentials,
     Bearer,
+    Web,
+}
+
+#[derive(Serialize)]
+pub struct EUser {
+    pub id: String,
+    pub admin: bool,
+    pub discord_avatar: String,
+    pub discord_id: String,
+    pub display_name: String,
 }
