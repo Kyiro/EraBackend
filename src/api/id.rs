@@ -1,6 +1,7 @@
 use crate::structs::{app::*, discord::*, ALPHABET};
 use actix_web::{cookie::Cookie, get, web, HttpRequest, HttpResponse, Responder};
 use mongodb::bson::{doc, DateTime};
+use urlencoding::encode;
 
 // TO-DO: Get rid of the unwraps
 #[get("/api/discord/oauth2")]
@@ -100,6 +101,18 @@ pub async fn discord_oauth(app: web::Data<State>, query: web::Query<OAuthQuery>)
         )
         .finish()
 }
+
+#[get("/api/discord/url")]
+pub async fn discord_url(app: web::Data<State>) -> impl Responder {
+    HttpResponse::Ok().body(
+        format!(
+            "https://discord.com/api/oauth2/authorize?client_id={}&redirect_uri={}&response_type=code&scope=identify",
+            app.discord.client_id.clone(),
+            encode(&app.discord.oauth_url.clone())
+        )
+    )
+}
+
 
 #[get("/api/user/@me")]
 pub async fn user_info(app: web::Data<State>, req: HttpRequest) -> impl Responder {

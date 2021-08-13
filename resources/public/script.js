@@ -1,5 +1,3 @@
-const DISCORD_OAUTH2 = "https://discord.com/api/oauth2/authorize?client_id=874789085737287741&redirect_uri=http%3A%2F%2F127.0.0.1%3A60101%2Fid%2Fapi%2Fdiscord%2Foauth2&response_type=code&scope=identify";
-
 var account;
 
 // skidded
@@ -7,6 +5,10 @@ function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+async function oauth_url() {
+    return await (await fetch('/id/api/discord/url')).text()
 }
 
 function getAvatar(id, avatar) {
@@ -17,11 +19,11 @@ var o = (url) => {
     window.open("https://" + url);
 };
 
-var s = (tab) => {
+var s = async (tab) => {
     tabU = tab.charAt(0).toUpperCase() + tab.slice(1);
     document.title = tabU + " / Project Era";
     if (tab == "account" && !account) {
-        location.href = DISCORD_OAUTH2;
+        location.href = await oauth_url();
         return;
     }
     for (article of document.getElementsByTagName("article")) {
@@ -45,6 +47,6 @@ window.onload = async () => {
         account = data;
     }
     const tab = location.href.split("#")[1];
-    if (tab) s(tab);
-    else s("home");
+    if (tab) await s(tab);
+    else await s("home");
 }
