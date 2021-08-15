@@ -9,8 +9,8 @@
         "_type": "CommonUI Simple Message",
         "message": {
           "_type": "CommonUI Simple Message Base",
-          "title": "Project ERA 1.1",
-          "body": "DLL by danii#0427\nJoin us at: dsc.gg/erafn\n\nEnjoy!!"
+          "title": "Project ERA 1.4.1",
+          "body": "Made by danii#4000\nLauncher by Not A Robot#6932 and ozne#3303\nBackend by Kyiro#7884\nSpecial thanks to Kemo, Sizzy and Mix\nJoin us at: dsc.gg/erafn\n\nEnjoy!!"
         }
       },
       "_activeDate": "2017-07-19T13:14:04.490Z",
@@ -99,8 +99,8 @@
             "hidden": false,
             "_type": "CommonUI Simple Message Base",
             "subgame": "br",
-            "title": "Release",
-            "body": "Era 1.1 by danii#0427 - Not a Robot#6932 - ozne#3303",
+            "title": "Release 1.4.1!",
+            "body": "Era 1.4.1 by danii#4000 - Not a Robot#6932 - ozne#3303\nBackend by Kyiro#7884",
             "spotlight": true
           }
         ],
@@ -112,8 +112,8 @@
               "hidden": false,
               "_type": "CommonUI Simple Message Base",
               "subgame": "br",
-              "title": "Release!",
-              "body": "Era 1.1 by danii#0427 - Not a Robot#6932 - ozne#3303",
+              "title": "Release 1.4.1!",
+              "body": "Era 1.4.1 by danii#4000 - Not a Robot#6932 - ozne#3303\nBackend by Kyiro#7884",
               "spotlight": true
             }
           }
