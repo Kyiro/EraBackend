@@ -74,7 +74,6 @@ pub struct CVariant {
 pub struct Database {
     pub athena: Collection<Athena>,
     pub cloudstorage: Collection<CloudStorage>,
-    pub tokens: Collection<RefreshToken>,
     pub users: Collection<User>,
 }
 
@@ -93,7 +92,6 @@ impl Database {
         Ok(Self {
             athena: db.collection::<Athena>("athena"),
             cloudstorage: db.collection::<CloudStorage>("cloudstorage"),
-            tokens: db.collection::<RefreshToken>("tokens"),
             users: db.collection::<User>("users"),
         })
     }
@@ -205,15 +203,10 @@ pub struct User {
     pub discord_refresh_token: String,
     pub discord_id: String,
     pub display_name: String,
+    pub login_token: String,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
-pub struct RefreshToken {
-    pub id: String,
-    pub date: DateTime,
-    pub token: String,
-}
-
+#[derive(Clone)]
 pub struct Token {
     pub token_type: TokenType,
     pub id: Option<String>,
@@ -225,9 +218,11 @@ impl Token {
     }
 }
 
+#[derive(Clone)]
 pub enum TokenType {
-    ClientCredentials,
     Bearer,
+    ClientCredentials,
+    Exchange,
     Web,
 }
 

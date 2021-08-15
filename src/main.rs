@@ -83,6 +83,7 @@ async fn main() -> std::io::Result<()> {
             )
             .service(
                 web::scope("/id")
+                    .service(api::id::exchange)
                     .service(api::id::discord_oauth)
                     .service(api::id::discord_url)
                     .service(api::id::user_info),

@@ -1,6 +1,7 @@
 use crate::structs::{app::*, discord::*, ALPHABET};
 use actix_web::{cookie::Cookie, get, web, HttpRequest, HttpResponse, Responder};
 use mongodb::bson::{doc, DateTime};
+use serde_json::json;
 use urlencoding::encode;
 
 // TO-DO: Get rid of the unwraps
@@ -42,6 +43,7 @@ pub async fn discord_oauth(app: web::Data<State>, query: web::Query<OAuthQuery>)
                     discord_refresh_token: auth.refresh_token,
                     discord_id: user.id.clone(),
                     display_name: user.username,
+                    login_token: nanoid::nanoid!(48, &ALPHABET),
                 },
                 None,
             )
@@ -153,4 +155,60 @@ pub async fn user_info(app: web::Data<State>, req: HttpRequest) -> impl Responde
     }
 
     HttpResponse::NotFound().into()
+}
+
+#[get("/api/exchange")]
+pub async fn exchange(req: HttpRequest, app: web::Data<State>) -> impl Responder {
+    // danii is italian so he must love this endpoint
+    let auth = match req.cookie("ETOKEN") {
+        Some(cookie) => cookie.value().to_string(),
+        None => match req.headers().get("Authorization") {
+            Some(data) => data.to_str().unwrap().replace("bearer ", ""),
+            None => return HttpResponse::BadRequest().into(),
+        }
+        .to_string(),
+    };
+
+    let tokens = app.tokens.read().unwrap();
+
+    if let Some(found) = tokens.get(&auth) {
+        let found = found.clone();
+        drop(tokens);
+
+        if let None = found.id {
+            return HttpResponse::Unauthorized().into();
+        }
+
+        let token = nanoid::nanoid!(32, &ALPHABET);
+        // It's generally a good idea to drop the RwLock as fast as possible
+        {
+            let mut tokens = app.tokens.write().unwrap();
+            tokens.insert(
+                token.clone(),
+                Token::new(found.id.as_ref().map(|s| s.clone()), TokenType::Exchange),
+            );
+        }
+
+        return HttpResponse::Ok().json(json!({ "code": token }));
+    } else if let Some(user) = app
+        .database
+        .users
+        .find_one(doc! { "login_token": auth }, None)
+        .await
+        .unwrap()
+    {
+        drop(tokens);
+        let token = nanoid::nanoid!(32, &ALPHABET);
+        {
+            let mut tokens = app.tokens.write().unwrap();
+            tokens.insert(
+                token.clone(),
+                Token::new(Some(user.id), TokenType::Exchange),
+            );
+        }
+
+        return HttpResponse::Ok().json(json!({ "code": token }));
+    }
+
+    HttpResponse::Unauthorized().into()
 }
