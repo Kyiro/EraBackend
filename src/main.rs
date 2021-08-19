@@ -46,13 +46,15 @@ async fn main() -> std::io::Result<()> {
             .service(version)
             .service(
                 web::scope("/account")
+                    .service(api::account::accounts_metadata)
                     .service(api::account::oauth_token)
                     .service(api::account::oauth_verify)
                     .service(api::account::external_auths)
                     .service(api::account::kill_sessions)
                     .service(api::account::kill_sessions_id)
                     .service(api::account::personal_account)
-                    .service(api::account::personal_account_query),
+                    .service(api::account::personal_account_query)
+                    .service(api::account::ssodomains),
             )
             .service(web::scope("/content").service(api::content::fortnite_game))
             .service(
@@ -66,6 +68,7 @@ async fn main() -> std::io::Result<()> {
                     .service(api::fortnite::catalog)
                     .service(api::fortnite::enabled_features)
                     .service(api::fortnite::find_player)
+                    .service(api::fortnite::fortnite_version)
                     .service(api::fortnite::keychain)
                     .service(api::fortnite::play_on_platform)
                     .service(api::fortnite::receipts)
@@ -77,8 +80,15 @@ async fn main() -> std::io::Result<()> {
                     .service(api::profile::query_profile)
                     .service(api::profile::other),
             )
+            .service(
+                web::scope("/lightswitch")
+                    .service(api::lightswitch::bulk_status)
+                    .service(api::lightswitch::fortnite_status)
+            )
+            .service(api::other::friends)
+            .service(api::other::blocklist)
+            .service(api::other::recent_players)
             .service(api::other::party_user)
-            .service(api::other::status)
             .service(api::other::waitingroom)
     })
     .bind(format!(

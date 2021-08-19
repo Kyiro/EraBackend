@@ -108,3 +108,20 @@ pub async fn keychain(app: web::Data<State>) -> impl Responder {
         .append_header(("content-type", "application/json"))
         .body(app.keychain.clone())
 }
+
+#[get("/api/version")]
+pub async fn fortnite_version() -> impl Responder {
+    HttpResponse::Ok()
+    .json(json!({
+        "app": "fortnite",
+        "serverDate": Utc::now().to_rfc3339_opts(SecondsFormat::Secs, true),
+        "overridePropertiesVersion": "unknown",
+        "cln": "2870186",
+        "build": "1",
+        "moduleName": "Fortnite-Core",
+        "buildDate": "2016-02-17T10:16:51.000Z",
+        "version": "4.12.0-2870186+++Fortnite+Release-Live",
+        "branch": "++Fortnite+Release-Live",
+        "modules": {}
+    }))
+}

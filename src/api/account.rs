@@ -1,5 +1,6 @@
 use crate::structs::account::*;
 use actix_web::{delete, get, post, web, HttpRequest, HttpResponse, Responder};
+use chrono::{prelude::*, Duration};
 use serde::Deserialize;
 use serde_json::json;
 
@@ -23,9 +24,25 @@ pub async fn oauth_token(body: web::Form<OAuthToken>, req: HttpRequest) -> impl 
     }
 }
 
-#[post("/api/oauth/verify")]
-pub async fn oauth_verify() -> impl Responder {
-    HttpResponse::NoContent()
+#[get("/api/oauth/verify")]
+pub async fn oauth_verify(req: HttpRequest) -> impl Responder {
+    let token = match req.headers().get("Authorization") {
+        Some(data) => data.to_str().unwrap().replace("bearer ", ""),
+        None => return HttpResponse::Unauthorized().into()
+    };
+    
+    HttpResponse::Ok().json(json!({
+        "token": token,
+        "token_type": "bearer",
+        "client_id": "3446cd72694c4a4485d81b77adbb2141",
+        "internal_client": true,
+        "client_service": "fortnite",
+        "expires_in": 2147483647,
+        "expires_at": (Utc::now() + Duration::minutes(2147483647))
+        .to_rfc3339_opts(SecondsFormat::Secs, true),
+        "app": "fortnite",
+        "scope": []
+    }))
 }
 
 #[get("/api/public/account/{id}")]
@@ -78,6 +95,11 @@ pub async fn external_auths() -> impl Responder {
     HttpResponse::Ok().json(Vec::<i8>::new())
 }
 
+#[get("/api/accounts/{i}/metadata")]
+pub async fn accounts_metadata() -> impl Responder {
+    HttpResponse::Ok().json(json!({}))
+}
+
 #[delete("/api/oauth/sessions/kill")]
 pub async fn kill_sessions() -> impl Responder {
     HttpResponse::NoContent()
@@ -86,4 +108,9 @@ pub async fn kill_sessions() -> impl Responder {
 #[delete("/api/oauth/sessions/kill/{i}")]
 pub async fn kill_sessions_id() -> impl Responder {
     HttpResponse::NoContent()
+}
+
+#[get("/api/epicdomains/ssodomains")]
+pub async fn ssodomains() -> impl Responder {
+    HttpResponse::Ok().json(Vec::<i8>::new())
 }
