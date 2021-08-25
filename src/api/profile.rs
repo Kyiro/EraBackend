@@ -86,7 +86,7 @@ pub struct EquipBattleRoyaleCustomization {
     #[serde(rename = "slotName")]
     pub slot_name: String,
     #[serde(rename = "indexWithinSlot")]
-    pub index: usize,
+    pub index: Option<usize>,
     #[serde(rename = "variantUpdates")]
     pub variants: Option<Vec<Variant>>,
 }
@@ -121,6 +121,8 @@ pub async fn equip_battle_royale(
             }
         }
     };
+    
+    let idx = body.index.unwrap_or(0);
 
     {
         // make new user if it doesn't exist
@@ -130,8 +132,8 @@ pub async fn equip_battle_royale(
 
         let slot = match body.slot_name.as_str() {
             "Character" => &mut profile.character,
-            "Dance" => &mut profile.dance[body.index],
-            "ItemWrap" => &mut profile.item_wrap[body.index],
+            "Dance" => &mut profile.dance[idx],
+            "ItemWrap" => &mut profile.item_wrap[idx],
             "Backpack" => &mut profile.backpack,
             "Pickaxe" => &mut profile.pickaxe,
             "Glider" => &mut profile.glider,
