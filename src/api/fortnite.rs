@@ -5,6 +5,13 @@ use chrono::prelude::*;
 use serde_json::{Value, json};
 
 #[get("/api/v2/versioncheck/{i}")]
+pub async fn version_check_v2() -> impl Responder {
+    HttpResponse::NoContent().json(json!({
+        "type": "NO_UPDATE"
+    }))
+}
+
+#[get("/api/versioncheck")]
 pub async fn version_check() -> impl Responder {
     HttpResponse::NoContent().json(json!({
         "type": "NO_UPDATE"
@@ -107,7 +114,7 @@ pub async fn play_on_platform() -> impl Responder {
 
 #[get("/api/matchmaking/session/findPlayer/{i}")]
 pub async fn find_player() -> impl Responder {
-    HttpResponse::Ok().json(json!({}))
+    HttpResponse::Ok()
 }
 
 #[get("/api/game/v2/world/info")]
