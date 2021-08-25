@@ -1,7 +1,7 @@
 use crate::structs::app::State;
 use crate::utils::get_season;
 use actix_web::{get, post, web, HttpRequest, HttpResponse, Responder};
-use chrono::prelude::*;
+use chrono::{Duration, prelude::*};
 use serde_json::{Value, json};
 
 #[get("/api/v2/versioncheck/{i}")]
@@ -32,8 +32,8 @@ pub async fn receipts() -> impl Responder {
 pub async fn catalog() -> impl Responder {
     HttpResponse::Ok().json(json!({
         "dailyPurchaseHrs": 24,
-        "expiration": "6104-07-28T13:21:45Z",
-        "refreshIntervalHrs": 1,
+        "expiration": "9999-01-01T22:28:47.830Z",
+        "refreshIntervalHrs": 24,
         "storefronts": [
             {
                 "name": "BRDailyStorefront",
@@ -131,6 +131,7 @@ pub async fn timeline(req: HttpRequest) -> impl Responder {
     // lol
     let useragent = req.headers().get("User-Agent").unwrap().to_str().unwrap();
     let season = get_season(useragent).unwrap_or("2");
+    let day = (Utc::now() + Duration::days(1)).to_rfc3339_opts(SecondsFormat::Secs, true);
 
     HttpResponse::Ok().json(json!({
       "channels": {
@@ -160,12 +161,12 @@ pub async fn timeline(req: HttpRequest) -> impl Responder {
                 "seasonTemplateId": format!("AthenaSeason:athenaseason{}", season),
                 "matchXpBonusPoints": 0,
                 "seasonBegin": "2000-01-01T10:00:00Z",
-                "seasonEnd": "9999-01-01T14:00:00Z",
-                "seasonDisplayedEnd": "9999-01-01T07:30:00Z",
-                "weeklyStoreEnd": "9999-01-01T00:00:00Z",
-                "stwEventStoreEnd": "9999-01-01T00:00:00.000Z",
-                "stwWeeklyStoreEnd": "9999-01-01T00:00:00.000Z",
-                "dailyStoreEnd": "9999-01-01T00:00:00Z"
+                "seasonEnd": day,
+                "seasonDisplayedEnd": day,
+                "weeklyStoreEnd": day,
+                "stwEventStoreEnd": day,
+                "stwWeeklyStoreEnd": day,
+                "dailyStoreEnd": day
               }
             }
           ],
