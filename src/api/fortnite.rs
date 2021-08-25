@@ -2,7 +2,7 @@ use crate::structs::app::State;
 use crate::utils::get_season;
 use actix_web::{get, post, web, HttpRequest, HttpResponse, Responder};
 use chrono::prelude::*;
-use serde_json::json;
+use serde_json::{Value, json};
 
 #[get("/api/v2/versioncheck/{i}")]
 pub async fn version_check() -> impl Responder {
@@ -27,8 +27,77 @@ pub async fn catalog() -> impl Responder {
         "dailyPurchaseHrs": 24,
         "expiration": "6104-07-28T13:21:45Z",
         "refreshIntervalHrs": 1,
-        "storefronts": Vec::<i8>::new()
+        "storefronts": [
+            {
+                "name": "BRDailyStorefront",
+                "catalogEntries": [
+                    item(None, "AthenaCharacter:CID_015_Athena_Commando_F", 800),
+                    item(None, "AthenaPickaxe:HalloweenScythe", 800),
+                    item(None, "AthenaCharacter:CID_010_Athena_Commando_M", 800),
+                    item(None, "AthenaCharacter:CID_012_Athena_Commando_M", 800),
+                ]
+            },
+            {
+                "name": "BRWeeklyStorefront",
+                "catalogEntries": [
+                    item(Some("DA_Featured_SFemaleHalloween"), "AthenaCharacter:CID_029_Athena_Commando_F_Halloween", 1500),
+                    item(Some("DA_Featured_SMaleHalloween"), "AthenaCharacter:CID_030_Athena_Commando_M_Halloween", 1200)
+                ]
+            }
+        ]
     }))
+}
+
+pub fn item(da: Option<&str>, id: &str, price: i32) -> Value {
+    json!({
+        "devName":  id,
+        "offerId": "v2:/erabackend",
+        "fulfillmentIds": [],
+        "dailyLimit": -1,
+        "weeklyLimit": -1,
+        "monthlyLimit": -1,
+        "categories": [],
+        "prices": [
+            {
+                "currencyType": "MtxCurrency",
+                "currencySubType": "",
+                "regularPrice": price,
+                "finalPrice": price,
+                "saleExpiration": "9999-12-31T23:59:59.999Z",
+                "basePrice": price
+            }
+        ],
+        "matchFilter": "",
+        "filterWeight": 0,
+        "appStoreId": [],
+        "requirements": [
+            {
+                "requirementType": "DenyOnItemOwnership",
+                "requiredId":  id,
+                "minQuantity": 1
+            }
+        ],
+        "offerType": "StaticPrice",
+        "giftInfo": {
+            "bIsEnabled": false,
+            "forcedGiftBoxTemplateId": "",
+            "purchaseRequirements": [],
+            "giftRecordIds": []
+        },
+        "refundable": true,
+        "metaInfo": [],
+        "displayAssetPath": if let Some(da) = da {
+            "/Game/Catalog/DisplayAssets/".to_owned() + da + "." + da
+        } else { String::new() },
+        "itemGrants": [
+            {
+                "templateId":  id,
+                "quantity": 1
+            }
+        ],
+        "sortPriority": 0,
+        "catalogGroupPriority": 0
+    })
 }
 
 #[post("/api/game/v2/tryPlayOnPlatform/account/{i}")]
@@ -38,7 +107,7 @@ pub async fn play_on_platform() -> impl Responder {
 
 #[get("/api/matchmaking/session/findPlayer/{i}")]
 pub async fn find_player() -> impl Responder {
-    HttpResponse::Ok()
+    HttpResponse::Ok().json(json!({}))
 }
 
 #[get("/api/game/v2/world/info")]
