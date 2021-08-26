@@ -1,8 +1,8 @@
-use crate::structs::app::State;
-use crate::utils::get_season;
+use crate::utils::get_build;
+use crate::{structs::app::State, utils::Build};
 use actix_web::{get, post, web, HttpRequest, HttpResponse, Responder};
-use chrono::{Duration, prelude::*};
-use serde_json::{Value, json};
+use chrono::{prelude::*, Duration};
+use serde_json::{json, Value};
 
 #[get("/api/v2/versioncheck/{i}")]
 pub async fn version_check_v2() -> impl Responder {
@@ -35,6 +35,15 @@ pub async fn catalog() -> impl Responder {
         "expiration": "9999-01-01T22:28:47.830Z",
         "refreshIntervalHrs": 24,
         "storefronts": [
+            {
+                "name": "BRSeasonalStorefront",
+                "catalogEntries": [
+                    item(None, "AthenaCharacter:CID_015_Athena_Commando_F", 800),
+                    item(None, "AthenaPickaxe:HalloweenScythe", 800),
+                    item(None, "AthenaCharacter:CID_010_Athena_Commando_M", 800),
+                    item(None, "AthenaCharacter:CID_012_Athena_Commando_M", 800),
+                ]
+            },
             {
                 "name": "BRDailyStorefront",
                 "catalogEntries": [
@@ -130,7 +139,7 @@ pub async fn world_info() -> impl Responder {
 pub async fn timeline(req: HttpRequest) -> impl Responder {
     // lol
     let useragent = req.headers().get("User-Agent").unwrap().to_str().unwrap();
-    let season = get_season(useragent).unwrap_or("2");
+    let build = get_build(useragent).unwrap_or(Build::default());
     let day = (Utc::now() + Duration::days(1)).to_rfc3339_opts(SecondsFormat::Secs, true);
 
     HttpResponse::Ok().json(json!({
@@ -141,14 +150,18 @@ pub async fn timeline(req: HttpRequest) -> impl Responder {
               "validFrom": "2000-01-01T10:00:00Z",
               "activeEvents": [
                 {
-                  "eventType": format!("EventFlag.Season{}", season.clone()),
+                  "eventType": format!("EventFlag.Season{}", build.season),
                   "activeUntil": "9999-01-01T22:28:47.830Z",
                   "activeSince": "2000-01-01T10:00:00Z"
                 },
                 {
-                  "eventType": match season {
-                      "1" | "2" => String::from("EventFlag.LobbyWinterDecor"),
-                      _ => format!("EventFlag.LobbySeason{}", season.clone())
+                  "eventType": match build.season {
+                      1 | 2 => String::from("EventFlag.LobbyWinterDecor"),
+                      _ => if build.patch == Some(6.21) {
+                        String::from("EventFlag.LobbySeason6Halloween")
+                      } else {
+                          format!("EventFlag.LobbySeason{}", build.season)
+                        }
                   },
                   "activeUntil": "9999-01-01T22:28:47.830Z",
                   "activeSince": "2000-01-01T10:00:00Z"
@@ -157,8 +170,8 @@ pub async fn timeline(req: HttpRequest) -> impl Responder {
               "state": {
                 "activeStorefronts": [],
                 "eventNamedWeights": {},
-                "seasonNumber": season.parse::<i32>().unwrap_or(2),
-                "seasonTemplateId": format!("AthenaSeason:athenaseason{}", season),
+                "seasonNumber": build.season,
+                "seasonTemplateId": format!("AthenaSeason:athenaseason{}", build.season),
                 "matchXpBonusPoints": 0,
                 "seasonBegin": "2000-01-01T10:00:00Z",
                 "seasonEnd": day,
@@ -188,8 +201,7 @@ pub async fn keychain(app: web::Data<State>) -> impl Responder {
 
 #[get("/api/version")]
 pub async fn fortnite_version() -> impl Responder {
-    HttpResponse::Ok()
-    .json(json!({
+    HttpResponse::Ok().json(json!({
         "app": "fortnite",
         "serverDate": Utc::now().to_rfc3339_opts(SecondsFormat::Secs, true),
         "overridePropertiesVersion": "unknown",

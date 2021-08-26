@@ -84,7 +84,7 @@ async fn main() -> std::io::Result<()> {
             .service(
                 web::scope("/lightswitch")
                     .service(api::lightswitch::bulk_status)
-                    .service(api::lightswitch::fortnite_status)
+                    .service(api::lightswitch::fortnite_status),
             )
             .service(api::other::friends)
             .service(api::other::blocklist)

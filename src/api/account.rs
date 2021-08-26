@@ -28,9 +28,9 @@ pub async fn oauth_token(body: web::Form<OAuthToken>, req: HttpRequest) -> impl 
 pub async fn oauth_verify(req: HttpRequest) -> impl Responder {
     let token = match req.headers().get("Authorization") {
         Some(data) => data.to_str().unwrap().replace("bearer ", ""),
-        None => return HttpResponse::Unauthorized().into()
+        None => return HttpResponse::Unauthorized().into(),
     };
-    
+
     HttpResponse::Ok().json(json!({
         "token": token,
         "token_type": "bearer",

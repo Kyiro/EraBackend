@@ -88,7 +88,7 @@ impl FullProfile {
         }
     }
 
-    pub fn new_athena(cosmetics: &Vec<CItem>, id: &str, profile: User, season: i32) -> Self {
+    pub fn new_athena(cosmetics: &Vec<CItem>, id: &str, profile: User, season: usize) -> Self {
         let mut full_profile = Self::new(id);
 
         full_profile.profile.stats.attributes = StatsAttributes::Athena(AthenaAttributes {
@@ -276,7 +276,7 @@ pub struct AthenaAttributes {
     pub rested_xp_overflow: i32,
     pub quest_manager: Value,
     pub book_level: i32,
-    pub season_num: i32,
+    pub season_num: usize,
     pub book_xp: i32,
     pub permissions: Vec<Value>,
     pub season: Value,
