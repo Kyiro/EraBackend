@@ -35,6 +35,7 @@ async fn main() -> std::io::Result<()> {
         state.cosmetics = files::cosmetics();
         state.game = files::game();
         state.keychain = files::keychain();
+        state.shops = files::shops();
 
         state
     });

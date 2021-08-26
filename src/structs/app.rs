@@ -2,13 +2,24 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::sync::{Arc, RwLock};
 
+pub type Shops = HashMap<usize, HashMap<String, Vec<ShopItem>>>;
+
 #[derive(Clone)]
 pub struct State {
     pub cosmetics: Vec<CItem>,
     pub game: String,
     pub keychain: String,
+    pub shops: Shops,
     // Yeah! Um...
     pub users: Arc<RwLock<HashMap<String, User>>>,
+}
+
+#[derive(Clone, Deserialize)]
+pub struct ShopItem {
+    pub id: String,
+    pub da: Option<String>,
+    pub price: usize,
+    pub categories: Option<Vec<String>>
 }
 
 impl State {
@@ -17,6 +28,7 @@ impl State {
             cosmetics: Vec::new(),
             game: String::new(),
             keychain: String::new(),
+            shops: Shops::new(),
             users: Arc::new(RwLock::new(HashMap::new())),
         }
     }

@@ -42,20 +42,10 @@ pub async fn query_profile(
     let build = get_build(useragent).unwrap_or(Build::default());
 
     match query.profile_id.as_str() {
-        "athena" => HttpResponse::Ok().json(create(
+        "athena" | "profile0"=> HttpResponse::Ok().json(create(
             query.profile_id,
             vec![ProfileChanges::Full(FullProfile::new_athena(
                 &app.cosmetics,
-                &id,
-                app.get_user(&id),
-                build.season,
-            ))],
-            None,
-        )),
-        "profile0" => HttpResponse::Ok().json(create(
-            query.profile_id,
-            vec![ProfileChanges::Full(FullProfile::new_athena(
-                &Vec::new(),
                 &id,
                 app.get_user(&id),
                 build.season,

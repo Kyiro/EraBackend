@@ -1,0 +1,166 @@
+{
+    "1": {
+        "BRDailyStorefront": [
+            {
+                "id": "AthenaCharacter:CID_015_Athena_Commando_F",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaPickaxe:HalloweenScythe",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaCharacter:CID_010_Athena_Commando_M",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaCharacter:CID_012_Athena_Commando_M",
+                "da": null,
+                "price": 800
+            }
+        ],
+        "BRWeeklyStorefront": [
+            {
+                "id": "AthenaCharacter:CID_029_Athena_Commando_F_Halloween",
+                "da": "DA_Featured_SFemaleHalloween",
+                "price": 1500
+            },
+            {
+                "id": "AthenaCharacter:CID_030_Athena_Commando_M_Halloween",
+                "da": "DA_Featured_SMaleHalloween",
+                "price": 1500
+            }
+        ]
+    },
+    "2": {
+        "BRDailyStorefront": [
+            {
+                "id": "AthenaCharacter:CID_048_Athena_Commando_F_HolidayGingerbread",
+                "da": null,
+                "price": 1500
+            },
+            {
+                "id": "AthenaCharacter:CID_044_Athena_Commando_F_SciPop",
+                "da": null,
+                "price": 1200
+            },
+            {
+                "id": "AthenaGlider:Glider_ID_009_CandyCoat",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaCharacter:CID_045_Athena_Commando_M_HolidaySweater",
+                "da": null,
+                "price": 800
+            }
+        ],
+        "BRWeeklyStorefront": [
+            {
+                "id": "AthenaCharacter:CID_051_Athena_Commando_M_HolidayElf",
+                "da": "DA_Featured_SMaleHID051",
+                "price": 1200
+            },
+            {
+                "id": "AthenaGlider:Glider_ID_005_HolidaySweater",
+                "da": "DA_Featured_Glider_ID_005_HolidaySweater",
+                "price": 800
+            }
+        ]
+    },
+    "3": {
+        "BRDailyStorefront": [
+            {
+                "id": "AthenaDance:EID_BreakDance",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaCharacter:CID_037_Athena_Commando_F_WinterCamo",
+                "da": null,
+                "price": 1200
+            },
+            {
+                "id": "AthenaPickaxe:Pickaxe_ID_021_Megalodon",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaDance:EID_Dab",
+                "da": null,
+                "price": 500
+            },
+            {
+                "id": "AthenaCharacter:CID_012_Athena_Commando_M",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaGlider:Glider_Stealth",
+                "da": null,
+                "price": 500
+            }
+        ],
+        "BRWeeklyStorefront": [
+            {
+                "id": "AthenaCharacter:CID_071_Athena_Commando_M_Wukong",
+                "da": "DA_Featured_CID_071_Athena_Commando_M_Wukong",
+                "price": 2000
+            },
+            {
+                "id": "AthenaGlider:Glider_ID_014_Dragon",
+                "da": "DA_Featured_Glider_ID_014_Dragon",
+                "price": 2000
+            }
+        ]
+    },
+    "4": {
+        "BRDailyStorefront": [
+            {
+                "id": "AthenaDance:EID_DiscoFever",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaCharacter:CID_076_Athena_Commando_F_Sup",
+                "da": null,
+                "price": 1200
+            },
+            {
+                "id": "AthenaCharacter:CID_023_Athena_Commando_F",
+                "da": null,
+                "price": 1200
+            },
+            {
+                "id": "AthenaPickaxe:Pickaxe_ID_030_ArtDeco",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaGlider:Glider_ID_009_CandyCoat",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaDance:EID_HeelClick",
+                "da": null,
+                "price": 200
+            }
+        ],
+        "BRWeeklyStorefront": [
+            {
+                "id": "AthenaCharacter:CID_108_Athena_Commando_M_Fishhead",
+                "da": "DA_Featured_CID_108_Athena_Commando_M_Fishhead",
+                "price": 2000
+            },
+            {
+                "id": "AthenaGlider:Glider_ID_027_Satelite",
+                "da": "DA_Featured_Glider_ID_027_Satelite",
+                "price": 1200
+            }
+        ]
+    }
+}

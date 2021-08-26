@@ -1,4 +1,4 @@
-use crate::structs::app::CItem;
+use crate::structs::app::{CItem, Shops};
 use std::fs::read_to_string;
 
 pub fn cosmetics() -> Vec<CItem> {
@@ -17,4 +17,12 @@ pub fn game() -> String {
 pub fn keychain() -> String {
     read_to_string("keychain.json")
         .unwrap_or(include_str!("../resources/keychain.json").to_string())
+}
+
+pub fn shops() -> Shops {
+    serde_json::from_str(
+        &read_to_string("shops.json")
+            .unwrap_or(include_str!("../resources/shops.json").to_string()),
+    )
+    .unwrap_or(Shops::new())
 }

@@ -93,7 +93,7 @@ impl FullProfile {
 
         full_profile.profile.stats.attributes = StatsAttributes::Athena(AthenaAttributes {
             past_seasons: Vec::new(),
-            season_match_boost: 0,
+            season_match_boost: 120,
             mfa_reward_claimed: true,
             rested_xp_overflow: 0,
             quest_manager: json!({
@@ -125,7 +125,7 @@ impl FullProfile {
             inventory_limit_bonus: 0,
             daily_rewards: json!({}),
             xp: 9999999,
-            season_friend_match_boost: 0,
+            season_friend_match_boost: 40,
             // cosmetics
             favorite_character: profile.character,
             favorite_backpack: profile.backpack,

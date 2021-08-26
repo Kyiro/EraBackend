@@ -1,5 +1,5 @@
 use crate::utils::get_build;
-use crate::{structs::app::State, utils::Build};
+use crate::{structs::app::{ShopItem, State}, utils::Build};
 use actix_web::{get, post, web, HttpRequest, HttpResponse, Responder};
 use chrono::{prelude::*, Duration};
 use serde_json::{json, Value};
@@ -29,58 +29,58 @@ pub async fn receipts() -> impl Responder {
 }
 
 #[get("/api/storefront/v2/catalog")]
-pub async fn catalog() -> impl Responder {
+pub async fn catalog(
+    app: web::Data<State>,
+    req: HttpRequest
+) -> impl Responder {
+    let useragent = req.headers().get("User-Agent").unwrap().to_str().unwrap();
+    let build = get_build(useragent).unwrap_or(Build::default());
+    // too lazy to structure it all
+    let mut storefronts = Vec::<Value>::new();
+    
+    let shop = match app.shops.get(&build.season) {
+        Some(shop) => shop,
+        None => app.shops.get(&1).unwrap()
+    };
+    
+    for (shop, items) in shop {
+        let mut storefront = Vec::<Value>::new();
+        for item in items {
+            storefront.push(gen_item(item));
+        }
+        storefronts.push(json!({
+            "name": shop,
+            "catalogEntries": storefront
+        }));
+    }
+    
     HttpResponse::Ok().json(json!({
         "dailyPurchaseHrs": 24,
         "expiration": "9999-01-01T22:28:47.830Z",
         "refreshIntervalHrs": 24,
-        "storefronts": [
-            {
-                "name": "BRSeasonalStorefront",
-                "catalogEntries": [
-                    item(None, "AthenaCharacter:CID_015_Athena_Commando_F", 800),
-                    item(None, "AthenaPickaxe:HalloweenScythe", 800),
-                    item(None, "AthenaCharacter:CID_010_Athena_Commando_M", 800),
-                    item(None, "AthenaCharacter:CID_012_Athena_Commando_M", 800),
-                ]
-            },
-            {
-                "name": "BRDailyStorefront",
-                "catalogEntries": [
-                    item(None, "AthenaCharacter:CID_015_Athena_Commando_F", 800),
-                    item(None, "AthenaPickaxe:HalloweenScythe", 800),
-                    item(None, "AthenaCharacter:CID_010_Athena_Commando_M", 800),
-                    item(None, "AthenaCharacter:CID_012_Athena_Commando_M", 800),
-                ]
-            },
-            {
-                "name": "BRWeeklyStorefront",
-                "catalogEntries": [
-                    item(Some("DA_Featured_SFemaleHalloween"), "AthenaCharacter:CID_029_Athena_Commando_F_Halloween", 1500),
-                    item(Some("DA_Featured_SMaleHalloween"), "AthenaCharacter:CID_030_Athena_Commando_M_Halloween", 1200)
-                ]
-            }
-        ]
+        "storefronts": storefronts
     }))
 }
 
-pub fn item(da: Option<&str>, id: &str, price: i32) -> Value {
+pub fn gen_item(item: &ShopItem) -> Value {
     json!({
-        "devName":  id,
+        "devName":  item.id.clone(),
         "offerId": "v2:/erabackend",
         "fulfillmentIds": [],
         "dailyLimit": -1,
         "weeklyLimit": -1,
         "monthlyLimit": -1,
-        "categories": [],
+        "categories": if let Some(categories) = item.categories.clone() {
+            categories
+        } else { Vec::new() },
         "prices": [
             {
                 "currencyType": "MtxCurrency",
                 "currencySubType": "",
-                "regularPrice": price,
-                "finalPrice": price,
+                "regularPrice": item.price,
+                "finalPrice": item.price,
                 "saleExpiration": "9999-12-31T23:59:59.999Z",
-                "basePrice": price
+                "basePrice": item.price
             }
         ],
         "matchFilter": "",
@@ -89,7 +89,7 @@ pub fn item(da: Option<&str>, id: &str, price: i32) -> Value {
         "requirements": [
             {
                 "requirementType": "DenyOnItemOwnership",
-                "requiredId":  id,
+                "requiredId": item.id,
                 "minQuantity": 1
             }
         ],
@@ -102,12 +102,12 @@ pub fn item(da: Option<&str>, id: &str, price: i32) -> Value {
         },
         "refundable": true,
         "metaInfo": [],
-        "displayAssetPath": if let Some(da) = da {
-            "/Game/Catalog/DisplayAssets/".to_owned() + da + "." + da
+        "displayAssetPath": if let Some(da) = item.da.clone() {
+            "/Game/Catalog/DisplayAssets/".to_owned() + &da + "." + &da
         } else { String::new() },
         "itemGrants": [
             {
-                "templateId":  id,
+                "templateId":  item.id,
                 "quantity": 1
             }
         ],
