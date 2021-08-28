@@ -26,6 +26,7 @@ pub enum ProfileChanges {
     Full(FullProfile),
     Changed(AttrChanged),
     Stat(StatModified),
+    Other(Value)
 }
 
 #[derive(Serialize, Deserialize)]
@@ -65,7 +66,7 @@ pub struct FullProfile {
 }
 
 impl FullProfile {
-    pub fn new(id: &str) -> Self {
+    pub fn new(id: &str, profile: &str) -> Self {
         let id = String::from(id);
         let now = Utc::now().to_rfc3339_opts(SecondsFormat::Secs, true);
         Self {
@@ -77,8 +78,8 @@ impl FullProfile {
                 rvn: 1,
                 wipeNumber: 1,
                 accountId: id,
-                profileId: String::from("athena"),
-                version: String::from("EraBackend by Kyiro"),
+                profileId: String::from(profile),
+                version: String::from("era_backend"),
                 items: HashMap::new(),
                 stats: Stats {
                     attributes: StatsAttributes::None,
@@ -89,7 +90,7 @@ impl FullProfile {
     }
 
     pub fn new_athena(cosmetics: &Vec<CItem>, id: &str, profile: User, season: usize) -> Self {
-        let mut full_profile = Self::new(id);
+        let mut full_profile = Self::new(id, "athena");
 
         full_profile.profile.stats.attributes = StatsAttributes::Athena(AthenaAttributes {
             past_seasons: Vec::new(),
@@ -171,7 +172,7 @@ impl FullProfile {
     }
 
     pub fn new_common_core(id: &str) -> Self {
-        let mut full_profile = Self::new(id);
+        let mut full_profile = Self::new(id, "common_core");
 
         full_profile.profile.stats.attributes = StatsAttributes::CommonCore(CommonCoreAttributes {
             survey_data: json!({}),
@@ -201,13 +202,104 @@ impl FullProfile {
     }
 
     pub fn new_common_public(id: &str) -> Self {
-        let mut full_profile = Self::new(id);
+        let mut full_profile = Self::new(id, "common_public");
 
         full_profile.profile.stats.attributes =
             StatsAttributes::CommonPublic(CommonPublicAttributes {
                 banner_color: String::from(""),
                 banner_icon: String::from(""),
                 homebase_name: String::from("Project Era"),
+            });
+
+        full_profile
+    }
+    
+    pub fn new_profile0(id: &str) -> Self {
+        let mut full_profile = Self::new(id, "profile0");
+        
+        // full_profile.profile.items.insert(
+        //     String::from("Hero:hid_commando_athena_menu"),
+        //     Item::Other(json!({
+        //         "templateId": "Hero:hid_commando_athena_menu",
+        //         "attributes": {
+        //             "equipped_cosmetics": [
+        //                 "",
+        //                 "",
+        //                 "",
+        //                 "",
+        //                 "",
+        //                 "",
+        //                 "",
+        //                 ""
+        //             ],
+        //             "gender": 0,
+        //             "level": 1,
+        //             "item_seen": true,
+        //             "squad_slot_idx": 0,
+        //             "portrait": "",
+        //             "hero_name": "DefaultHeroName",
+        //             "max_level_bonus": 0,
+        //             "mode_loadouts": [
+        //                 {
+        //                     "loadoutName": "Default",
+        //                     "selectedGadgets": [
+        //                         "",
+        //                         "",
+        //                         ""
+        //                     ]
+        //                 }
+        //             ],
+        //             "squad_id": "",
+        //             "xp": 0,
+        //             "slotted_building_id": "",
+        //             "building_slot_used": -1,
+        //             "favorite": false
+        //         },
+        //         "quantity": 1
+        //     }))
+        // );
+        
+        // this could be improved but it's good for now
+        full_profile.profile.stats.attributes =
+            StatsAttributes::Profile0(Profile0Attributes {
+                node_costs: json!({}),
+                mission_alert_redemption_record: json!({}),
+                twitch: json!({}),
+                client_settings: json!({}),
+                level: 0,
+                named_counters: json!({
+                    "SubGameSelectCount_Campaign": {
+                        "current_count": 0
+                    },
+                    "SubGameSelectCount_Athena": {
+                        "current_count": 0
+                    }
+                }),
+                default_hero_squad_id: String::new(),
+                collection_book: json!({}),
+                quest_manager: json!({
+                    "dailyLoginInterval": "2017-01-01T01:00:00.602Z",
+                    "dailyQuestRerolls": 1
+                }),
+                bans: json!({}),
+                gameplay_stats: Vec::new(),
+                inventory_limit_bonus: 0,
+                current_mtx_platform: String::from("Epic"),
+                weekly_purchases: json!({}),
+                daily_purchases: json!({}),
+                mode_loadouts: Vec::new(),
+                in_app_purchases: json!({}),
+                daily_rewards: json!({}),
+                monthly_purchases: json!({}),
+                xp: 0,
+                homebase: json!({
+                    "townName": "ProjectEra",
+                    "bannerIconId": "",
+                    "bannerColorId": "",
+                    "flagPattern": -1,
+                    "flagColor": -1
+                }),
+                packs_granted: 0
             });
 
         full_profile
@@ -262,9 +354,9 @@ pub struct Stats {
 #[serde(untagged)]
 pub enum StatsAttributes {
     Athena(AthenaAttributes),
-    Campaign(CampaignAttributes),
     CommonCore(CommonCoreAttributes),
     CommonPublic(CommonPublicAttributes),
+    Profile0(Profile0Attributes),
     None,
 }
 
@@ -319,32 +411,6 @@ pub struct AthenaAttributes {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct CampaignAttributes {
-    pub node_costs: Value,
-    pub mission_alert_redemption_record: Value,
-    pub rewards_claimed_post_max_level: i32,
-    pub collection_book: Value,
-    pub mfa_reward_claimed: bool,
-    pub quest_manager: Value,
-    pub legacy_research_points_spent: i32,
-    pub gameplay_stats: Vec<Value>,
-    pub permissions: Vec<Value>,
-    pub unslot_mtx_spend: i32,
-    pub twitch: Value,
-    pub client_settings: Value,
-    pub research_levels: Value,
-    pub level: i32,
-    pub xp_overflow: i32,
-    pub latent_xp_marker: i32,
-    pub inventory_limit_bonus: i32,
-    pub xp_lost: i32,
-    pub mode_loadouts: Vec<Value>,
-    pub daily_rewards: Value,
-    pub xp: i32,
-    pub packs_granted: i32,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct CommonCoreAttributes {
     pub survey_data: Value,
     pub personal_offers: Value,
@@ -377,9 +443,36 @@ pub struct CommonPublicAttributes {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct Profile0Attributes {
+    pub node_costs: Value,
+    pub mission_alert_redemption_record: Value,
+    pub twitch: Value,
+    pub client_settings: Value,
+    pub level: i32,
+    pub named_counters: Value,
+    pub default_hero_squad_id: String,
+    pub collection_book: Value,
+    pub quest_manager: Value,
+    pub bans: Value,
+    pub gameplay_stats: Vec<Value>,
+    pub inventory_limit_bonus: i32,
+    pub current_mtx_platform: String,
+    pub weekly_purchases: Value,
+    pub daily_purchases: Value,
+    pub mode_loadouts: Vec<Value>,
+    pub in_app_purchases: Value,
+    pub daily_rewards: Value,
+    pub monthly_purchases: Value,
+    pub xp: i32,
+    pub homebase: Value,
+    pub packs_granted: i32
+}
+
+#[derive(Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum Item {
     Cosmetic(CosmeticItem),
+    Other(Value)
 }
 
 #[derive(Serialize, Deserialize)]

@@ -214,3 +214,8 @@ pub async fn fortnite_version() -> impl Responder {
         "modules": {}
     }))
 }
+
+#[get("/api/game/v2/twitch/{i}")]
+pub async fn twitch() -> impl Responder {
+    HttpResponse::Ok().json(json!({}))
+}

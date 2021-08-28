@@ -42,7 +42,7 @@ pub async fn query_profile(
     let build = get_build(useragent).unwrap_or(Build::default());
 
     match query.profile_id.as_str() {
-        "athena" | "profile0"=> HttpResponse::Ok().json(create(
+        "athena" => HttpResponse::Ok().json(create(
             query.profile_id,
             vec![ProfileChanges::Full(FullProfile::new_athena(
                 &app.cosmetics,
@@ -51,6 +51,11 @@ pub async fn query_profile(
                 build.season,
             ))],
             None,
+        )),
+        "profile0" => HttpResponse::Ok().json(create(
+            query.profile_id,
+            vec![ProfileChanges::Full(FullProfile::new_profile0(&id))],
+            None
         )),
         "common_core" => HttpResponse::Ok().json(create(
             query.profile_id,
@@ -62,7 +67,11 @@ pub async fn query_profile(
             vec![ProfileChanges::Full(FullProfile::new_common_public(&id))],
             None,
         )),
-        _ => HttpResponse::Ok().json(create(query.profile_id, Vec::new(), None)),
+        _ => HttpResponse::Ok().json(create(
+            query.profile_id.clone(),
+            vec![ProfileChanges::Full(FullProfile::new(&id, &query.profile_id))],
+            Some(query.rvn)
+        )),
     }
 }
 

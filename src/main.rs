@@ -74,6 +74,7 @@ async fn main() -> std::io::Result<()> {
                     .service(api::fortnite::play_on_platform)
                     .service(api::fortnite::receipts)
                     .service(api::fortnite::timeline)
+                    .service(api::fortnite::twitch)
                     .service(api::fortnite::version_check)
                     .service(api::fortnite::version_check_v2)
                     .service(api::fortnite::world_info)
@@ -87,6 +88,8 @@ async fn main() -> std::io::Result<()> {
                     .service(api::lightswitch::bulk_status)
                     .service(api::lightswitch::fortnite_status),
             )
+            .service(api::other::eulatracking)
+            .service(api::other::datarouter)
             .service(api::other::friends)
             .service(api::other::blocklist)
             .service(api::other::recent_players)

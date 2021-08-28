@@ -1,4 +1,4 @@
-use actix_web::{get, HttpResponse, Responder};
+use actix_web::{get, post, HttpResponse, Responder};
 use serde_json::json;
 
 #[get("/waitingroom/api/waitingroom")]
@@ -31,4 +31,14 @@ pub async fn blocklist() -> impl Responder {
     HttpResponse::Ok().json(json!({
         "blockedUsers": []
     }))
+}
+
+#[post("/datarouter/api/v1/public/data")]
+pub async fn datarouter() -> impl Responder {
+    HttpResponse::NoContent().json(json!({}))
+}
+
+#[get("/eulatracking/api/shared/agreements/fn")]
+pub async fn eulatracking() -> impl Responder {
+    HttpResponse::NoContent().json(json!({}))
 }
