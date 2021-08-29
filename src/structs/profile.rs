@@ -173,6 +173,17 @@ impl FullProfile {
 
     pub fn new_common_core(id: &str) -> Self {
         let mut full_profile = Self::new(id, "common_core");
+        
+        full_profile.profile.items.insert(
+            String::from("Currency:MtxComplimentary"),
+            Item::Other(json!({
+                "templateId": "Currency:MtxComplimentary",
+                "attributes": {
+                    "platform": "Shared"
+                },
+                "quantity": 13500
+            }))
+        );
 
         full_profile.profile.stats.attributes = StatsAttributes::CommonCore(CommonCoreAttributes {
             survey_data: json!({}),
@@ -216,6 +227,17 @@ impl FullProfile {
     
     pub fn new_profile0(id: &str) -> Self {
         let mut full_profile = Self::new(id, "profile0");
+        
+        full_profile.profile.items.insert(
+            String::from("Currency:MtxComplimentary"),
+            Item::Other(json!({
+                "templateId": "Currency:MtxComplimentary",
+                "attributes": {
+                    "platform": "Shared"
+                },
+                "quantity": 13500
+            }))
+        );
         
         // full_profile.profile.items.insert(
         //     String::from("Hero:hid_commando_athena_menu"),

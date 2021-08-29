@@ -120,32 +120,32 @@
     "4": {
         "BRDailyStorefront": [
             {
-                "id": "AthenaDance:EID_DiscoFever",
+                "id": "Token:AthenaBattlePassStarSale_S4_v1",
                 "da": null,
-                "price": 800
+                "price": 900
             },
             {
-                "id": "AthenaCharacter:CID_076_Athena_Commando_F_Sup",
+                "id": "AthenaBackpack:BID_027_Scavenger",
+                "da": null,
+                "price": 0
+            },
+            {
+                "id": "AthenaCharacter:CID_025_Athena_Commando_M",
                 "da": null,
                 "price": 1200
             },
             {
-                "id": "AthenaCharacter:CID_023_Athena_Commando_F",
-                "da": null,
-                "price": 1200
-            },
-            {
-                "id": "AthenaPickaxe:Pickaxe_ID_030_ArtDeco",
+                "id": "AthenaPickaxe:Pickaxe_ID_023_SkiBoot",
                 "da": null,
                 "price": 800
             },
             {
-                "id": "AthenaGlider:Glider_ID_009_CandyCoat",
+                "id": "AthenaDance:EID_TapShuffle",
                 "da": null,
-                "price": 800
+                "price": 500
             },
             {
-                "id": "AthenaDance:EID_HeelClick",
+                "id": "AthenaDance:EID_RockPaperScissors",
                 "da": null,
                 "price": 200
             }
