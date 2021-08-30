@@ -10,7 +10,7 @@ pub const VERSION: &'static str = "1.2";
 
 #[get("/")]
 async fn index() -> impl Responder {
-    HttpResponse::PermanentRedirect()
+    HttpResponse::TemporaryRedirect()
         .append_header(("Location", "https://erafn.glitch.me/"))
         .finish()
 }
@@ -33,6 +33,7 @@ async fn main() -> std::io::Result<()> {
         let mut state = structs::app::State::new();
 
         state.cosmetics = files::cosmetics();
+        state.events = files::events();
         state.game = files::game();
         state.keychain = files::keychain();
         state.shops = files::shops();
@@ -89,6 +90,7 @@ async fn main() -> std::io::Result<()> {
                     .service(api::lightswitch::fortnite_status),
             )
             .service(api::other::eulatracking)
+            .service(api::other::events)
             .service(api::other::datarouter)
             .service(api::other::friends)
             .service(api::other::blocklist)

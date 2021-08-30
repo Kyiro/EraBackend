@@ -144,13 +144,17 @@ pub async fn equip_battle_royale(
 
     let mut changes: Vec<ProfileChanges> = Vec::new();
 
+    let favorite_slot = if body.slot_name == "ItemWrap" {
+        String::from("itemwraps")
+    } else { body.slot_name.to_lowercase() };
+    
     changes.push(ProfileChanges::Stat(StatModified {
         changeType: String::from("statModified"),
-        name: ["favorite", &body.slot_name.to_lowercase()].join("_"),
-        value: if &body.slot_name == "Dance" || &body.slot_name == "ItemWrap" {
-            StatValue::Vec(app.get_user(&id).dance.to_vec())
-        } else {
-            StatValue::String(body.item_to_slot.clone())
+        name: "favorite_".to_owned() + &favorite_slot,
+        value: match body.slot_name.as_str() {
+            "Dance" => StatValue::Vec(app.get_user(&id).dance.to_vec()),
+            "ItemWrap" => StatValue::Vec(app.get_user(&id).item_wrap.to_vec()),
+            _ => StatValue::String(body.item_to_slot.clone())
         },
     }));
 

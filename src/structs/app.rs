@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+use serde_json::{json, Value};
 use std::collections::HashMap;
 use std::sync::{Arc, RwLock};
 
@@ -7,6 +8,7 @@ pub type Shops = HashMap<usize, HashMap<String, Vec<ShopItem>>>;
 #[derive(Clone)]
 pub struct State {
     pub cosmetics: Vec<CItem>,
+    pub events: Value,
     pub game: String,
     pub keychain: String,
     pub shops: Shops,
@@ -26,6 +28,7 @@ impl State {
     pub fn new() -> Self {
         Self {
             cosmetics: Vec::new(),
+            events: json!({}),
             game: String::new(),
             keychain: String::new(),
             shops: Shops::new(),

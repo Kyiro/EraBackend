@@ -1,4 +1,5 @@
-use actix_web::{get, post, HttpResponse, Responder};
+use actix_web::{get, post, HttpResponse, Responder, web};
+use crate::structs::app;
 use serde_json::json;
 
 #[get("/waitingroom/api/waitingroom")]
@@ -41,4 +42,9 @@ pub async fn datarouter() -> impl Responder {
 #[get("/eulatracking/api/shared/agreements/fn")]
 pub async fn eulatracking() -> impl Responder {
     HttpResponse::NoContent().json(json!({}))
+}
+
+#[get("/api/v1/events/Fortnite/download/{user}")]
+pub async fn events(app: web::Data<app::State>) -> impl Responder {
+    HttpResponse::Ok().json(app.events.clone())
 }

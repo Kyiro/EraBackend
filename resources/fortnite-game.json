@@ -125,5 +125,50 @@
       "_activeDate": "2018-08-06T19:00:26.217Z",
       "lastModified": "2019-10-29T22:32:52.686Z",
       "_locale": "en-US"
+    },
+    "tournamentinformation": {
+        "conversion_config": {
+            "containerName": "tournament_info",
+            "_type": "Conversion Config",
+            "enableReferences": true,
+            "contentName": "tournaments"
+        },
+        "jcr:isCheckedOut": true,
+        "tournament_info": {
+            "tournaments": [
+                {
+                    "title_color": "FFFFFF",
+                    "loading_screen_image": "https://cdn.discordapp.com/attachments/881559210507251774/881879992978513960/Era1024x512.png",
+                    "background_text_color": "130026",
+                    "background_right_color": "130026",
+                    "poster_back_image": "https://cdn.discordapp.com/attachments/881559210507251774/881879988733898792/Era750x1080-Back.png",
+                    "_type": "Tournament Display Info",
+                    "tournament_display_id": "EraTournament",
+                    "highlight_color": "F7FF00",
+                    "schedule_info": "",
+                    "primary_color": "FFFFFF",
+                    "flavor_description": "",
+                    "poster_front_image": "https://cdn.discordapp.com/attachments/881559210507251774/881879992403902534/Era750x1080-Front.png",
+                    "short_format_title": "",
+                    "title_line_2": "Tournament",
+                    "title_line_1": "Project Era",
+                    "shadow_color": "8F20FF",
+                    "details_description": "",
+                    "background_left_color": "9545FF",
+                    "long_format_title": "Project Era Tournament",
+                    "poster_fade_color": "29C2FE",
+                    "secondary_color": "9545FF",
+                    "playlist_tile_image": "https://cdn.discordapp.com/attachments/881559210507251774/881879992978513960/Era1024x512.png",
+                    "base_color": "FFFFFF"
+                }
+            ],
+            "_type": "Tournaments Info"
+        },
+        "_title": "tournamentinformation",
+        "_noIndex": false,
+        "jcr:baseVersion": "0",
+        "_activeDate": "2018-08-06T19:00:26.217Z",
+        "lastModified": "2019-10-29T22:32:52.686Z",
+        "_locale": "en-US"
     }
 }

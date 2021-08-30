@@ -90,7 +90,7 @@ pub fn gen_item(item: &ShopItem) -> Value {
             {
                 "requirementType": "DenyOnItemOwnership",
                 "requiredId": item.id,
-                "minQuantity": 1
+                "minQuantity": 2
             }
         ],
         "offerType": "StaticPrice",
@@ -156,7 +156,7 @@ pub async fn timeline(req: HttpRequest) -> impl Responder {
                 },
                 {
                   "eventType": match build.season {
-                      1 | 2 => String::from("EventFlag.LobbyWinterDecor"),
+                      2 => String::from("EventFlag.LobbyWinterDecor"),
                       _ => if build.patch == Some(6.21) {
                         String::from("EventFlag.LobbySeason6Halloween")
                       } else {
