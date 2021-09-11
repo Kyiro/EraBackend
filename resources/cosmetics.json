@@ -7006,7 +7006,7 @@
         "variants": []
     },
     {
-        "type": "AthenaPetCarrier",
+        "type": "AthenaBackpack",
         "id": "petcarrier_001_dog",
         "variants": [
             {
@@ -7020,12 +7020,12 @@
         ]
     },
     {
-        "type": "AthenaPetCarrier",
+        "type": "AthenaBackpack",
         "id": "petcarrier_002_chameleon",
         "variants": []
     },
     {
-        "type": "AthenaPetCarrier",
+        "type": "AthenaBackpack",
         "id": "petcarrier_003_dragon",
         "variants": [
             {
@@ -7039,7 +7039,7 @@
         ]
     },
     {
-        "type": "AthenaPetCarrier",
+        "type": "AthenaBackpack",
         "id": "petcarrier_004_hamster",
         "variants": [
             {
@@ -7053,7 +7053,7 @@
         ]
     },
     {
-        "type": "AthenaPetCarrier",
+        "type": "AthenaBackpack",
         "id": "petcarrier_005_wolf",
         "variants": [
             {
@@ -7067,37 +7067,37 @@
         ]
     },
     {
-        "type": "AthenaPetCarrier",
+        "type": "AthenaBackpack",
         "id": "petcarrier_006_gingerbread",
         "variants": []
     },
     {
-        "type": "AthenaPet",
+        "type": "AthenaBackpack",
         "id": "petid_001_dog",
         "variants": []
     },
     {
-        "type": "AthenaPet",
+        "type": "AthenaBackpack",
         "id": "petid_002_chameleon",
         "variants": []
     },
     {
-        "type": "AthenaPet",
+        "type": "AthenaBackpack",
         "id": "petid_003_dragon",
         "variants": []
     },
     {
-        "type": "AthenaPet",
+        "type": "AthenaBackpack",
         "id": "petid_004_hamster",
         "variants": []
     },
     {
-        "type": "AthenaPet",
+        "type": "AthenaBackpack",
         "id": "petid_005_wolf",
         "variants": []
     },
     {
-        "type": "AthenaPet",
+        "type": "AthenaBackpack",
         "id": "petid_006_gingerbread",
         "variants": []
     },
