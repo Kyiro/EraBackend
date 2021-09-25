@@ -58,7 +58,11 @@ async fn main() -> std::io::Result<()> {
                     .service(api::account::personal_account_query)
                     .service(api::account::ssodomains),
             )
-            .service(web::scope("/content").service(api::content::fortnite_game))
+            .service(
+			    web::scope("/content")
+				    .service(api::content::fortnite_game)
+					.service(api::content::fortnite_game_)
+			    )
             .service(
                 web::scope("/fortnite")
                     .service(api::cloudstorage::system)
@@ -96,6 +100,7 @@ async fn main() -> std::io::Result<()> {
             .service(api::other::blocklist)
             .service(api::other::recent_players)
             .service(api::other::party_user)
+            .service(api::other::settings)
             .service(api::other::waitingroom)
     })
     .bind(format!(

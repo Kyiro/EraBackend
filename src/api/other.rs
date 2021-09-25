@@ -34,6 +34,11 @@ pub async fn blocklist() -> impl Responder {
     }))
 }
 
+#[get("/friends/api/v1/{i}/settings")]
+pub async fn settings() -> impl Responder {
+    HttpResponse::Ok().json(json!({}))
+}
+
 #[post("/datarouter/api/v1/public/data")]
 pub async fn datarouter() -> impl Responder {
     HttpResponse::NoContent().json(json!({}))

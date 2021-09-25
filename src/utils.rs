@@ -22,7 +22,7 @@ pub fn get_build(useragent: &str) -> Option<Build> {
 
     let season = if netcl < 3807424 {
         1
-    } else if netcl < 3841827 {
+    } else if netcl < 3901517 {
         2
     } else {
         captures.get(1)?.as_str().parse().ok()?
