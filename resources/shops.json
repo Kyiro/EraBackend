@@ -162,5 +162,194 @@
                 "price": 1200
             }
         ]
+    },
+    "5": {
+        "BRDailyStorefront": [
+            {
+                "id": "AthenaCharacter:CID_043_Athena_Commando_F_Stealth",
+                "da": null,
+                "price": 1200
+            },
+            {
+                "id": "AthenaPickaxe:Pickaxe_ID_035_Prismatic",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaCharacter:CID_079_Athena_Commando_F_Camo",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaDance:EID_PopDance01",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaDance:EID_MakeItRain",
+                "da": null,
+                "price": 500
+            },
+            {
+                "id": "AthenaGlider:Glider_ID_036_AuroraGlow",
+                "da": null,
+                "price": 500
+            }
+        ],
+        "BRWeeklyStorefront": [
+            {
+                "id": "AthenaCharacter:CID_171_Athena_Commando_M_SharpDresser",
+                "da": "DA_Featured_CID_171_Athena_Commando_M_SharpDresser",
+                "price": 1200
+            },
+            {
+                "id": "AthenaPickaxe:Pickaxe_ID_074_SharpDresser",
+                "da": "DA_Featured_Pickaxe_ID_074_SharpDresser",
+                "price": 800
+            }
+        ]
+    },
+    "6": {
+        "BRDailyStorefront": [
+            {
+                "id": "AthenaDance:EID_Fresh",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaCharacter:CID_076_Athena_Commando_F_Sup",
+                "da": null,
+                "price": 1200
+            },
+            {
+                "id": "AthenaPickaxe:HappyPickaxe",
+                "da": null,
+                "price": 500
+            },
+            {
+                "id": "AthenaCharacter:CID_123_Athena_Commando_F_Metal",
+                "da": null,
+                "price": 1200
+            },
+            {
+                "id": "AthenaDance:EID_SexyFlip",
+                "da": null,
+                "price": 500
+            },
+            {
+                "id": "AthenaGlider:Glider_ID_031_Metal",
+                "da": null,
+                "price": 500
+            }
+        ],
+        "BRWeeklyStorefront": [
+            {
+                "id": "AthenaCharacter:CID_225_Athena_Commando_M_Octoberfest",
+                "da": "DA_Featured_CID_225_Athena_Commando_M_Octoberfest",
+                "price": 1500
+            },
+            {
+                "id": "AthenaPickaxe:Pickaxe_ID_101_Octoberfest",
+                "da": "DA_Featured_Pickaxe_ID_101_Octoberfest",
+                "price": 500
+            }
+        ]
+    },
+    "7": {
+        "BRDailyStorefront": [
+            {
+                "id": "AthenaDance:EID_Everytime",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaCharacter:CID_077_Athena_Commando_M_Sup",
+                "da": null,
+                "price": 1200
+            },
+            {
+                "id": "AthenaDance:EID_Dab",
+                "da": null,
+                "price": 500
+            },
+            {
+                "id": "AthenaCharacter:CID_076_Athena_Commando_F_Sup",
+                "da": null,
+                "price": 1200
+            },
+            {
+                "id": "AthenaPickaxe:Pickaxe_ID_035_Prismatic",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "Glider_ID_098_Sup",
+                "da": null,
+                "price": 500
+            }
+        ],
+        "BRWeeklyStorefront": [
+            {
+                "id": "AthenaCharacter:CID_290_Athena_Commando_F_BlueBadass",
+                "da": "DA_Featured_CID_290_Athena_Commando_F_BlueBadass",
+                "price": 1500
+            },
+            {
+                "id": "AthenaCharacter:CID_121_Athena_Commando_M_Graffiti",
+                "da": "DA_Featured_CID_121_Athena_Commando_M_Graffiti",
+                "price": 1500
+            }
+        ]
+    },
+    "8": {
+        "BRDailyStorefront": [
+            {
+                "id": "AthenaDance:EID_Maracas",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaPickaxe:Pickaxe_ID_030_ArtDeco",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaCharacter:CID_014_Athena_Commando_F",
+                "da": null,
+                "price": 800
+            },
+            {
+                "id": "AthenaDance:EID_Spyglass",
+                "da": null,
+                "price": 500
+            },
+            {
+                "id": "AthenaCharacter:CID_196_Athena_Commando_M_Biker",
+                "da": null,
+                "price": 1200
+            },
+            {
+                "id": "AthenaGlider:Glider_ID_065_Hippie",
+                "da": null,
+                "price": 500
+            }
+        ],
+        "BRWeeklyStorefront": [
+            {
+                "id": "AthenaCharacter:CID_315_Athena_Commando_M_TeriyakiFish",
+                "da": "DA_Featured_CID_315_Athena_Commando_M_TeriyakiFish",
+                "price": 1200
+            },
+            {
+                "id": "AthenaGlider:Glider_ID_110_TeriyakiFish",
+                "da": "DA_Featured_Glider_ID_110_TeriyakiFish",
+                "price": 800
+            },
+            {
+                "id": "AthenaPickaxe:Pickaxe_ID_017_Shark",
+                "da": "DA_Featured_Pickaxe_ID_017_Shark",
+                "price": 1200
+            }
+        ]
     }
 }
