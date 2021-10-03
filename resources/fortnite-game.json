@@ -10,7 +10,7 @@
         "message": {
           "_type": "CommonUI Simple Message Base",
           "title": "Project ERA 1.5",
-          "body": "Made by danii#4000\nLauncher by Not A Robot#6932 and ozne#3303\nBackend by Kyiro#7884\nSpecial thanks to Kemo, Sizzy, Mix and Fischsalat.\n\nChangelog:\nFixed freezes\nFloor loot\n'cheatscript StartGame' to load into a game if the playbutton doesn't work\nSeason 1/2 building\nEditing\nWorking chests & ammo boxes\n1.8-8.51 support\nAny map support, using console command 'open' in lobby.\nFixed 4.5 crashes (The version is still unstable)\n\nJoin us at: dsc.gg/erafn\nEnjoy!!"
+          "body": "Made by danii#4000\nLauncher by Not A Robot#6932 and ozne#3303\nBackend by Kyiro#7884\nSpecial thanks to Kemo, Sizzy, Mix and Fischsalat.\n\nChangelog:\nEraScript beta\nFixed freezes\nFloor loot\n'cheatscript StartGame' to load into a game if the playbutton doesn't work\nSeason 1/2 building\nEditing\nWorking chests & ammo boxes\n1.8-8.51 support\nAny map support, using console command 'open' in lobby.\nFixed 4.5 crashes (The version is still unstable)\n\nJoin us at: dsc.gg/erafn\nEnjoy!!"
         }
       },
       "_activeDate": "2017-07-19T13:14:04.490Z",
