@@ -1,11 +1,13 @@
 import json
 import requests
 
-DANCES = [
-    "AthenaEmoji",
-    "AthenaToy",
-    "AthenaSpray"
-]
+MAPPINGS = {
+    "AthenaEmoji": "AthenaDance",
+    "AthenaToy": "AthenaDance",
+    "AthenaSpray": "AthenaDance",
+    "AthenaPet": "AthenaBackpack",
+    "AthenaPetCarrier": "AthenaBackpack"
+}
 
 data = []
 file = open("cosmetics.json", "w")
@@ -16,8 +18,8 @@ for item in items["data"]:
     if "Default" in item["id"] or item["introduction"] and item["introduction"]["backendValue"] <= season:
         item_type = item["type"]["backendValue"]
         
-        if item_type in DANCES:
-            item_type = "AthenaDance"
+        if item_type in MAPPINGS:
+            item_type = MAPPINGS[item_type]
         
         variants = []
         if item["variants"]:

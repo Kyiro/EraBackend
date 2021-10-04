@@ -1,7 +1,7 @@
-use crate::structs::ALPHABET;
 use base64::decode;
 use chrono::{prelude::*, Duration};
 use serde::Serialize;
+use uuid::Uuid;
 
 #[derive(Serialize)]
 pub struct ClientCreds {
@@ -44,7 +44,7 @@ fn decode_basic(token: &str) -> String {
 impl ClientCreds {
     pub fn new(basic: &str) -> Self {
         Self {
-            access_token: nanoid::nanoid!(32, &ALPHABET),
+            access_token: Uuid::new_v4().to_simple().to_string(),
             expires_in: 2147483647,
             expires_at: (Utc::now() + Duration::minutes(2147483647))
                 .to_rfc3339_opts(SecondsFormat::Secs, true),
@@ -58,14 +58,14 @@ impl ClientCreds {
 
 impl BearerToken {
     pub fn new(basic: &str) -> Self {
-        let acc_id = nanoid::nanoid!(8, &ALPHABET);
+        let acc_id = Uuid::new_v4().to_simple().to_string();
         Self {
-            access_token: nanoid::nanoid!(32, &ALPHABET),
+            access_token: Uuid::new_v4().to_simple().to_string(),
             expires_in: 2147483647,
             expires_at: (Utc::now() + Duration::minutes(2147483647))
                 .to_rfc3339_opts(SecondsFormat::Secs, true),
             token_type: String::from("bearer"),
-            refresh_token: nanoid::nanoid!(32, &ALPHABET),
+            refresh_token: Uuid::new_v4().to_simple().to_string(),
             refresh_expires: 2147483647,
             refresh_expires_at: (Utc::now() + Duration::minutes(2147483647))
                 .to_rfc3339_opts(SecondsFormat::Secs, true),
