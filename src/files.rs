@@ -1,4 +1,5 @@
 use crate::structs::app::{CItem, Shops};
+use crate::CLOUDSTORAGE;
 use serde_json::{json, Value};
 use std::fs::read_to_string;
 
@@ -34,4 +35,26 @@ pub fn events() -> Value {
             .unwrap_or(include_str!("../resources/events.json").to_string()),
     )
     .unwrap_or(json!({}))
+}
+
+pub fn get_cloudstorage() -> Vec<(String, String)> {
+    let mut files = Vec::<(String, String)>::new();
+    
+    // add reading cloudstorage that's not hardcoded :|
+    for (name, data) in CLOUDSTORAGE {
+        files.push((name.to_string(), data.to_string()))
+    }
+    
+    files
+}
+
+pub fn get_cloudstorage_file(file_name: String) -> Option<String> {
+    // add reading cloudstorage that's not hardcoded :|
+    for (name, data) in CLOUDSTORAGE {
+        if name == file_name {
+            return Some(data.to_string())
+        }
+    }
+    
+    None
 }
