@@ -49,7 +49,67 @@ pub async fn eulatracking() -> impl Responder {
     HttpResponse::NoContent().json(json!({}))
 }
 
-#[get("/api/v1/events/Fortnite/download/{user}")]
+#[get("/api/v1/events/Fortnite/download/{id}")]
 pub async fn events(app: web::Data<app::State>) -> impl Responder {
     HttpResponse::Ok().json(app.events.clone())
+}
+
+#[get("/api/v1/events/Fortnite/{tournament}/history/{id}")]
+pub async fn events_history(
+    path: web::Path<(String, String)>
+) -> impl Responder {
+    let (tournament, id) = path.into_inner();
+    
+    HttpResponse::Ok()
+        .json(json!([
+            {
+                "scoreKey": {
+                    "gameId": "Fortnite",
+                    "eventId": tournament,
+                    "eventWindowId": "",
+                    "_scoreId": null
+                },
+                "teamId": id,
+                "teamAccountIds": [
+                    id
+                ],
+                "liveSessionId": null,
+                "pointsEarned": 999999,
+                "score": 999999,
+                "rank": 1,
+                "percentile": 0.01,
+                "pointBreakdown": {},
+                "sessionHistory": []
+            }
+        ]))
+}
+
+#[get("/api/v1/events/Fortnite/{tournament}/{window}/history/{id}")]
+pub async fn events_history_window(
+    path: web::Path<(String, String, String)>
+) -> impl Responder {
+    let (tournament, window, id) = path.into_inner();
+    
+    HttpResponse::Ok()
+        .json(json!([
+            {
+                "scoreKey": {
+                    "gameId": "Fortnite",
+                    "eventId": tournament,
+                    "eventWindowId": window,
+                    "_scoreId": null
+                },
+                "teamId": id,
+                "teamAccountIds": [
+                    id
+                ],
+                "liveSessionId": null,
+                "pointsEarned": 999999,
+                "score": 999999,
+                "rank": 1,
+                "percentile": 0.01,
+                "pointBreakdown": {},
+                "sessionHistory": []
+            }
+        ]))
 }

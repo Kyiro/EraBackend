@@ -95,6 +95,8 @@ async fn main() -> std::io::Result<()> {
             )
             .service(api::other::eulatracking)
             .service(api::other::events)
+            .service(api::other::events_history)
+            .service(api::other::events_history_window)
             .service(api::other::datarouter)
             .service(api::other::friends)
             .service(api::other::blocklist)
