@@ -7,8 +7,10 @@ pub mod structs;
 pub mod utils;
 
 pub const VERSION: &'static str = "1.2";
-pub const CLOUDSTORAGE: [(&'static str, &'static str); 1] = [
-    ("DefaultGame.ini", include_str!("../resources/cloudstorage/DefaultGame.ini"))
+pub const CLOUDSTORAGE: [(&'static str, &'static str); 3] = [
+    ("DefaultGame.ini", include_str!("../resources/cloudstorage/DefaultGame.ini")),
+    ("DefaultRuntimeOptions.ini", include_str!("../resources/cloudstorage/DefaultRuntimeOptions.ini")),
+    ("DefaultEngine.ini", include_str!("../resources/cloudstorage/DefaultEngine.ini"))
 ];
 
 #[get("/")]
