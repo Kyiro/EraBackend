@@ -182,56 +182,58 @@ impl FullProfile {
                 "templateId": "CosmeticLocker:cosmeticlocker_athena",
                 "attributes": {
                     "locker_slots_data": {
-                        "SkyDiveContrail": {
-                            "items": [ profile.contrail ],
-                            "activeVariants": [ null ]
-                        },
-                        "MusicPack": {
-                            "items": [ profile.music_pack ],
-                            "activeVariants": [ null ]
-                        },
-                        "Character": {
-                            "items": [ profile.character ],
-                            "activeVariants": [ null ]
-                        },
-                        "Backpack": {
-                            "items": [ profile.backpack ],
-                            "activeVariants": [ null ]
-                        },
-                        "Glider": {
-                            "items": [ profile.glider ],
-                            "activeVariants": [ null ]
-                        },
-                        "Pickaxe": {
-                            "items": [ profile.pickaxe ],
-                            "activeVariants": [ null ]
-                        },
-                        "ItemWrap": {
-                            "items": profile.item_wrap,
-                            "activeVariants": [
-                                null,
-                                null,
-                                null,
-                                null,
-                                null,
-                                null,
-                                null
-                            ]
-                        },
-                        "LoadingScreen": {
-                            "items": [ profile.loading ],
-                            "activeVariants": [ null ]
-                        },
-                        "Dance": {
-                            "items": profile.dance,
-                            "activeVariants": [
-                                null,
-                                null,
-                                null,
-                                null,
-                                null,
-                                null
-                            ]
+                        "slots": {
+                            "SkyDiveContrail": {
+                                "items": [ profile.contrail ],
+                                "activeVariants": [ null ]
+                            },
+                            "MusicPack": {
+                                "items": [ profile.music_pack ],
+                                "activeVariants": [ null ]
+                            },
+                            "Character": {
+                                "items": [ profile.character ],
+                                "activeVariants": [ null ]
+                            },
+                            "Backpack": {
+                                "items": [ profile.backpack ],
+                                "activeVariants": [ null ]
+                            },
+                            "Glider": {
+                                "items": [ profile.glider ],
+                                "activeVariants": [ null ]
+                            },
+                            "Pickaxe": {
+                                "items": [ profile.pickaxe ],
+                                "activeVariants": [ null ]
+                            },
+                            "ItemWrap": {
+                                "items": profile.item_wrap,
+                                "activeVariants": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            "LoadingScreen": {
+                                "items": [ profile.loading ],
+                                "activeVariants": [ null ]
+                            },
+                            "Dance": {
+                                "items": profile.dance,
+                                "activeVariants": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
                         }
                     },
                     "use_count": 1,
