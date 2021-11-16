@@ -49,6 +49,7 @@ pub enum Attributes {
     Bool(bool),
     String(String),
     Variants(Vec<Variant>),
+    Other(Value)
 }
 
 #[derive(Serialize, Deserialize)]
@@ -128,15 +129,15 @@ impl FullProfile {
             xp: 9999999,
             season_friend_match_boost: 40,
             // cosmetics
-            favorite_character: profile.character,
-            favorite_backpack: profile.backpack,
-            favorite_pickaxe: profile.pickaxe,
-            favorite_glider: profile.glider,
-            favorite_skydivecontrail: profile.contrail,
-            favorite_musicpack: profile.music_pack,
-            favorite_loadingscreen: profile.loading,
-            favorite_dance: profile.dance,
-            favorite_itemwraps: profile.item_wrap,
+            favorite_character: profile.character.clone(),
+            favorite_backpack: profile.backpack.clone(),
+            favorite_pickaxe: profile.pickaxe.clone(),
+            favorite_glider: profile.glider.clone(),
+            favorite_skydivecontrail: profile.contrail.clone(),
+            favorite_musicpack: profile.music_pack.clone(),
+            favorite_loadingscreen: profile.loading.clone(),
+            favorite_dance: profile.dance.clone(),
+            favorite_itemwraps: profile.item_wrap.clone(),
             // unused cosmetics
             favorite_callingcard: String::new(),
             favorite_consumableemote: String::new(),
@@ -146,6 +147,12 @@ impl FullProfile {
             favorite_mapmarker: String::new(),
             favorite_vehicledeco: String::new(),
             favorite_victorypose: String::new(),
+            // s12
+            use_random_loadout: false,
+            last_applied_loadout: String::from("EraLoadout"),
+            loadouts: vec! [
+                String::from("EraLoadout")
+            ]
         });
 
         for i in cosmetics.into_iter() {
@@ -167,6 +174,60 @@ impl FullProfile {
                 }),
             );
         }
+        
+        full_profile.profile.items.insert(
+            String::from("EraLoadout"),
+            Item::Other(json!({
+                "templateId": "CosmeticLocker:cosmeticlocker_athena",
+                "attributes": {
+                    "locker_slots_data": {
+                        "SkyDiveContrail": {
+                            "items": [ profile.contrail ],
+                            "activeVariants": []
+                        },
+                        "MusicPack": {
+                            "items": [ profile.music_pack ],
+                            "activeVariants": []
+                        },
+                        "Character": {
+                            "items": [ profile.character ],
+                            "activeVariants": []
+                        },
+                        "Backpack": {
+                            "items": [ profile.backpack ],
+                            "activeVariants": []
+                        },
+                        "Glider": {
+                            "items": [ profile.glider ],
+                            "activeVariants": []
+                        },
+                        "Pickaxe": {
+                            "items": [ profile.pickaxe ],
+                            "activeVariants": []
+                        },
+                        "ItemWrap": {
+                            "items": profile.item_wrap,
+                            "activeVariants": []
+                        },
+                        "LoadingScreen": {
+                            "items": [ profile.loading ],
+                            "activeVariants": []
+                        },
+                        "Dance": {
+                            "items": profile.dance,
+                            "activeVariants": []
+                        }
+                    },
+                    "use_count": 1,
+                    "banner_icon_template": "",
+                    "banner_color_template": "",
+                    "locker_name": "Project Era",
+                    "item_seen": true,
+                    "favorite": false
+                },
+                "quantity": 1
+            }))
+        );
 
         full_profile
     }
@@ -430,6 +491,10 @@ pub struct AthenaAttributes {
     pub favorite_mapmarker: String,
     pub favorite_vehicledeco: String,
     pub favorite_victorypose: String,
+    // s12
+    pub last_applied_loadout: String,
+    pub loadouts: Vec<String>,
+    pub use_random_loadout: bool,
 }
 
 #[derive(Serialize, Deserialize)]

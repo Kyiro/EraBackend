@@ -90,6 +90,7 @@ async fn main() -> std::io::Result<()> {
                     .service(api::fortnite::world_info)
                     .service(api::profile::client_quest_login)
                     .service(api::profile::equip_battle_royale)
+                    .service(api::profile::set_cosmetic_locker_slot)
                     .service(api::profile::query_profile)
                     .service(api::profile::other),
             )

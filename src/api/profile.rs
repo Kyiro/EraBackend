@@ -4,6 +4,7 @@ use crate::utils::{get_build, Build};
 use actix_web::{post, web, HttpRequest, HttpResponse, Responder};
 use chrono::prelude::*;
 use serde::Deserialize;
+use serde_json::json;
 
 // reused from Ruten
 fn create(profile_id: String, change: Vec<ProfileChanges>, rvn: Option<i32>) -> Profile {
@@ -76,14 +77,11 @@ pub async fn query_profile(
 }
 
 #[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct EquipBattleRoyaleCustomization {
-    #[serde(rename = "itemToSlot")]
     pub item_to_slot: String,
-    #[serde(rename = "slotName")]
     pub slot_name: String,
-    #[serde(rename = "indexWithinSlot")]
     pub index: Option<usize>,
-    #[serde(rename = "variantUpdates")]
     pub variants: Option<Vec<Variant>>,
 }
 
@@ -168,6 +166,121 @@ pub async fn equip_battle_royale(
             }))
         }
     }
+
+    HttpResponse::Ok().json(create(String::from("athena"), changes, Some(query.rvn)))
+}
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct SetCosmeticLockerSlot {
+    pub locker_item: String,
+    pub category: String,
+    pub item_to_slot: String,
+    pub slot_index: usize
+}
+
+#[post("/api/game/v2/profile/{id}/client/SetCosmeticLockerSlot")]
+pub async fn set_cosmetic_locker_slot(
+    app: web::Data<State>,
+    body: web::Json<SetCosmeticLockerSlot>,
+    query: web::Query<Query>,
+    id: web::Path<String>,
+) -> impl Responder {
+    let body = body.into_inner();
+    let query = query.into_inner();
+    let id = id.into_inner();
+    // let cosmetic = {
+    //     let id = body
+    //         .item_to_slot
+    //         .clone()
+    //         .split(":")
+    //         .collect::<Vec<&str>>()
+    //         .get(1)
+    //         .unwrap_or(&"")
+    //         .to_string();
+    //     match app.cosmetics.iter().find(|c| c.id == id) {
+    //         Some(data) => data.clone(),
+    //         None => {
+    //             if body.item_to_slot == "" {
+    //                 CItem::new()
+    //             } else {
+    //                 return HttpResponse::BadRequest().into();
+    //             }
+    //         }
+    //     }
+    // };
+
+    {
+        // make new user if it doesn't exist
+        app.get_user(&id);
+        let mut profile = app.users.write().unwrap();
+        let profile = profile.get_mut(&id).unwrap();
+
+        let slot = match body.category.as_str() {
+            "Character" => &mut profile.character,
+            "Dance" => &mut profile.dance[body.slot_index],
+            "ItemWrap" => &mut profile.item_wrap[body.slot_index],
+            "Backpack" => &mut profile.backpack,
+            "Pickaxe" => &mut profile.pickaxe,
+            "Glider" => &mut profile.glider,
+            "SkyDiveContrail" => &mut profile.contrail,
+            "MusicPack" => &mut profile.music_pack,
+            "LoadingScreen" => &mut profile.loading,
+            _ => &mut profile.character,
+        };
+
+        *slot = body.item_to_slot.clone();
+    }
+
+    let mut changes: Vec<ProfileChanges> = Vec::new();
+    
+    let profile = app.get_user(&id);
+    
+    changes.push(ProfileChanges::Changed(AttrChanged {
+        changeType: String::from("itemAttrChanged"),
+        itemId: body.locker_item,
+        attributeName: String::from("locker_slots_data"),
+        attributeValue: Attributes::Other(json!({
+            "slots": {
+                "SkyDiveContrail": {
+                    "items": [ profile.contrail ],
+                    "activeVariants": []
+                },
+                "MusicPack": {
+                    "items": [ profile.music_pack ],
+                    "activeVariants": []
+                },
+                "Character": {
+                    "items": [ profile.character ],
+                    "activeVariants": []
+                },
+                "Backpack": {
+                    "items": [ profile.backpack ],
+                    "activeVariants": []
+                },
+                "Glider": {
+                    "items": [ profile.glider ],
+                    "activeVariants": []
+                },
+                "Pickaxe": {
+                    "items": [ profile.pickaxe ],
+                    "activeVariants": []
+                },
+                "ItemWrap": {
+                    "items": profile.item_wrap,
+                    "activeVariants": []
+                },
+                "LoadingScreen": {
+                    "items": [ profile.loading ],
+                    "activeVariants": []
+                },
+                "Dance": {
+                    "items": profile.dance,
+                    "activeVariants": []
+                }
+            }
+        })),
+    }));
 
     HttpResponse::Ok().json(create(String::from("athena"), changes, Some(query.rvn)))
 }
