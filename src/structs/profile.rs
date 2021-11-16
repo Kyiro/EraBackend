@@ -147,11 +147,12 @@ impl FullProfile {
             favorite_mapmarker: String::new(),
             favorite_vehicledeco: String::new(),
             favorite_victorypose: String::new(),
-            // s12
+            // new loadouts
+            active_loadout_index: 0,
             use_random_loadout: false,
-            last_applied_loadout: String::from("EraLoadout"),
+            last_applied_loadout: String::from("eraloadout"),
             loadouts: vec! [
-                String::from("EraLoadout")
+                String::from("eraloadout")
             ]
         });
 
@@ -176,46 +177,61 @@ impl FullProfile {
         }
         
         full_profile.profile.items.insert(
-            String::from("EraLoadout"),
+            String::from("eraloadout"),
             Item::Other(json!({
                 "templateId": "CosmeticLocker:cosmeticlocker_athena",
                 "attributes": {
                     "locker_slots_data": {
                         "SkyDiveContrail": {
                             "items": [ profile.contrail ],
-                            "activeVariants": []
+                            "activeVariants": [ null ]
                         },
                         "MusicPack": {
                             "items": [ profile.music_pack ],
-                            "activeVariants": []
+                            "activeVariants": [ null ]
                         },
                         "Character": {
                             "items": [ profile.character ],
-                            "activeVariants": []
+                            "activeVariants": [ null ]
                         },
                         "Backpack": {
                             "items": [ profile.backpack ],
-                            "activeVariants": []
+                            "activeVariants": [ null ]
                         },
                         "Glider": {
                             "items": [ profile.glider ],
-                            "activeVariants": []
+                            "activeVariants": [ null ]
                         },
                         "Pickaxe": {
                             "items": [ profile.pickaxe ],
-                            "activeVariants": []
+                            "activeVariants": [ null ]
                         },
                         "ItemWrap": {
                             "items": profile.item_wrap,
-                            "activeVariants": []
+                            "activeVariants": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
                         },
                         "LoadingScreen": {
                             "items": [ profile.loading ],
-                            "activeVariants": []
+                            "activeVariants": [ null ]
                         },
                         "Dance": {
                             "items": profile.dance,
-                            "activeVariants": []
+                            "activeVariants": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
                         }
                     },
                     "use_count": 1,
@@ -491,7 +507,8 @@ pub struct AthenaAttributes {
     pub favorite_mapmarker: String,
     pub favorite_vehicledeco: String,
     pub favorite_victorypose: String,
-    // s12
+    // new loadouts
+    pub active_loadout_index: usize,
     pub last_applied_loadout: String,
     pub loadouts: Vec<String>,
     pub use_random_loadout: bool,
