@@ -11,9 +11,12 @@ pub fn cosmetics() -> Vec<CItem> {
     .unwrap_or(Vec::new())
 }
 
-pub fn game() -> String {
-    read_to_string("fortnite-game.json")
-        .unwrap_or(include_str!("../resources/fortnite-game.json").to_string())
+pub fn game() -> Value {
+    serde_json::from_str(
+        &read_to_string("fortnite-game.json")
+            .unwrap_or(include_str!("../resources/fortnite-game.json").to_string()),
+    )
+    .unwrap_or(json!({}))
 }
 
 pub fn keychain() -> String {

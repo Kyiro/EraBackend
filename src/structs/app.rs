@@ -9,7 +9,7 @@ pub type Shops = HashMap<usize, HashMap<String, Vec<ShopItem>>>;
 pub struct State {
     pub cosmetics: Vec<CItem>,
     pub events: Value,
-    pub game: String,
+    pub game: Value,
     pub keychain: String,
     pub shops: Shops,
     // Yeah! Um...
@@ -29,7 +29,7 @@ impl State {
         Self {
             cosmetics: Vec::new(),
             events: json!({}),
-            game: String::new(),
+            game: json!({}),
             keychain: String::new(),
             shops: Shops::new(),
             users: Arc::new(RwLock::new(HashMap::new())),
