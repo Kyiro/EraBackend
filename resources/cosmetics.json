@@ -4552,7 +4552,7 @@
     },
     {
         "type": "AthenaCharacter",
-        "id": "cid_028_athena_commando_f",
+        "id": "_cid_028_athena_commando_f",
         "variants": [
             {
                 "channel": "Material",
