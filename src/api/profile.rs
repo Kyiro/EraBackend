@@ -82,6 +82,7 @@ pub struct EquipBattleRoyaleCustomization {
     pub item_to_slot: String,
     pub slot_name: String,
     pub index: Option<usize>,
+    #[serde(rename = "variantUpdates")]
     pub variants: Option<Vec<Variant>>,
 }
 
